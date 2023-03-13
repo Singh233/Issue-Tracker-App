@@ -1,0 +1,77 @@
+
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0%;
+    width: 100vw;
+    height: auto;
+    font-size: 1.3rem;
+
+    .branding {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+
+        img {
+            height: 50px;
+        }
+
+        p {
+            margin-left: 8px;
+            font-size: 1.4rem;
+            span {
+                font-size: 2rem;
+
+                font-weight: 600;
+            }
+        }
+    }
+
+    .menu {
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+}
+
+
+
+// For mobile devices
+
+@media screen and (max-width: "480px") {
+
+
+    
+    .navbar-container {
+        
+
+        .branding {
+            padding: 5px;
+
+            img {
+                height: 36px;
+            }
+
+            p {
+                margin-left: 8px;
+                font-size: 1.2rem;
+                span {
+                    font-size: 1.7rem;
+
+                }
+            }
+        }
+
+        .menu {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+    }
+
+}

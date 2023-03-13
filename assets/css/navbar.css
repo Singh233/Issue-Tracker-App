@@ -1,0 +1,39 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0%;
+  width: 100vw;
+  height: auto;
+  font-size: 1.3rem; }
+  .navbar-container .branding {
+    display: flex;
+    align-items: center;
+    padding: 10px; }
+    .navbar-container .branding img {
+      height: 50px; }
+    .navbar-container .branding p {
+      margin-left: 8px;
+      font-size: 1.4rem; }
+      .navbar-container .branding p span {
+        font-size: 2rem;
+        font-weight: 600; }
+  .navbar-container .menu {
+    margin-right: 15px;
+    cursor: pointer; }
+
+@media screen and (max-width: 480px) {
+  .navbar-container .branding {
+    padding: 5px; }
+    .navbar-container .branding img {
+      height: 36px; }
+    .navbar-container .branding p {
+      margin-left: 8px;
+      font-size: 1.2rem; }
+      .navbar-container .branding p span {
+        font-size: 1.7rem; }
+  .navbar-container .menu {
+    margin-right: 15px;
+    cursor: pointer; } }

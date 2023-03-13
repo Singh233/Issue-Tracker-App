@@ -1,0 +1,79 @@
+
+<!-- If user is authenticated -->
+<% if (locals.user) { %> 
+    <div class="home-container">
+        <h1> <i class="fa-solid fa-circle-check"></i> Successfully Signed in!</h1>
+        <p> <%= user.name %> </p>
+        <p> <%= user.email %> </p>
+        <form id="forgot-password-form" action="/users/forgot-password" method="post">
+            <input id="email-input" type="hidden" name="email" value="<%= user.email %>">
+        </form>
+        <a id="sign-out-button" href="/users/sign-out">Sign out </a>
+        <a id="reset-password-link">Reset Password</a>
+
+    </div>
+
+    <script>
+        document.getElementById('reset-password-link').addEventListener('click', function() {
+            iziToast.question({
+                timeout: 20000,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                id: 'question',
+                icon: 'fa-solid fa-envelope',
+                backgroundColor: '#0057D2',
+                theme: 'dark',
+                zindex: 999,
+                title: 'Email link',
+                message: 'Are you sure about that?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>YES</b></button>', function (instance, toast) {
+
+                        <% if (user.email) { %>
+                            const form = document.getElementById('forgot-password-form');
+                            form.submit();
+                        <% } else { %>
+                            iziToast.error({
+                                title: 'Error',
+                                message: 'Please update your email address!',
+                                theme: 'dark',
+                                backgroundColor: '#AA0808',
+                                position: 'topCenter',
+                                progressBarColor: 'white',
+                                transitionInMobile: 'fadeInUp',
+                                transitionOutMobile: 'fadeOutUp',
+                            });
+                        <% } %>
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                    }, true],
+                    ['<button>NO</button>', function (instance, toast) {
+                        console.log('No')
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+            
+                    }],
+                ],
+                onClosing: function(instance, toast, closedBy){
+                    console.info('Closing | closedBy: ' + closedBy);
+                },
+                onClosed: function(instance, toast, closedBy){
+                    console.info('Closed | closedBy: ' + closedBy);
+                }
+            });
+        })
+    </script>
+    
+<% } else { %>
+
+    <!-- else display the sign in / up form  -->
+
+    <%- include('user_sign_in'); %>
+    <%- include('user_sign_up'); %>
+    <%- include('forgot_password'); %>
+    <script src="/js/sign_in_up.js"></script>
+
+<% } %>

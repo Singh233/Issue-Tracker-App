@@ -1,0 +1,51 @@
+
+<!-- User Sign in Container -->
+<div id="sign-in-container" class="user-sign-in animate__animated animate__faster ">
+    <div class="outline-effect">
+
+        <div class="welcome-div">
+            <img src="" alt="">
+            <p> Welcome,<span> Ready to Aboard? </span> </p>
+        </div>
+    
+        <!-- Sign In form -->
+        <form action="/users/create-session" method="post">
+            
+            <!-- Email Input -->
+            <div class="input-with-icon">
+                <i class="fa-solid fa-envelope"></i>
+                <input id="email-input" type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <!-- Password Input -->
+            <div class="input-with-icon">
+                <i class="fa-solid fa-key"></i>
+                <input id="pass-input" type="password" name="password" placeholder="Password" required>
+                <i class="fa-solid fa-eye animate__animated animate__faster" id="toggle-password"></i>
+            </div>
+    
+            <a id="toggle-forgot-password-page" class="forgot-password">Forgot password?</a>
+            <!-- Sign in button -->
+            <button id="submit-button" type="submit">
+                Sign In 
+                <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                </div>
+            </button>
+        </form>
+    
+    
+        <p class="option-text">Checkout other options</p>
+        
+        <!-- Other Sign in Options -->
+        <div class="auth-options">
+            <a id="google-auth" href="/users/auth/google"><img src="/img/icons8-google-48.png" alt=""></a>
+            <a id="fb-auth" href="/users/auth/facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a id="git-auth" href="/users/auth/github"><i class="fa-brands fa-github"></i></a>
+        </div>
+    
+        <p class="option-text">or Create an Account <a id="toggle-sign-in-page" href="#">Sign up <i class="fa-solid fa-arrow-right"></i></a></p>
+    
+    </div>
+</div>
+
+

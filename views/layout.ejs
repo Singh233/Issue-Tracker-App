@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJs Authentication </title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/user_sign_up.css">
+    <link rel="stylesheet" href="/css/user_sign_in.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/forgot_password.css">
+    <link rel="stylesheet" href="/css/password_reset.css">
+    <link rel="stylesheet" href="/css/iziToast.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <%- include('navbar'); %>
+    <%- include('menu'); %>
+    
+    <div id="main-body">
+        <%- body %>
+    </div>
+
+    <%- include('footer'); %>
+
+
+    <%- script %>
+    <script src="/js/iziToast.js" type="text/javascript"></script>
+    <script>
+        
+        <% if (flash.success && flash.success.length > 0) { %> 
+            iziToast.success({
+                title: 'Success',
+                message: '<%= flash.success %>',
+                theme: 'dark',
+                backgroundColor: 'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
+                position: 'topCenter',
+                progressBarColor: 'white',
+                transitionInMobile: 'fadeInUp',
+                transitionOutMobile: 'fadeOutUp',
+                
+            });
+        <% } %>
+
+        <% if (flash.error && flash.error.length > 0) { %> 
+            iziToast.error({
+                title: 'Error',
+                message: '<%= flash.error %>',
+                theme: 'dark',
+                backgroundColor: '#AA0808',
+                position: 'topCenter',
+                progressBarColor: 'white',
+                transitionInMobile: 'fadeInUp',
+                transitionOutMobile: 'fadeOutUp',
+            });
+        <% } %>
+
+        <% if (flash.info && flash.info.length > 0) { %> 
+            iziToast.warning({
+                title: 'Caution',
+                message: '<%= flash.info %>',
+                theme: 'dark',
+                backgroundColor: '#FFB300',
+                position: 'topCenter',
+                progressBarColor: 'white',
+                transitionInMobile: 'fadeInUp',
+                transitionOutMobile: 'fadeOutUp',
+            });
+
+            // On redirect show the signupcontainer
+            signInContainer.classList.toggle('remove');
+            signUpContainer.classList.toggle('remove');
+            
+            
+        <% } %>
+
+        <% if (flash.warning && flash.warning.length > 0) { %> 
+            iziToast.error({
+                title: 'Error',
+                message: '<%= flash.warning %>',
+                theme: 'dark',
+                backgroundColor: '#AA0808',
+                position: 'topCenter',
+                progressBarColor: 'white',
+                transitionInMobile: 'fadeInUp',
+                transitionOutMobile: 'fadeOutUp',
+            });
+            
+            // On redirect show the forgotpasswordcontainer
+            signInContainer.classList.toggle('remove');
+            forgotPasswordContainer.classList.toggle('remove');
+            
+            
+        <% } %>
+        
+    </script>
+</body>
+</html>
