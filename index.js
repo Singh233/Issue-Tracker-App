@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: true})); // parses urlencoded bodie
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
-    debug: true,
+    debug: false,
     outputStyle: 'extended',
     prefix: '/css'
 }));

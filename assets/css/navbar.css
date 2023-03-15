@@ -14,12 +14,13 @@
     padding: 10px; }
     .navbar-container .branding img {
       height: 50px; }
+    .navbar-container .branding i {
+      font-size: 2rem;
+      color: #fff; }
     .navbar-container .branding p {
       margin-left: 8px;
-      font-size: 1.4rem; }
-      .navbar-container .branding p span {
-        font-size: 2rem;
-        font-weight: 600; }
+      font-size: 1.4rem;
+      font-weight: 600; }
   .navbar-container .menu {
     margin-right: 15px;
     cursor: pointer; }

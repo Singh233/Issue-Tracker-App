@@ -2,14 +2,25 @@
 <!-- If user is authenticated -->
 <% if (locals.user) { %> 
     <div class="home-container">
-        <h1> <i class="fa-solid fa-circle-check"></i> Successfully Signed in!</h1>
-        <p> <%= user.name %> </p>
-        <p> <%= user.email %> </p>
-        <form id="forgot-password-form" action="/users/forgot-password" method="post">
-            <input id="email-input" type="hidden" name="email" value="<%= user.email %>">
-        </form>
-        <a id="sign-out-button" href="/users/sign-out">Sign out </a>
-        <a id="reset-password-link">Reset Password</a>
+        <!-- Landing page design -->
+        <%- include('landing', {user}); %>
+
+        <div class="content-container">
+            <div class="content">
+                <h1> Welcome to the home page </h1>
+                <p> This is the home page </p>
+
+                <p> <%= user.name %> </p>
+                <p> <%= user.email %> </p>
+                <form id="forgot-password-form" action="/users/forgot-password" method="post">
+                    <input id="email-input" type="hidden" name="email" value="<%= user.email %>">
+                </form>
+                <a id="sign-out-button" href="/users/sign-out">Sign out </a>
+                <a id="reset-password-link">Reset Password</a>
+            </div>
+            
+        </div>
+        
 
     </div>
 

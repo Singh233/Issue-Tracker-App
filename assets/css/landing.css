@@ -1,0 +1,269 @@
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 90vh;
+  width: 100vw;
+  background-color: #000924;
+  background: black;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 21, 85, 0.5) 75%); }
+  .heading-container .star1 {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.517);
+    border-radius: 50%; }
+  .heading-container .star2 {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    height: 4px;
+    width: 4px;
+    background-color: rgba(255, 255, 255, 0.694);
+    border-radius: 50%; }
+  .heading-container .star3 {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    height: 3px;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.417);
+    border-radius: 50%; }
+  .heading-container .star4 {
+    position: absolute;
+    left: 70%;
+    top: 40%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star5 {
+    position: absolute;
+    right: 70%;
+    top: 35%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star6 {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star7 {
+    position: absolute;
+    left: 5%;
+    top: 32%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star8 {
+    position: absolute;
+    right: 5%;
+    top: 44%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star9 {
+    position: absolute;
+    right: 10%;
+    top: 3%;
+    height: 5px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.744);
+    border-radius: 50%; }
+  .heading-container .star10 {
+    position: absolute;
+    right: 40%;
+    top: 12%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star11 {
+    position: absolute;
+    right: 4%;
+    top: 17%;
+    height: 5px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.382);
+    border-radius: 50%; }
+  .heading-container .star12 {
+    position: absolute;
+    left: 30%;
+    top: 12%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 50%; }
+  .heading-container .star13 {
+    position: absolute;
+    left: 20%;
+    top: 26%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star14 {
+    position: absolute;
+    left: 20%;
+    top: 43%;
+    height: 3px;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 50%; }
+  .heading-container .star15 {
+    position: absolute;
+    left: 15%;
+    top: 11%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star16 {
+    position: absolute;
+    left: 1%;
+    top: 11%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.467);
+    border-radius: 50%; }
+  .heading-container .star17 {
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.347);
+    border-radius: 50%; }
+  .heading-container .star18 {
+    position: absolute;
+    right: 25%;
+    top: 11%;
+    height: 3px;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 50%; }
+  .heading-container .star19 {
+    position: absolute;
+    right: 25%;
+    top: 31%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.277);
+    border-radius: 50%; }
+  .heading-container .star20 {
+    position: absolute;
+    left: 15%;
+    top: 11%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .left-gradient {
+    position: absolute;
+    top: 20%;
+    left: -360px;
+    width: 20vw;
+    height: 15vw;
+    background-color: black;
+    border-radius: 50%;
+    transform-style: preserve-3d; }
+  .heading-container .left-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    transform: translate3d(10px, 8px, -1px);
+    /* (X, Y, Z) */
+    background: violet;
+    filter: blur(170px); }
+  .heading-container .right-gradient {
+    position: absolute;
+    top: 20%;
+    right: -360px;
+    width: 20vw;
+    height: 15vw;
+    background-color: black;
+    border-radius: 50%;
+    transform-style: preserve-3d; }
+  .heading-container .right-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0px;
+    transform: translate3d(10px, 8px, -1px);
+    /* (X, Y, Z) */
+    background: violet;
+    filter: blur(170px); }
+  .heading-container .planet {
+    position: relative;
+    top: 30%;
+    z-index: 0;
+    min-width: 1845.6px;
+    height: 70vh;
+    background-color: black;
+    background: black;
+    transform: translate(0);
+    transform-style: preserve-3d;
+    box-shadow: inset 0 0 15px 15px #4a63bc;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background: linear-gradient(335deg, #2a1e54 22%, #2a2f79 89%);
+    background: radial-gradient(circle at 50% 0%, rgba(42, 47, 121, 0.5) 10%, rgba(42, 30, 84, 0.108) 50.71%), radial-gradient(circle at 6.7% 75%, black 20%, rgba(42, 30, 84, 0.708) 10.71%), radial-gradient(circle at 93.3% 75%, rgba(0, 0, 0, 0.5) 70%, black 70.71%) black;
+    background: linear-gradient(-3deg, black 55%, #2a1e54 78%, #2a2f79 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .heading-container .bg-planet {
+    position: absolute;
+    top: 35%;
+    z-index: -1;
+    min-width: 1845.6px;
+    height: 70vh;
+    background-color: black;
+    background: black;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .heading-container .main-shadow:before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    transform: translate3d(-4px, -8px, -1px);
+    background: lightblue;
+    background: linear-gradient(180deg, rgba(0, 86, 255, 0.9) 0%, lightblue 10%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    filter: blur(100px); }
+  .heading-container .greeting-text {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .heading-container .greeting-text .wish {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.515); }
+    .heading-container .greeting-text .name {
+      font-size: 1.1rem;
+      font-weight: 600; }
+    .heading-container .greeting-text .line {
+      height: 20vh;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.312);
+      margin: 15px; }
+    .heading-container .greeting-text .time {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.647); }
