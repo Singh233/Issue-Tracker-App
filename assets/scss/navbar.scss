@@ -10,6 +10,11 @@
     font-size: 1.3rem;
     background-color: #0E1117;
 
+    a {
+        text-decoration: none;
+        
+    }
+
     .search-and-nav {
         display: flex;
         align-items: center;
@@ -53,7 +58,7 @@
             color: rgba(255, 255, 255, 0.527);
         }
 
-        p {
+        a, p {
             margin-left: 8px;
             font-size: 1.1rem;
             font-weight: 500;

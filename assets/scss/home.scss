@@ -11,13 +11,10 @@ $button-color-gray: #1a2733;
     border-radius: 20px;
     margin: 0;
 
-    
-
     .content-container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto 2fr auto;
         align-items: center;
-        justify-content: space-between;
         background-color: rgba(0, 0, 0, 0);
         width: 100vw;
 

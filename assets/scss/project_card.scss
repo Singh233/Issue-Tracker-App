@@ -1,0 +1,108 @@
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-top: 20px;
+
+    position: relative;
+
+    .user-info {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 10px;
+        }
+
+        .user-name {
+            margin-left: 10px;
+        }
+
+        .day {
+            margin-left: 10px;
+            color: #ffffff6c;
+            font-size: 0.9rem;
+        }
+    }
+
+    .project-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #161B22;
+        margin: 10px 0;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.194);
+
+        .title {
+            font-weight: 600;
+        }
+
+        .description {
+            margin: 10px 0;
+            color: #ffffff6c;
+        }
+
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            color: #ffffff6c;
+
+            .type {
+
+                i {
+                    color: orangered;
+                    margin-right: 5px;
+                }
+            }
+
+            .stars {
+                margin-left: 10px;
+                i {
+                    color: white;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .star-button {
+            display: flex;
+            align-items: center;
+
+            background-color: #30363C;
+            border-radius: 5px;
+            padding: 3px 13px;
+
+            border: 1px solid rgba(255, 255, 255, 0.194);
+            
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff9e;
+
+            i {
+                color: #ffffff9e;
+                margin-right: 5px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    .issues {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 5px 15px;
+        border-radius: 15px;
+
+        background-color: dodgerblue;
+    }
+}

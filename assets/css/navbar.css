@@ -9,6 +9,8 @@
   height: auto;
   font-size: 1.3rem;
   background-color: #0E1117; }
+  .navbar-container a {
+    text-decoration: none; }
   .navbar-container .search-and-nav {
     display: flex;
     align-items: center;
@@ -40,14 +42,14 @@
       font-size: 1.1rem;
       margin-right: 20px;
       color: rgba(255, 255, 255, 0.527); }
-    .navbar-container .search-and-nav p {
+    .navbar-container .search-and-nav a, .navbar-container .search-and-nav p {
       margin-left: 8px;
       font-size: 1.1rem;
       font-weight: 500;
       color: gray;
       transition: all 0.2s ease-in-out;
       cursor: pointer; }
-      .navbar-container .search-and-nav p:hover {
+      .navbar-container .search-and-nav a:hover, .navbar-container .search-and-nav p:hover {
         color: white; }
   .navbar-container .menu {
     display: flex;

@@ -1,0 +1,46 @@
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0;
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 40%;
+
+        border-bottom: 1px solid #ffffff6c;
+
+        p {
+            margin: 0;
+            padding: 0;
+            margin-left: 1px;
+            margin-right: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px;
+            color: gray;
+        }
+
+        .recents {
+            color: white;
+            border-bottom: orange 2px solid;
+
+            
+        }
+    }
+
+    .cards-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+    }
+
+    
+}

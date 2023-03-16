@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
         avatar: {
             type: String,
             default:
-                'https://res.cloudinary.com/dzqjxjx8f/image/upload/v1583991009/avatars/default-avatar.png',
+                'https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg',
         },
         facebook_id: { type: String }, // for facebook auth
     },

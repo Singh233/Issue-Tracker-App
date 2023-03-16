@@ -1,0 +1,18 @@
+
+
+<div class="main-container">
+    <div class="nav">
+        <p class="recents">Recent activity</p>
+        <p class="favorites">Favorites</p>
+        <p class="issues">Issues</p>
+        <p class="my-projects">Your projects</p>
+    </div>
+
+    <div class="cards-list">
+
+        <% for (let i = 0; i < projects.length; i++) { %>
+            <%- include('project_card.ejs', {project: projects[i]}); %>
+        <% } %>
+        
+    </div>
+</div>
