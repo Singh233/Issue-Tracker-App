@@ -1,5 +1,5 @@
 
-<form action="/new-project/create-project" class="new-project-container" method="post">
+<form id="new-project-form" action="/new-project/create-project" class="new-project-container" method="post">
     <div class="heading">
         Create a new project
     </div>
@@ -48,7 +48,7 @@
             <span> (Anyone can view) </span>
         </label>
         <label>
-            <input type="radio" name="project-visibility" value="private">
+            <input type="radio" name="visibility" value="private">
             <i class="fa-solid fa-eye-slash"></i>
             <p>Private</p> 
             <span> (Only you can view) </span>
@@ -60,9 +60,15 @@
     </div>
 
     <div class="project-creation">
-        <button>Create Project</button>
+        <button type="submit">Create Project
+        </button>
+        <svg id="loader" class=" hide" viewBox="25 25 50 50">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
         
     </div>
 
 
 </form>
+
+<script src="/js/NewProject.js"></script>

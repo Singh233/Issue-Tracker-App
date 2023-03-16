@@ -121,7 +121,7 @@
       .new-project-container .project-visibility label input[type='radio'] {
         display: none; }
         .new-project-container .project-visibility label input[type='radio']:checked + i {
-          color: #1B90FF; }
+          color: #1b90ff; }
         .new-project-container .project-visibility label input[type='radio']:not(:checked) + i {
           color: #d0d4db; }
       .new-project-container .project-visibility label i {
@@ -143,16 +143,54 @@
     border-top: rgba(255, 255, 255, 0.416) 1px solid; }
   .new-project-container .project-creation {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content; }
     .new-project-container .project-creation button {
-      display: block;
-      padding: 10px 20px;
-      font-weight: 600;
       color: #fff;
-      background-color: #28a745;
+      background-color: transparent;
       border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease; }
-      .new-project-container .project-creation button:hover {
-        background-color: #34ce57; }
+      font-weight: 600; }
+    .new-project-container .project-creation svg {
+      position: relative;
+      z-index: 10;
+      margin: 0;
+      margin-left: 10px;
+      width: 2em;
+      height: 1.3em;
+      transform-origin: center;
+      animation: rotate4 2s linear infinite;
+      color: white; }
+      .new-project-container .project-creation svg circle {
+        fill: none;
+        stroke: white;
+        stroke-width: 4;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: dash4 1.5s ease-in-out infinite; }
+    .new-project-container .project-creation .hide {
+      display: none; }
+    .new-project-container .project-creation:hover {
+      background-color: #34ce57; }
+
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dashoffset: -125px; } }

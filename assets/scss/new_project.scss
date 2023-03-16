@@ -146,7 +146,7 @@ $font-size: 16px;
                 display: none;
 
                 &:checked + i {
-                    color: #1B90FF; // blue color for "public" option
+                    color: #1b90ff; // blue color for "public" option
                 }
 
                 &:not(:checked) + i {
@@ -184,20 +184,75 @@ $font-size: 16px;
     .project-creation {
         display: flex;
         align-items: center;
-        button {
-            display: block;
-            padding: 10px 20px;
-            font-weight: 600;
-            color: #fff;
-            background-color: #28a745;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
 
-            &:hover {
-                background-color: lighten(#28a745, 10%);
+        padding: 10px 20px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #28a745;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: fit-content;
+        button {
+
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            font-weight: 600;
+
+        }
+
+        svg {
+            position: relative;
+            z-index: 10;
+            margin: 0;
+            margin-left: 10px;
+            width: 2em;
+            height: 1.3em;
+            transform-origin: center;
+            animation: rotate4 2s linear infinite;
+            color: white;
+
+            circle {
+                fill: none;
+                stroke: hsl(0, 0%, 100%);
+                stroke-width: 4;
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+                stroke-linecap: round;
+                animation: dash4 1.5s ease-in-out infinite;
             }
         }
+
+        .hide {
+            display: none;
+        }
+
+        &:hover {
+            background-color: lighten(#28a745, 10%);
+        }
+    }
+}
+
+@keyframes rotate4 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash4 {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dashoffset: -125px;
     }
 }

@@ -19,6 +19,14 @@ module.exports.createProject = async function(req, res){
             visibility: req.body.visibility,
             user: req.user._id
         });
+        if (req.xhr){
+            return res.status(200).json({
+                data: {
+                    project: project
+                },
+                message: "Project Created!"
+            });
+        }
         req.flash('success', 'Project Created Successfully');
         return res.redirect('back');
     }catch(err){
