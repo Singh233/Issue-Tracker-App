@@ -5,10 +5,10 @@
   padding: 10px 20px;
   position: fixed;
   top: 0%;
+  z-index: 999;
   width: 100vw;
   height: auto;
-  font-size: 1.3rem;
-  background-color: #0E1117; }
+  font-size: 1.3rem; }
   .navbar-container a {
     text-decoration: none; }
   .navbar-container .search-and-nav {

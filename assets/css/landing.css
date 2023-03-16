@@ -1,4 +1,5 @@
 .heading-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,7 +223,7 @@
     justify-content: center; }
   .heading-container .bg-planet {
     position: absolute;
-    top: 35%;
+    top: 45%;
     z-index: -1;
     min-width: 1845.6px;
     height: 70vh;
@@ -240,7 +241,7 @@
     filter: blur(100px); }
   .heading-container .greeting-text {
     position: absolute;
-    top: 32%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
