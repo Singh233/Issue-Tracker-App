@@ -1,0 +1,203 @@
+// Colors
+$white: #fff;
+$gray-light: #f6f8fa;
+$gray-medium: #959da5;
+$gray-dark: rgba(255, 255, 255, 0.855);
+$blue: #0366d6;
+$bg-color: #0e1117;
+
+// Fonts
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+$font-size: 16px;
+
+// Container
+.new-project-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 24px;
+    box-shadow: 0px 4px 12px rgba(149, 157, 165, 0.1);
+    border-radius: 6px;
+    margin-top: 70px;
+
+    // Heading
+    .heading {
+        font-size: 24px;
+        font-weight: 600;
+        color: $gray-dark;
+        margin-bottom: 6px;
+    }
+
+    // Subheading
+    .sub-heading {
+        font-size: $font-size;
+        color: $gray-medium;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        border-bottom: rgba(255, 255, 255, 0.416) 1px solid;
+    }
+
+    // Owner
+    .owner {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+
+        border-bottom: rgba(255, 255, 255, 0.416) 1px solid;
+
+        .owner-name {
+            font-size: $font-size;
+            color: $gray-dark;
+            font-weight: 600;
+
+            p:last-child {
+                margin: 0;
+                font-size: 14px;
+                color: $gray-medium;
+                font-weight: normal;
+            }
+        }
+
+        .owner-image {
+            margin-right: 16px;
+
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    // Form fields
+    .project-name,
+    .project-description,
+    .project-type,
+    .project-creation {
+        margin-bottom: 24px;
+
+        p {
+            margin-bottom: 8px;
+            font-size: $font-size;
+            color: $gray-dark;
+            font-weight: 600;
+        }
+
+        input[type='text'],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.421);
+            border-radius: 6px;
+            font-family: $font-family;
+            font-size: $font-size;
+            color: white;
+            background-color: $bg-color;
+            transition: all 0.2s ease;
+
+            &:focus {
+                border: 1px solid $blue;
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.59 8.59003L12 13.17L7.41 8.59003L6 10L12 16L18 10L16.59 8.59003Z' fill='%23333333'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+    }
+
+    .project-visibility {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        p {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            input[type='radio'] {
+                display: none;
+
+                &:checked + i {
+                    color: #1B90FF; // blue color for "public" option
+                }
+
+                &:not(:checked) + i {
+                    color: #d0d4db; // gray color for "private" option
+                }
+            }
+
+            i {
+                font-size: 1.25rem;
+                margin-right: 0.5rem;
+                transition: all 0.2s ease;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            span {
+                color: #586069; // gray color for the description
+                margin-left: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        margin: 20px 0 20px 0;
+        padding: 20px 0 20px 0;
+        border-bottom: rgba(255, 255, 255, 0.416) 1px solid;
+        border-top: rgba(255, 255, 255, 0.416) 1px solid;
+    }
+
+    .project-creation {
+        display: flex;
+        align-items: center;
+        button {
+            display: block;
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: lighten(#28a745, 10%);
+            }
+        }
+    }
+}

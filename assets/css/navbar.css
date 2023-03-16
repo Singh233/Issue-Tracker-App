@@ -7,7 +7,8 @@
   top: 0%;
   width: 100vw;
   height: auto;
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+  background-color: #0E1117; }
   .navbar-container .search-and-nav {
     display: flex;
     align-items: center;
@@ -34,6 +35,11 @@
         border: 1px solid white; }
       .navbar-container .search-and-nav input:hover {
         border: 1px solid white; }
+    .navbar-container .search-and-nav .search-icon {
+      margin-left: -40px;
+      font-size: 1.1rem;
+      margin-right: 20px;
+      color: rgba(255, 255, 255, 0.527); }
     .navbar-container .search-and-nav p {
       margin-left: 8px;
       font-size: 1.1rem;
@@ -61,12 +67,16 @@
       background-color: transparent;
       border: none;
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid #29a33f;
       font-weight: 600;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer; }
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+      background-color: #29a33f; }
+      .navbar-container .menu .create-button i {
+        font-size: 1.2rem;
+        margin-right: 5px; }
       .navbar-container .menu .create-button:hover {
-        border: 1px solid white; }
+        background-color: #48c25e; }
 
 @media screen and (max-width: 480px) {
   .navbar-container .branding {

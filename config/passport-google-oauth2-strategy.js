@@ -33,7 +33,8 @@ passport.use(new GoogleStrategy({
                 // if not found create the user and set it as req.user
                 name: profile.displayName,
                 email: profile.emails[0].value,
-                password: crypto.randomBytes(20).toString('hex')
+                password: crypto.randomBytes(20).toString('hex'),
+                avatar: profile.photos[0].value,
             }, function(error, user) {
                 if (error) {
                     console.log("Error in creating user google auth", error);

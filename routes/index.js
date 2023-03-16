@@ -11,5 +11,8 @@ router.get('/', homeController.home);
 // Route for sign/up page
 router.use('/users', require('./users'));
 
+// Route for new project page
+router.use('/new-project', require('./new_project'));
+
 
 module.exports = router;

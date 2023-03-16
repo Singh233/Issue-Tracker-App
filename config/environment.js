@@ -16,7 +16,7 @@ const development = {
     fb_clientSecret: process.env.NODEJS_FACEBOOK_CLIENT_SECRET,
     fb_callbackURL: "http://localhost:8000/users/auth/facebook/callback",
 
-    db: process.env.NODEJS_DB,
+    db: process.env.ISSUE_TRACKER_DB,
     password_link: 'http://localhost:8000/users/password-reset/',
 
     host: process.env.NODEJS_MAIL_HOST,
@@ -38,7 +38,7 @@ const production = {
     fb_clientSecret: process.env.NODEJS_FACEBOOK_CLIENT_SECRET,
     fb_callbackURL: "https://sanam.tech/users/auth/facebook/callback",
 
-    db: process.env.NODEJS_DB,
+    db: process.env.ISSUE_TRACKER_DB,
     password_link: 'https://sanam.tech/users/password-reset/',
 
     host: process.env.NODEJS_MAIL_HOST,
