@@ -1,5 +1,5 @@
 
-<div class="new-project-container">
+<form action="/new-project/create-project" class="new-project-container" method="post">
     <div class="heading">
         Create a new project
     </div>
@@ -21,18 +21,18 @@
     </div>
 
     <div class="project-name">
-        <p>Project Name</p>
-        <input type="text" placeholder="Enter project name">
+        <p>Project Title</p>
+        <input name="title" type="text" placeholder="Enter project title" required>
     </div>
 
     <div class="project-description">
         <p>Project Description</p>
-        <textarea name="project-description" id="project-description" cols="30" rows="3" placeholder="Enter project description"></textarea>
+        <textarea required name="description" id="project-description" cols="30" rows="3" placeholder="Enter project description"></textarea>
     </div>
 
     <div class="project-type">
         <p>Project Type</p>
-        <select name="project-type" id="project-type">
+        <select name="type" id="project-type">
             <option value="web">Web</option>
             <option value="mobile">Mobile</option>
             <option value="desktop">Desktop</option>
@@ -42,7 +42,7 @@
     <div class="project-visibility">
         <p>Project Visibility</p>
         <label>
-            <input type="radio" name="project-visibility" value="public" checked>
+            <input type="radio" name="visibility" value="public" checked>
             <i class="fa-solid fa-eye"></i>
             <p>Public</p>
             <span> (Anyone can view) </span>
@@ -65,4 +65,4 @@
     </div>
 
 
-</div>
+</form>
