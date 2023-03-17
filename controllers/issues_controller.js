@@ -4,47 +4,47 @@ const Project = require('../models/project');
 // import issue model
 const Issue = require('../models/issue');
 
-
 // controller for project issue page
-module.exports.issue = async function(req, res) {
+module.exports.issue = async function (req, res) {
     try {
-        // find the project and populate with user and issue
+        // find the project and populate with user and issues
         let project = await Project.findById(req.params.id).populate('user');
+
+        // find the issues of the project and populate with user
+        let issues = await Issue.find({ project: req.params.id }).populate('user');
+
         // render the project issue page
         return res.render('issues.ejs', {
             title: 'Issue',
-            project: project
+            project: project,
+            issues: issues,
         });
-        
     } catch (error) {
         flash(error, 'Error in finding project in db');
         console.log('Error--', error);
         return res.redirect('back');
     }
-    
-}
+};
 
 // controller for new issue page
-module.exports.new = async function(req, res) {
+module.exports.new = async function (req, res) {
     try {
         // find the project
         let project = await Project.findById(req.params.id).populate('user');
         // render the new issue page
         return res.render('new_issue.ejs', {
             title: 'New Issue',
-            project: project
+            project: project,
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
         console.log('Error--', error);
         return res.redirect('back');
     }
-
-}
-
+};
 
 // controller for creating issue
-module.exports.create = async function(req, res) {
+module.exports.create = async function (req, res) {
     try {
         // find the project
         let project = await Project.findById(req.params.id);
@@ -52,11 +52,14 @@ module.exports.create = async function(req, res) {
         let issue = await Issue.create({
             title: req.body.title,
             description: req.body.description,
-            label: req.body.label,
             status: req.body.status,
-            author: req.user._id,
-            project: req.params.id
+            user: req.user._id,
+            project: req.params.id,
         });
+        // add the label to the issue
+        issue.labels.push(req.body.label);
+        issue.save();
+
         // add the issue to the project
         project.issues.push(issue);
         // save the project
@@ -70,5 +73,4 @@ module.exports.create = async function(req, res) {
         console.log('Error--', error);
         return res.redirect('back');
     }
-
-}
+};

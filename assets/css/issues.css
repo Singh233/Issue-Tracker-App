@@ -14,7 +14,7 @@
       display: flex;
       align-items: center;
       color: dodgerblue;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 600; }
       .issues-container .issue-header .user-info img {
         width: 40px;
@@ -34,7 +34,7 @@
         font-weight: 400;
         font-size: 0.8rem;
         color: rgba(255, 255, 255, 0.8);
-        background-color: #30363C;
+        background-color: #30363c;
         border-radius: 10px;
         padding: 1px 8px;
         border: 1px solid rgba(255, 255, 255, 0.194);
@@ -45,7 +45,7 @@
     .issues-container .issue-header .issue-header-right .star-button {
       display: flex;
       align-items: center;
-      background-color: #30363C;
+      background-color: #30363c;
       border-radius: 5px;
       padding: 3px 13px;
       border: 1px solid rgba(255, 255, 255, 0.194);
@@ -82,12 +82,12 @@
         border: 1px solid rgba(255, 255, 255, 0.194);
         color: #ffffff9e;
         font-weight: 500;
-        background-color: #30363C;
+        background-color: #30363c;
         cursor: pointer;
         transition: all 0.2s ease-in-out; }
         .issues-container .filter-create-bar .filter-search .filter:hover {
           color: white;
-          background-color: #2A2F35; }
+          background-color: #2a2f35; }
         .issues-container .filter-create-bar .filter-search .filter i {
           color: #ffffff9e;
           margin-left: 5px; }
@@ -130,13 +130,13 @@
       border: 1px solid rgba(255, 255, 255, 0.194);
       color: #ffffff9e;
       font-weight: 500;
-      background-color: #30363C;
+      background-color: #30363c;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
       transition: all 0.2s ease-in-out; }
       .issues-container .filter-create-bar .label-button:hover {
         color: white;
-        background-color: #2A2F35; }
+        background-color: #2a2f35; }
       .issues-container .filter-create-bar .label-button i {
         color: #ffffff9e;
         margin-right: 5px;
@@ -173,7 +173,7 @@
       padding: 5px 10px;
       color: gray;
       transition: all 0.2s ease-in-out;
-      background-color: #2A2F35;
+      background-color: #2a2f35;
       border-radius: 5px;
       border: 1px solid rgba(255, 255, 255, 0.194); }
       .issues-container .issue-nav a:hover {
@@ -185,11 +185,11 @@
     display: flex;
     flex-direction: column;
     width: 70%;
-    min-height: 40%;
+    min-height: auto;
     border: 1px solid rgba(255, 255, 255, 0.194);
     border-radius: 10px;
     margin-top: 30px;
-    background-color: #0E1117; }
+    background-color: #0e1117; }
     .issues-container .issues-list .no-issues {
       display: flex;
       flex-direction: column;
@@ -199,7 +199,8 @@
       .issues-container .issues-list .no-issues i {
         font-size: 1.5rem;
         color: #ffffff9e;
-        margin: 10px; }
+        margin: 10px;
+        margin-top: 10%; }
       .issues-container .issues-list .no-issues .heading {
         font-size: 1.5rem;
         font-weight: 600;
@@ -208,13 +209,113 @@
       .issues-container .issues-list .no-issues .sub-heading {
         width: 70%;
         text-align: center;
-        color: #ffffff9e; }
+        color: #ffffff9e;
+        margin-bottom: 10%; }
         .issues-container .issues-list .no-issues .sub-heading span {
           color: dodgerblue;
           font-weight: 600;
           cursor: pointer; }
           .issues-container .issues-list .no-issues .sub-heading span:hover {
             color: dodgerblue; }
+    .issues-container .issues-list .issue-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.194); }
+      .issues-container .issues-list .issue-card .left {
+        display: flex;
+        align-items: center; }
+        .issues-container .issues-list .issue-card .left i {
+          align-self: flex-start;
+          color: #29a33f;
+          margin-top: 8px; }
+        .issues-container .issues-list .issue-card .left .info {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px; }
+          .issues-container .issues-list .issue-card .left .info .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin: 5px;
+            margin-bottom: 0px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer; }
+            .issues-container .issues-list .issue-card .left .info .title:hover {
+              color: dodgerblue; }
+          .issues-container .issues-list .issue-card .left .info .stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff9e;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 5px;
+            margin-top: 0px; }
+            .issues-container .issues-list .issue-card .left .info .stats i {
+              margin-right: 5px; }
+      .issues-container .issues-list .issue-card .right {
+        display: flex;
+        align-items: center;
+        width: 120px;
+        justify-content: space-around; }
+        .issues-container .issues-list .issue-card .right .labels {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .issues-container .issues-list .issue-card .right .labels .label {
+            padding: 1px 10px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.194);
+            color: #ffffff9e;
+            font-weight: 500;
+            background-color: #30363c;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            font-size: 0.9rem; }
+            .issues-container .issues-list .issue-card .right .labels .label:hover {
+              color: white;
+              background-color: #2a2f35; }
+            .issues-container .issues-list .issue-card .right .labels .label i {
+              color: #ffffff9e;
+              margin-right: 5px;
+              margin-bottom: 2px; }
+          .issues-container .issues-list .issue-card .right .labels .bug {
+            background-color: #d73a4a7d;
+            border: #d73a4a solid 1px; }
+            .issues-container .issues-list .issue-card .right .labels .bug:hover {
+              background-color: #d73a4a;
+              border: #d73a4a solid 1px;
+              box-shadow: 0 0 20px #d73a4a98; }
+          .issues-container .issues-list .issue-card .right .labels .help {
+            background-color: #28a7457d;
+            border: #28a745 solid 1px; }
+            .issues-container .issues-list .issue-card .right .labels .help:hover {
+              background-color: #28a745;
+              border: #28a745 solid 1px;
+              box-shadow: 0 0 20px #28a74598; }
+          .issues-container .issues-list .issue-card .right .labels .invalid {
+            background-color: #6f42c17d;
+            border: #6f42c1 solid 1px; }
+            .issues-container .issues-list .issue-card .right .labels .invalid:hover {
+              background-color: #6f42c1;
+              border: #6f42c1 solid 1px;
+              box-shadow: 0 0 20px #6f42c198; }
+          .issues-container .issues-list .issue-card .right .labels .question {
+            background-color: #d876e37d;
+            border: #d876e3 solid 1px; }
+            .issues-container .issues-list .issue-card .right .labels .question:hover {
+              background-color: #d876e3;
+              border: #d876e3 solid 1px;
+              box-shadow: 0 0 20px #d876e398; }
+        .issues-container .issues-list .issue-card .right .comments {
+          display: flex;
+          align-items: center;
+          color: #ffffff9e; }
+          .issues-container .issues-list .issue-card .right .comments i {
+            margin-right: 5px;
+            color: #ffffff9e; }
   .issues-container .tip {
     display: flex;
     align-items: center;

@@ -80,6 +80,7 @@
 
 
         <!-- If no issues are present -->
+        <% if (issues.length === 0) { %>
         <div class="no-issues">
             <i class="fa-solid fa-circle-dot"></i>
             <p class="heading">Welcome to issues!</p>
@@ -90,6 +91,49 @@
                 To get started, you should <span>create an issue</span>.
             </p>
         </div>
+        <% } else { %>
+        <!-- If issues are present -->
+        <% issues.forEach((issue) => { %>
+            <div class="issue-card">
+                <div class="left">
+                    <i class="fa-solid fa-circle-dot"></i>
+                    <div class="info">
+                        <p class="title"><%= issue.title %></p>
+                        <p class="stats"> 1 day ago by <%= issue.user.name %> </p>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="labels">
+                        <% issue.labels.forEach((label) => { %>
+                            <!-- style according to label -->
+                            <% if (label === "bug") { %>
+                                <div class="label bug">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "help") { %>
+                                <div class="label help">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "invalid") { %>
+                                <div class="label invalid ">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "question") { %>
+                                <div class="label question">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } %>
+
+                        <% }) %>
+                    </div>
+                    <div class="comments">
+                        <i class="fa-regular fa-message"></i>
+                        <p>0</p>
+                    </div>
+                </div>
+            </div>
+        <% }) } %>
     </div>
 
     <div class="tip">
@@ -98,3 +142,4 @@
         </p>
     </div>
 </div>
+

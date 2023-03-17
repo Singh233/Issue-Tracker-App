@@ -12,17 +12,18 @@ const IssueSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    label: {
-        type: String,
-        required: true
-    },
+    labels: [
+        {
+            type: String
+        }
+    ],
     status: {
         type: String,
         default: 'Open'
     },
-    author: {
-        type: String,
-        required: true
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     project: {
         type: mongoose.Schema.Types.ObjectId,
