@@ -1,6 +1,100 @@
-
-
 <div class="issues-container">
-    <% console.log(project) %>
-    Hello
+    <div class="issue-header">
+        <div class="user-project-info">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="<%= project.user.avatar %>" alt="avatar" />
+                </div>
+                <div class="user-project-name">
+                    <p class="user-name"><%= project.user.name %></p>
+                    <p class="slash">/</p>
+                    <p class="project-title"><%= project.title %></p>
+                    <p class="project-visibility">
+                        <% if (project.visibility === "public") { %>
+                        <i class="fa-solid fa-globe"></i>
+                        <% } else { %>
+                        <i class="fa-solid fa-lock"></i>
+                        <% } %> <%= project.visibility %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="issue-header-right">
+            <div class="star-button">
+                <i class="fa-regular fa-star"></i>
+                <p>Star</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- <div class="border"></div> -->
+
+    <!-- Filter issues and create new issue div -->
+    <div class="filter-create-bar">
+        <div class="filter-search">
+
+            <!-- Filter button -->
+            <div class="filter">
+                <p>Filter</p>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="search">     
+                <i class="fa-solid fa-search"></i>
+                <input
+                    class="search-input"
+                    type="text"
+                    placeholder="Search issues"
+                />
+            </div>
+        </div>
+
+        <div class="label-button">
+            <i class="fa-solid fa-tag"></i>
+            <p>Labels</p>
+        </div>
+
+        <div class="create-button">
+            <p>New Issue</p>
+        </div>
+    </div>
+
+    <div class="issue-nav">
+        <div class="issue-nav-item">
+            <a class="all-issues active" href="/issues">All Issues</a>
+        </div>
+        <div class="issue-nav-item">
+            <a class="open-issues" href="/issues?status=Open">Open Issues</a>
+        </div>
+        <div class="issue-nav-item">
+            <a class="closed-issues" href="/issues?status=Closed"
+                >Closed Issues</a
+            >
+        </div>
+    </div>
+
+    <!-- Issues list -->
+    <div class="issues-list">
+
+
+        <!-- If no issues are present -->
+        <div class="no-issues">
+            <i class="fa-solid fa-circle-dot"></i>
+            <p class="heading">Welcome to issues!</p>
+            <p class="sub-heading">
+                Issues are used to track todos, bugs, feature requests, and more. 
+                As issues are created, 
+                they’ll appear here in a searchable and filterable list. 
+                To get started, you should <span>create an issue</span>.
+            </p>
+        </div>
+    </div>
+
+    <div class="tip">
+        <p>
+            <i class="fa-solid fa-lightbulb"></i>Tip: You can use filter to sort issues.
+        </p>
+    </div>
 </div>
