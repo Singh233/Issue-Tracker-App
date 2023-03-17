@@ -16,7 +16,6 @@ passport.use(new GitHubStrategy({
     callbackURL: env.github_callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
-        console.log(profile);
         // find a user
         const email = profile.emails[0].value.toLowerCase();
         User.findOne({email: email}).exec(function(error, user) {
@@ -24,7 +23,6 @@ passport.use(new GitHubStrategy({
                 console.log('Error in Github strategy passport', error);
                 return;
             }
-            console.log(profile);
             if (user) {
                 //if found set this user as req.user
                 return done(null, user);

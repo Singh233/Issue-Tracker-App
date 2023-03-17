@@ -1,5 +1,5 @@
 
-<div class="card-container">
+<div onclick="window.location.href = `/issues/<%= project.id %>`" class="card-container">
     <div class="user-info">
         <img src="<%= project.user.avatar %>" alt="">
         <p class="user-name"><%= project.user.name %> </p>
@@ -11,7 +11,7 @@
         <p class="description"><%= project.description %> </p>
 
         <div class="card-footer">
-            <p class="type"><i class="fa-solid fa-circle"></i><%= project.type %> </p>
+            <p class="type"><i class="fa-solid fa-circle"></i><%= project.type %> Application </p>
             <p class="stars"><i class="fa-regular fa-star"></i>11.2k</p>
         </div>
 

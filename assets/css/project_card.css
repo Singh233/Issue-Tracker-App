@@ -27,7 +27,11 @@
     margin: 10px 0;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.194); }
+    border: 1px solid rgba(255, 255, 255, 0.194);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; }
+    .card-container .project-info:hover {
+      border: 1px solid rgba(255, 255, 255, 0.5); }
     .card-container .project-info .title {
       font-weight: 600; }
     .card-container .project-info .description {

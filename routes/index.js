@@ -14,5 +14,8 @@ router.use('/users', require('./users'));
 // Route for new project page
 router.use('/new-project', require('./new_project'));
 
+// Route for project issue page
+router.use('/issues', require('./issues'));
+
 
 module.exports = router;

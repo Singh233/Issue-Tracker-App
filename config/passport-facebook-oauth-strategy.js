@@ -16,7 +16,6 @@ passport.use(new FacebookStrategy({
     callbackURL: env.fb_callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
-        console.log(profile);
         // find a user
         User.findOne({ facebook_id: profile.id }, function(error, user) {//See if a User already exists with the Facebook ID
             if (error) {
@@ -26,7 +25,6 @@ passport.use(new FacebookStrategy({
             console.log('profile----', profile);
             if (user) {
                 //if found set this user as req.user
-                console.log('User found------', user)
                 return done(null, user);
             }
             

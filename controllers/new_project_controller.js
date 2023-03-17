@@ -11,7 +11,6 @@ module.exports.newProject = function(req, res){
 // controller for create project
 module.exports.createProject = async function(req, res){
     try{
-        console.log('Request Body', req.body)
         let project = await Project.create({
             title: req.body.title,
             description: req.body.description,

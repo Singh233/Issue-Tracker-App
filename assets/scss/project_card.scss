@@ -6,6 +6,7 @@
     width: 50vw;
     margin-top: 20px;
 
+
     position: relative;
 
     .user-info {
@@ -40,6 +41,12 @@
         padding: 20px;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.194);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
 
         .title {
             font-weight: 600;

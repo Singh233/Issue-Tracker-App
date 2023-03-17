@@ -14,7 +14,6 @@ function openMenu() {
     menu.classList.remove('animate__slideOutRight');
     setTimeout(() => {
         window.onclick = function() {
-            console.log('Inside window***')
             closeMenu();
         };
     }, 1);
