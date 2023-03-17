@@ -28,7 +28,7 @@ module.exports.issue = async function(req, res) {
 module.exports.new = async function(req, res) {
     try {
         // find the project
-        let project = await Project.findById(req.params.id);
+        let project = await Project.findById(req.params.id).populate('user');
         // render the new issue page
         return res.render('new_issue.ejs', {
             title: 'New Issue',

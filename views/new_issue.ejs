@@ -1,5 +1,67 @@
 
 
 <div class="new-issue-container">
-    Hello from new issue
+    <div class="issue-header">
+        <div class="user-project-info">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="<%= project.user.avatar %>" alt="avatar" />
+                </div>
+                <div class="user-project-name">
+                    <p class="user-name"><%= project.user.name %></p>
+                    <p class="slash">/</p>
+                    <p class="project-title"><%= project.title %></p>
+                    <p class="slash">/</p>
+                    <p class="new-issue">New-issue</p>
+                    <p class="project-visibility">
+                        <% if (project.visibility === "public") { %>
+                        <i class="fa-solid fa-globe"></i>
+                        <% } else { %>
+                        <i class="fa-solid fa-lock"></i>
+                        <% } %> <%= project.visibility %>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="issue-header-right">
+            <div class="star-button">
+                <i class="fa-regular fa-star"></i>
+                <p>Star</p>
+            </div>
+        </div>
+    </div>
+
+    <form action="/<%= project.id %>/new/create" method="post" id="new-issue-form">
+        <img src="<%= locals.user.avatar %>" alt="">
+        <p class="form-title">Post new Issue</p>
+        <input type="text" name="title" placeholder="Title" />
+        <textarea rows="3" minlength="3" name="description" placeholder="Leave a comment"></textarea>
+        <!-- div for labels and submit button -->
+        <div class="label-submit">
+            <div class="labels">
+                <p class="bug bug-selected">bug</p>
+                <p class="help">help wanted</p>
+                <p class="invalid">invalid</p>
+                <p class="question">question</p>
+            </div>
+
+            <div class="new-issue-button">
+                <button type="submit" class="submit-button">Submit</button>
+                <svg id="loader" class=" hide" viewBox="25 25 50 50">
+                    <circle r="20" cy="50" cx="50"></circle>
+                </svg>
+            </div>
+        </div>
+        
+
+    </form>
+
+    <div class="info">
+        <i class="fa-solid fa-circle-info"></i>
+        <p class="info-text"> Provide clear and concise information and choose the appropriate labels.</p>
+    </div>
+
+
+
 </div>
