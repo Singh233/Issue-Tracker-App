@@ -31,3 +31,6 @@ const IssueSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+// export Issue model
+module.exports = mongoose.model('Issue', IssueSchema);

@@ -9,6 +9,7 @@ const ProjectSchema = new mongoose.Schema(
         type: { type: String, required: true },
         visibility: { type: String, required: true },
         user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        issues: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Issue' }],
     },
     {
         timestamps: true,

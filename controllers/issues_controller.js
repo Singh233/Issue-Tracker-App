@@ -62,11 +62,11 @@ module.exports.create = async function(req, res) {
         // save the project
         project.save();
         // flash message
-        flash(success, 'Issue created successfully');
+        req.flash('success', 'Issue Created Successfully!');
         // redirect to project issue page
         return res.redirect('back');
     } catch (error) {
-        flash(error, 'Error in creating issue');
+        req.flash('error', 'Error in creating issue');
         console.log('Error--', error);
         return res.redirect('back');
     }

@@ -32,11 +32,15 @@
         </div>
     </div>
 
-    <form action="/<%= project.id %>/new/create" method="post" id="new-issue-form">
+    <form action="/new-issue/<%= project.id %>/new/create" method="post" id="new-issue-form">
+        <input id="project-id" type="hidden" name="project_id" value="<%= project.id %>">
+        <input id="labels" type="hidden" name="label" value="bug">
+        <input id="status" type="hidden" name="status" value="open">
+        
         <img src="<%= locals.user.avatar %>" alt="">
         <p class="form-title">Post new Issue</p>
-        <input type="text" name="title" placeholder="Title" />
-        <textarea rows="3" minlength="3" name="description" placeholder="Leave a comment"></textarea>
+        <input type="text" name="title" placeholder="Title" required />
+        <textarea rows="3" minlength="3" name="description" required placeholder="Leave a comment"></textarea>
         <!-- div for labels and submit button -->
         <div class="label-submit">
             <div class="labels">
@@ -48,7 +52,7 @@
 
             <div class="new-issue-button">
                 <button type="submit" class="submit-button">Submit</button>
-                <svg id="loader" class=" hide" viewBox="25 25 50 50">
+                <svg id="issue-loader" class=" hide" viewBox="25 25 50 50">
                     <circle r="20" cy="50" cx="50"></circle>
                 </svg>
             </div>
@@ -65,3 +69,5 @@
 
 
 </div>
+
+<script src="/js/NewIssue.js"></script>
