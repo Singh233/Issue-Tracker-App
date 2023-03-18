@@ -3,6 +3,8 @@ const flash = require('flash');
 const Project = require('../models/project');
 // import issue model
 const Issue = require('../models/issue');
+// import comment model
+const Comment = require('../models/comment');
 
 // controller for project issue page
 module.exports.issue = async function (req, res) {
@@ -74,3 +76,33 @@ module.exports.create = async function (req, res) {
         return res.redirect('back');
     }
 };
+
+
+// controller for showing discussion page
+module.exports.discussion = async function (req, res) {
+    try {
+    
+
+        // find the issue of the project and populate with user
+        let issue = await Issue.findById(req.params.id).populate('user');
+
+        // find the comments of the issue and populate with user
+        let comments = await Comment.find({ issue: req.params.id }).populate('user');
+
+        // find the project and populate with user
+        let project = await Project.findById(issue.project).populate('user');
+
+        // render the project issue page
+        return res.render('discussion.ejs', {
+            title: 'Discussion',
+            issue,
+            project,
+            comments,
+            index: req.params.index,
+        });
+    } catch (error) {
+        flash(error, 'Error in finding project in db');
+        console.log('Error--', error);
+        return res.redirect('back');
+    }
+}

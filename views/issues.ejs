@@ -93,12 +93,12 @@
         </div>
         <% } else { %>
         <!-- If issues are present -->
-        <% issues.forEach((issue) => { %>
+        <% issues.forEach((issue, index) => { %>
             <div class="issue-card">
                 <div class="left">
                     <i class="fa-solid fa-circle-dot"></i>
                     <div class="info">
-                        <p class="title"><%= issue.title %></p>
+                        <a href="/issues/<%= issue.id %>/discussion/<%= index + 1 %>" class="title"><%= issue.title %></a>
                         <p class="stats"> 1 day ago by <%= issue.user.name %> </p>
                     </div>
                 </div>

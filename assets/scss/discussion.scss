@@ -1,0 +1,490 @@
+// Colors
+$white: #fff;
+$gray-light: #f6f8fa;
+$gray-medium: #959da5;
+$gray-dark: rgba(255, 255, 255, 0.855);
+$blue: #0366d6;
+$bg-color: #0e1117;
+
+
+.discussion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    margin-top: 90px;
+
+
+    .discussion-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            color: dodgerblue;
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-left: 10px;
+            }
+
+            .user-name {
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+
+            .slash {
+                color: gray;
+            }
+
+            .project-title {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            .new-issue {
+                margin-left: 5px;
+                margin-right: 10px;
+            }
+
+            .project-visibility {
+                font-weight: 400;
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.8);
+                background-color: #30363c;
+                border-radius: 10px;
+                padding: 1px 8px;
+                border: 1px solid rgba(255, 255, 255, 0.194);
+                margin-top: 2px;
+            }
+
+            .user-project-name {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .discussion-header-right {
+            .star-button {
+                display: flex;
+                align-items: center;
+
+                background-color: #30363c;
+                border-radius: 5px;
+                padding: 3px 13px;
+
+                border: 1px solid rgba(255, 255, 255, 0.194);
+
+                color: #ffffff9e;
+
+                i {
+                    color: #ffffff9e;
+                    margin-right: 5px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        margin-top: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.194);
+
+        .issue-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .info-left {
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                    display: flex;
+                    align-items: center;
+                    font-size: 2.2rem;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+
+                    .issue-number {
+                        margin-left: 10px;
+                    }
+                }
+
+                .status-stats {
+                    display: flex;
+                    align-items: center;
+                    color: #ffffff9e;
+
+                    .status {
+                        margin-right: 10px;
+                        background-color: #29a33f;
+                        border-radius: 15px;
+                        padding: 3px 10px;
+                        color: white;
+                    }
+
+                    .stats {
+                        display: flex;
+                        align-items: center;
+                        font-size: 0.9rem;
+
+                        .stat {
+                            margin-right: 10px;
+                        }
+
+                        .comments {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            .info-right {
+                display: flex;
+                align-items: center;
+                font-size: 0.8rem;
+
+                .edit-button {
+                    display: flex;
+                    align-items: center;
+                    padding: 4px 20px;
+                    border-radius: 5px;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    border: 1px solid rgba(255, 255, 255, 0.194);
+                    font-weight: 600;
+                    transition: all 0.1s ease-in-out;
+                    cursor: pointer;
+                    background-color: #30363c;
+                    margin-right: 5px;
+
+                    &:hover {
+                        background-color: #30363c;
+                    }
+                }
+                .new-issue-button {
+                    display: flex;
+                    align-items: center;
+                    padding: 4px 20px;
+                    border-radius: 5px;
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    border: 1px solid #29a33f;
+                    font-weight: 600;
+                    transition: all 0.1s ease-in-out;
+                    cursor: pointer;
+                    background-color: #29a33f;
+
+                    &:hover {
+                        background-color: #48c25e;
+                    }
+                }
+            }
+        }
+    }
+
+    .comments-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+
+        .owner {
+            --heading-color: #15223a;
+            --border-color: #1F4272;
+        }
+
+        .comment {
+            --heading-color: #161B22;
+            --border-color: rgba(255, 255, 255, 0.194);
+
+        }
+
+        .comment, .owner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            border: 1px solid var(--border-color);
+            background-color: #0E1117;
+            border-radius: 10px;
+            margin-top: 50px;
+            position: relative;
+
+            // chat bubble effect for form
+            &:before {
+                content: '';
+                position: absolute;
+                top: 26px;
+                left: -5px;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                // left triangle
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+
+                border-right: 10px solid rgba(255, 255, 255, 0.531);
+                color: #0e1117;
+            }
+
+            // profile image
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                left: -60px;
+                top: 15px;
+                z-index: 1;
+            }
+
+            .heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background-color: var(--heading-color);
+                font-size: 0.9rem;
+                border-radius: 10px 10px 0 0;
+                padding: 7px 20px;
+
+                .author-name {
+                    font-weight: 500;
+                }
+
+                .comment-time {
+                    color: #ffffff9e;
+                }
+
+                .label {
+                    display: flex;
+                    align-items: center;
+
+                    .owner-label {
+                        font-size: 0.8rem;
+                        background-color: #15223a80;
+                        color: white;
+                        padding: 3px 10px;
+                        border-radius: 15px;
+                        margin-left: 10px;
+                        border: 1px solid #1F4272;
+                    }
+                }
+            }
+
+            .comment-body {
+                padding: 20px;
+                font-size: 1rem;
+                color: #ffffff9e;
+                align-self: flex-start;
+            }
+
+            .vertical-track {
+                width: 2px;
+                height: 50%;
+                background-color: rgba(255, 255, 255, 0.194);
+                position: absolute;
+                left: 5%;
+                bottom: -52%;
+            }
+        }
+
+        
+    }
+
+    .border {
+        width: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.194);
+        margin-top: 50px;
+    }
+
+    #new-comment-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 49%;
+        margin-top: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.194);
+        background-color: #0E1117;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 40px;
+        position: relative;
+
+
+        // chat bubble effect for form
+        &:before {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: -5px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            // left triangle
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent; 
+            
+            border-right: 10px solid rgba(255, 255, 255, 0.531);
+            color: #0E1117;
+
+
+        }
+
+        // profile image
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: -60px;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+            align-self: flex-start;
+
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.421);
+            border-radius: 6px;
+
+            color: white;
+            background-color: black;
+            transition: all 0.2s ease;
+            margin: 10px;
+
+            &:focus {
+                border: 1px solid $blue;
+                outline: none;
+            }
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+
+        .label-submit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .new-comment {
+                
+                align-self: flex-end;
+                display: flex;
+                align-items: center;
+                font-size: 1rem;
+                margin: 10px;
+                margin-top: 20px;
+                margin-right: 0;
+        
+                padding: 5px 20px;
+                font-weight: 600;
+                color: #fff;
+                background-color: #28a745;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                width: fit-content;
+
+                
+                button {
+        
+                    color: #fff;
+                    background-color: transparent;
+                    border: none;
+                    font-weight: 600;
+        
+                }
+        
+                svg {
+                    position: relative;
+                    z-index: 10;
+                    margin: 0;
+                    margin-left: 10px;
+                    width: 2em;
+                    height: 1.3em;
+                    transform-origin: center;
+                    animation: rotate4 2s linear infinite;
+                    color: white;
+        
+                    circle {
+                        fill: none;
+                        stroke: hsl(0, 0%, 100%);
+                        stroke-width: 4;
+                        stroke-dasharray: 1, 200;
+                        stroke-dashoffset: 0;
+                        stroke-linecap: round;
+                        animation: dash4 1.5s ease-in-out infinite;
+                    }
+                }
+        
+                .hide {
+                    display: none;
+                }
+        
+                &:hover {
+                    background-color: lighten(#28a745, 10%);
+                }
+            }
+
+            .close-issue-button {
+                display: flex;
+                align-items: center;
+                background-color: #30363c;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.194);
+
+                i {
+                    margin-right: 5px;
+                    color: violet;
+                    font-size: 1.1rem;
+                }
+
+                &:hover {
+                    background-color: lighten(#30363c, 10%);
+                }
+            }
+        }
+
+        
+
+    }
+}

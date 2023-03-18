@@ -241,7 +241,8 @@
             margin: 5px;
             margin-bottom: 0px;
             transition: all 0.2s ease-in-out;
-            cursor: pointer; }
+            cursor: pointer;
+            text-decoration: none; }
             .issues-container .issues-list .issue-card .left .info .title:hover {
               color: dodgerblue; }
           .issues-container .issues-list .issue-card .left .info .stats {
