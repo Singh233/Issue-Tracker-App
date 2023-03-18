@@ -318,19 +318,22 @@
           display: none; }
         .discussion-container #new-comment-form .label-submit .new-comment:hover {
           background-color: #34ce57; }
-      .discussion-container #new-comment-form .label-submit .close-issue-button {
-        display: flex;
-        align-items: center;
-        background-color: #30363c;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.194); }
-        .discussion-container #new-comment-form .label-submit .close-issue-button i {
-          margin-right: 5px;
-          color: violet;
-          font-size: 1.1rem; }
-        .discussion-container #new-comment-form .label-submit .close-issue-button:hover {
-          background-color: #475058; }
+    .discussion-container #new-comment-form .close-issue-button {
+      display: flex;
+      align-items: center;
+      background-color: #30363c;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.194); }
+      .discussion-container #new-comment-form .close-issue-button i {
+        margin-right: 5px;
+        color: violet;
+        font-size: 1.1rem; }
+      .discussion-container #new-comment-form .close-issue-button:hover {
+        background-color: #475058; }
+
+.error-toast {
+  border-radius: 5px; }

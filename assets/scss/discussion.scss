@@ -5,6 +5,7 @@ $gray-medium: #959da5;
 $gray-dark: rgba(255, 255, 255, 0.855);
 $blue: #0366d6;
 $bg-color: #0e1117;
+$error-color: #aa08087d;
 
 
 .discussion-container {
@@ -137,6 +138,8 @@ $bg-color: #0e1117;
                         border-radius: 15px;
                         padding: 3px 10px;
                         color: white;
+
+                        
                     }
 
                     .stats {
@@ -217,6 +220,7 @@ $bg-color: #0e1117;
             --border-color: rgba(255, 255, 255, 0.194);
 
         }
+
 
         .comment, .owner {
             display: flex;
@@ -461,30 +465,37 @@ $bg-color: #0e1117;
                 }
             }
 
-            .close-issue-button {
-                display: flex;
-                align-items: center;
-                background-color: #30363c;
-                border-radius: 5px;
-                padding: 5px 10px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                color: white;
-                border: 1px solid rgba(255, 255, 255, 0.194);
+            
+        }
 
-                i {
-                    margin-right: 5px;
-                    color: violet;
-                    font-size: 1.1rem;
-                }
+        .close-issue-button {
+            display: flex;
+            align-items: center;
+            background-color: #30363c;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.194);
 
-                &:hover {
-                    background-color: lighten(#30363c, 10%);
-                }
+            i {
+                margin-right: 5px;
+                color: violet;
+                font-size: 1.1rem;
+            }
+
+            &:hover {
+                background-color: lighten(#30363c, 10%);
             }
         }
 
         
 
     }
+}
+
+
+.error-toast {
+    border-radius: 5px;
 }

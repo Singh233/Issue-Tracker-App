@@ -106,3 +106,24 @@ module.exports.discussion = async function (req, res) {
         return res.redirect('back');
     }
 }
+
+
+// controller for changing status of issue
+module.exports.changeStatus = async function (req, res) {
+    try {
+        // find the issue
+        let issue = await Issue.findById(req.params.issueId);
+        // change the status
+        issue.status = req.params.status;
+        // save the issue
+        issue.save();
+        // flash message
+        req.flash('success', 'Status Changed Successfully!');
+        // redirect to project issue page
+        return res.redirect('back');
+    } catch (error) {
+        req.flash('error', 'Error in changing status');
+        console.log('Error--', error);
+        return res.redirect('back');
+    }
+}

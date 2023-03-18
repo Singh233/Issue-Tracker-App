@@ -1,8 +1,31 @@
-
 // make ajax request on new project form submit
-$('#new-comment-form').on('submit', function(e){
+$('#new-comment-form').on('submit', function (e) {
     // prevent default form submission
     e.preventDefault();
+    const btn = $(this).find('button[type=submit]:focus');
+
+    // check if close issue button is clicked
+    if (btn == undefined || btn === null || btn.length === 0) {
+        // start button loading
+        return;
+    }
+
+    // check if the comment is empty
+    if ($('#comment-content').val() === '') {
+        iziToast.error({
+            title: 'Error',
+            class: 'error-toast',
+            message: 'Comment cannot be empty!',
+            theme: 'dark',
+            backgroundColor:
+                '#AA0808',
+            position: 'topCenter',
+            progressBarColor: 'white',
+            transitionInMobile: 'fadeInUp',
+            transitionOutMobile: 'fadeOutUp',
+        });
+        return;
+    }
 
     // start button loading
     const button = document.querySelector('button[type="submit"]');
@@ -22,18 +45,18 @@ $('#new-comment-form').on('submit', function(e){
         type: 'post',
         url: `/issues/${projectId}/discussion/${projectIndex}/create-comment`,
         data: $(this).serialize(),
-        success: function(data){
+        success: function (data) {
             setTimeout(() => {
                 iziToast.success({
                     title: 'Success',
                     message: 'Comment added Successfully!',
                     theme: 'dark',
-                    backgroundColor: 'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
+                    backgroundColor:
+                        'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
                     position: 'topCenter',
                     progressBarColor: 'white',
                     transitionInMobile: 'fadeInUp',
                     transitionOutMobile: 'fadeOutUp',
-                    
                 });
                 // clear the form
                 $('#new-comment-form')[0].reset();
@@ -44,23 +67,22 @@ $('#new-comment-form').on('submit', function(e){
                 // hide the loader
                 document.getElementById('comment-loader').classList.add('hide');
 
-                // add the new comment to the DOM   
-                document.getElementById('comments-ls').innerHTML += newComment(data.data.comment);
+                // add the new comment to the DOM
+                document.getElementById('comments-ls').innerHTML += newComment(
+                    data.data.comment
+                );
             }, 1500);
-
-            
         },
-        error: function(error){
+        error: function (error) {
             console.log(error.responseText);
-        }
+        },
     });
-} );
-
+});
 
 // html for new comment
 const newComment = (comment) => {
     return `
-    <div class="comment">
+    <div class="comment animate__animated animate__fadeIn">
         <img src="${comment.user.avatar}" alt="">
 
         <div class="heading">
@@ -77,7 +99,7 @@ const newComment = (comment) => {
         </div>
     </div>
     `;
-}
+};
 
 // <% if (comment.user.email === project.user.email) { %>
 //     <div class="owner">
@@ -95,7 +117,7 @@ const newComment = (comment) => {
 //                 <p class="comment-time">commented 4 days ago</p>
 //                 <p class="owner-label">Owner</p>
 //             </div>
-            
+
 //         </div>
 //     <% } else { %>
 //         <div class="heading">
@@ -104,12 +126,11 @@ const newComment = (comment) => {
 //         </div>
 //     <% } %>
 
-
 //     <div class="comment-body">
 //         <p class="comment-text">${comment.content}</p>
 //     </div>
 
 //     <div class="vertical-track">
-        
+
 //     </div>
 // </div>

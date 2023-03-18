@@ -24,6 +24,9 @@ router.get('/:id/discussion/:index', issueController.discussion);
 // define route for creating comment
 router.post('/:id/discussion/:index/create-comment', commentsController.createComment);
 
+// Route for change status of issue
+router.get('/:id/discussion/:index/:issueId/change-status/:status', issueController.changeStatus);
+
 
 // export router
 module.exports = router;

@@ -10,6 +10,7 @@
   "author": "Sanambir Singh",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
