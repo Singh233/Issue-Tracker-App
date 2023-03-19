@@ -246,6 +246,7 @@
             .issues-container .issues-list .issue-card .left .info .title:hover {
               color: dodgerblue; }
           .issues-container .issues-list .issue-card .left .info .stats {
+            align-self: flex-start;
             display: flex;
             align-items: center;
             justify-content: center;

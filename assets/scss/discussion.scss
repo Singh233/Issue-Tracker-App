@@ -136,9 +136,15 @@ $error-color: #aa08087d;
                         margin-right: 10px;
                         background-color: #29a33f;
                         border-radius: 15px;
-                        padding: 3px 10px;
+                        padding: 5px 13px;
                         color: white;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        font-size: 0.9rem;
 
+                        i {
+                            font-size: 1rem;
+                        }
                         
                     }
 
@@ -182,6 +188,7 @@ $error-color: #aa08087d;
                         background-color: #30363c;
                     }
                 }
+
                 .new-issue-button {
                     display: flex;
                     align-items: center;

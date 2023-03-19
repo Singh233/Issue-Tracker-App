@@ -89,8 +89,13 @@
             margin-right: 10px;
             background-color: #29a33f;
             border-radius: 15px;
-            padding: 3px 10px;
-            color: white; }
+            padding: 5px 13px;
+            color: white;
+            text-transform: capitalize;
+            font-weight: 600;
+            font-size: 0.9rem; }
+            .discussion-container .main-content .issue-info .info-left .status-stats .status i {
+              font-size: 1rem; }
           .discussion-container .main-content .issue-info .info-left .status-stats .stats {
             display: flex;
             align-items: center;

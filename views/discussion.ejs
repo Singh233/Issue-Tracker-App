@@ -47,18 +47,20 @@
 
                         <p class="status-value">
                             <i class="fa-solid fa-circle-dot"></i>
+                            <%= issue.status %>
                     <% } else { %>
                     <div style="background-color: #8957E5;" class="status">
 
                         <p class="status-value close">
-                            <i class="fa-solid fa-check-circle"></i>
-                        <% } %>
-                        <%= issue.status %>
+                            <i class="fa-regular fa-circle-check"></i>
+                            <%= issue.status %>d
+                    <% } %>
+                        
                         </p>
                     </div>
                     <div class="stats">
                         <p class="user"><%= issue.user.email %> opened this issue 4 days ago</p>
-                        <% if (issue.comments.length > 0) { %>
+                        <% if (issue.comments.length > 1) { %>
                             <p class="comments"><%= issue.comments.length %> comments</p>
                         <% } else { %>
                             <p class="comments"><%= issue.comments.length %> comment</p>
@@ -166,16 +168,23 @@
         <!-- div for labels and submit button -->
         <div class="label-submit">
 
-            <!-- Check the status of the issue -->
-            <% if(issue.status === 'open') { %>
-                <button id="close-issue" onclick="window.location.href = '/issues/<%= project.id %>/discussion/<%= index %>/<%= issue.id %>/change-status/close'" class="close-issue-button">
-                <i class="fa-regular fa-circle-check"></i>
-                Close issue</button>
+            <!-- Only show if author or owner is commenting -->
+            <% if (locals.user.email === issue.user.email || locals.user.email === project.user.email) { %>
+                <!-- Check the status of the issue -->
+                <% if(issue.status === 'open') { %>
+                    <button id="close-issue" onclick="window.location.href = '/issues/<%= project.id %>/discussion/<%= index %>/<%= issue.id %>/change-status/close'" class="close-issue-button">
+                    <i class="fa-regular fa-circle-check"></i>
+                    Close issue
+                </button>
+                <% } else { %>
+                    <button onclick="window.location.href = '/issues/<%= project.id %>/discussion/<%= index %>/<%= issue.id %>/change-status/open'" class="close-issue-button">
+                        <i style="color: #29a33f;" class="fa-brands fa-rev"></i>
+                    Reopen issue</button>
+                <% } %>
             <% } else { %>
-                <button onclick="window.location.href = '/issues/<%= project.id %>/discussion/<%= index %>/<%= issue.id %>/change-status/open'" class="close-issue-button">
-                    <i style="color: #29a33f;" class="fa-brands fa-rev"></i>
-                Reopen issue</button>
+                <div></div>
             <% } %>
+            
 
 
             <!-- new comment -->
