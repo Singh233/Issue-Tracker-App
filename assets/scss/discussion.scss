@@ -50,6 +50,11 @@ $error-color: #aa08087d;
             .project-title {
                 margin-left: 5px;
                 margin-right: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    color: lighten($color: dodgerblue, $amount: 20%);
+                }
             }
 
             .new-issue {
@@ -125,6 +130,82 @@ $error-color: #aa08087d;
                     .issue-number {
                         margin-left: 10px;
                     }
+
+                    .labels {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-left: 10px;
+    
+                        .label {
+                            padding: 1px 10px;
+                            border-radius: 15px;
+                            border: 1px solid rgba(255, 255, 255, 0.194);
+                            color: #ffffff9e;
+                            font-weight: 500;
+                            background-color: #30363c;
+                            transition: all 0.2s ease-in-out;
+                            cursor: pointer;
+                            font-size: 0.9rem;
+    
+                            &:hover {
+                                color: white;
+                                background-color: #2a2f35;
+                            }
+    
+                            i {
+                                color: #ffffff9e;
+                                margin-right: 5px;
+                                margin-bottom: 2px;
+                            }
+                        }
+    
+                        .bug {
+                            background-color: #d73a4a7d;
+                            border:#d73a4a solid 1px;
+        
+                            &:hover {
+                                background-color: #d73a4a;
+                                border:#d73a4a solid 1px;
+                                box-shadow: 0 0 20px #d73a4a98;
+                            }
+                        }
+        
+                        .help {
+                            background-color: #28a7457d;
+                            border:#28a745 solid 1px;
+        
+                            &:hover {
+                                background-color: #28a745;
+                                border:#28a745 solid 1px;
+                                box-shadow: 0 0 20px #28a74598;
+                            }
+                        }
+        
+    
+                        .invalid {
+                            background-color: #6f42c17d;
+                            border:#6f42c1 solid 1px;
+        
+                            &:hover {
+                                background-color: #6f42c1;
+                                border:#6f42c1 solid 1px;
+                                box-shadow: 0 0 20px #6f42c198;
+                            }
+                        }
+    
+                        .question {
+                            background-color: #d876e37d;
+                            border:#d876e3 solid 1px;
+        
+                            &:hover {
+                                background-color: #d876e3;
+                                border:#d876e3 solid 1px;
+                                box-shadow: 0 0 20px #d876e398;
+                            }
+                        }
+                    }
+    
                 }
 
                 .status-stats {

@@ -29,7 +29,10 @@
         color: gray; }
       .discussion-container .discussion-header .user-info .project-title {
         margin-left: 5px;
-        margin-right: 5px; }
+        margin-right: 5px;
+        cursor: pointer; }
+        .discussion-container .discussion-header .user-info .project-title:hover {
+          color: #84c2ff; }
       .discussion-container .discussion-header .user-info .new-issue {
         margin-left: 5px;
         margin-right: 10px; }
@@ -81,6 +84,56 @@
           margin-bottom: 10px; }
           .discussion-container .main-content .issue-info .info-left .title .issue-number {
             margin-left: 10px; }
+          .discussion-container .main-content .issue-info .info-left .title .labels {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px; }
+            .discussion-container .main-content .issue-info .info-left .title .labels .label {
+              padding: 1px 10px;
+              border-radius: 15px;
+              border: 1px solid rgba(255, 255, 255, 0.194);
+              color: #ffffff9e;
+              font-weight: 500;
+              background-color: #30363c;
+              transition: all 0.2s ease-in-out;
+              cursor: pointer;
+              font-size: 0.9rem; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .label:hover {
+                color: white;
+                background-color: #2a2f35; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .label i {
+                color: #ffffff9e;
+                margin-right: 5px;
+                margin-bottom: 2px; }
+            .discussion-container .main-content .issue-info .info-left .title .labels .bug {
+              background-color: #d73a4a7d;
+              border: #d73a4a solid 1px; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .bug:hover {
+                background-color: #d73a4a;
+                border: #d73a4a solid 1px;
+                box-shadow: 0 0 20px #d73a4a98; }
+            .discussion-container .main-content .issue-info .info-left .title .labels .help {
+              background-color: #28a7457d;
+              border: #28a745 solid 1px; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .help:hover {
+                background-color: #28a745;
+                border: #28a745 solid 1px;
+                box-shadow: 0 0 20px #28a74598; }
+            .discussion-container .main-content .issue-info .info-left .title .labels .invalid {
+              background-color: #6f42c17d;
+              border: #6f42c1 solid 1px; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .invalid:hover {
+                background-color: #6f42c1;
+                border: #6f42c1 solid 1px;
+                box-shadow: 0 0 20px #6f42c198; }
+            .discussion-container .main-content .issue-info .info-left .title .labels .question {
+              background-color: #d876e37d;
+              border: #d876e3 solid 1px; }
+              .discussion-container .main-content .issue-info .info-left .title .labels .question:hover {
+                background-color: #d876e3;
+                border: #d876e3 solid 1px;
+                box-shadow: 0 0 20px #d876e398; }
         .discussion-container .main-content .issue-info .info-left .status-stats {
           display: flex;
           align-items: center;

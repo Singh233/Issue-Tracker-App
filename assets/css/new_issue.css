@@ -29,7 +29,10 @@
         color: gray; }
       .new-issue-container .issue-header .user-info .project-title {
         margin-left: 5px;
-        margin-right: 5px; }
+        margin-right: 5px;
+        cursor: pointer; }
+        .new-issue-container .issue-header .user-info .project-title:hover {
+          color: #84c2ff; }
       .new-issue-container .issue-header .user-info .new-issue {
         margin-left: 5px;
         margin-right: 10px; }

@@ -10,7 +10,7 @@
                 <div class="user-project-name">
                     <p class="user-name"><%= project.user.name %></p>
                     <p class="slash">/</p>
-                    <p class="project-title"><%= project.title %></p>
+                    <p onclick="window.location.href = `/issues/<%= project.id %>`" class="project-title"><%= project.title %></p>
                     <p class="slash">/</p>
                     <p class="new-issue">discussion</p>
                     <p class="project-visibility">
@@ -38,6 +38,29 @@
                 <div class="title">
                     <p class="issue-title"><%= issue.title %></p>
                     <p class="issue-number">#<%= index %></p>
+                    <div class="labels">
+                        <% issue.labels.forEach((label) => { %>
+                            <!-- style according to label -->
+                            <% if (label === "bug") { %>
+                                <div class="label bug">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "help") { %>
+                                <div class="label help">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "invalid") { %>
+                                <div class="label invalid ">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } else if (label === "question") { %>
+                                <div class="label question">
+                                    <p><%= label %></p>
+                                </div>
+                            <% } %>
+
+                        <% }) %>
+                    </div>
                 </div>
 
                 <div class="status-stats">
@@ -72,10 +95,10 @@
             </div>
 
             <div class="info-right">
-                <div class="edit-button">
+                <div onclick="commingSoon()" class="edit-button">
                     <p>Edit</p>
                 </div>
-                <div class="new-issue-button">
+                <div onclick="window.location.href = `/issues/<%= project.id %>/new`" class="new-issue-button">
                     <p>New Issue</p>
                 </div>
             </div>
@@ -203,3 +226,19 @@
 </div>
 
 <script src="/js/NewComment.js"></script>
+
+<script>
+    function commingSoon() {
+    iziToast.info({
+        title: 'Info',
+        message: 'This feature is coming soon!',
+        theme: 'dark',
+        backgroundColor:
+            'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
+        position: 'topCenter',
+        progressBarColor: 'white',
+        transitionInMobile: 'fadeInUp',
+        transitionOutMobile: 'fadeOutUp',
+    });
+}
+</script>

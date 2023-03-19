@@ -49,6 +49,11 @@ $bg-color: #0e1117;
             .project-title {
                 margin-left: 5px;
                 margin-right: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    color: lighten($color: dodgerblue, $amount: 20%);
+                }
             }
 
             .new-issue {

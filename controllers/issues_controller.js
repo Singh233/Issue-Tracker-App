@@ -117,8 +117,15 @@ module.exports.changeStatus = async function (req, res) {
         issue.status = req.params.status;
         // save the issue
         issue.save();
-        // flash message
-        req.flash('success', 'Status Changed Successfully!');
+
+        if (req.params.status == 'close') {
+            // flash message
+            req.flash('success', 'Issue Closed!');
+        } else {
+            // flash message
+            req.flash('success', 'Issue Reopened!');
+        }
+
         // redirect to project issue page
         return res.redirect('back');
     } catch (error) {
