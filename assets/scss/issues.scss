@@ -249,6 +249,16 @@
         border-bottom: orange 2px solid !important;
     }
 
+    .active-open {
+        color: white !important;
+        border-bottom: #28a745 2px solid !important;
+    }
+
+    .active-closed {
+        color: white !important;
+        border-bottom: #6f42c1 2px solid !important;
+    }
+
     .issues-list {
         display: flex;
         flex-direction: column;

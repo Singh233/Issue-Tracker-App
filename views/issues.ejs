@@ -62,17 +62,21 @@
     </div>
 
     <div class="issue-nav">
+        
+
         <div class="issue-nav-item">
-            <a class="all-issues active" href="/issues">All Issues</a>
+            <a class="all-issues <% if (page === 'all') {  %> active <% } %>  " href="/issues/<%= project.id %>/all">All Issues</a>
         </div>
         <div class="issue-nav-item">
-            <a class="open-issues" href="/issues?status=Open">Open Issues</a>
+            <a class="open-issues <% if (page === 'open') {  %> active-open <% } %>" href="/issues/<%= project.id %>/open">Open Issues</a>
         </div>
         <div class="issue-nav-item">
-            <a class="closed-issues" href="/issues?status=Closed"
+            <a class="closed-issues <% if (page === 'closed') {  %> active-closed <% } %>" href="/issues/<%= project.id %>/closed"
                 >Closed Issues</a
             >
         </div>
+        
+
     </div>
 
     <!-- Issues list -->

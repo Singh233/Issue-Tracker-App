@@ -9,8 +9,14 @@ const commentsController = require('../controllers/comments_controller');
 
 
 
-// define route for project issue page
-router.get('/:id', issueController.issue);
+// define route for project all issues page
+router.get('/:id/all', issueController.all);
+
+// define route for project open issues page
+router.get('/:id/open', issueController.open);
+
+// define route for project closed issues page
+router.get('/:id/closed', issueController.closed);
 
 // Route for new issue page
 router.get('/:id/new', issueController.new);

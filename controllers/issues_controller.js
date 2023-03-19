@@ -6,8 +6,8 @@ const Issue = require('../models/issue');
 // import comment model
 const Comment = require('../models/comment');
 
-// controller for project issue page
-module.exports.issue = async function (req, res) {
+// controller for project all issues page
+module.exports.all = async function (req, res) {
     try {
         // find the project and populate with user and issues
         let project = await Project.findById(req.params.id).populate('user');
@@ -20,6 +20,53 @@ module.exports.issue = async function (req, res) {
             title: 'Issue',
             project: project,
             issues: issues,
+            page: 'all',
+        });
+    } catch (error) {
+        flash(error, 'Error in finding project in db');
+        console.log('Error--', error);
+        return res.redirect('back');
+    }
+};
+
+// controller for project open issues page
+module.exports.open = async function (req, res) {
+    try {
+        // find the project and populate with user and issues
+        let project = await Project.findById(req.params.id).populate('user');
+
+        // find the issues of the project and populate with user
+        let issues = await Issue.find({ project: req.params.id, status: 'open' }).populate('user');
+
+        // render the project issue page
+        return res.render('issues.ejs', {
+            title: 'Issue',
+            project: project,
+            issues: issues,
+            page: 'open',
+        });
+    } catch (error) {
+        flash(error, 'Error in finding project in db');
+        console.log('Error--', error);
+        return res.redirect('back');
+    }
+};
+
+// controller for project closed issues page
+module.exports.closed = async function (req, res) {
+    try {
+        // find the project and populate with user and issues
+        let project = await Project.findById(req.params.id).populate('user');
+
+        // find the issues of the project and populate with user
+        let issues = await Issue.find({ project: req.params.id, status: 'close' }).populate('user');
+
+        // render the project issue page
+        return res.render('issues.ejs', {
+            title: 'Issue',
+            project: project,
+            issues: issues,
+            page: 'closed',
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
