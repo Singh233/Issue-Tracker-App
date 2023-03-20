@@ -41,9 +41,11 @@
       display: flex;
       align-items: center;
       color: #ffffff6c; }
-      .card-container .project-info .card-footer .type i {
-        color: orangered;
-        margin-right: 5px; }
+      .card-container .project-info .card-footer .type {
+        text-transform: capitalize; }
+        .card-container .project-info .card-footer .type i {
+          color: orangered;
+          margin-right: 5px; }
       .card-container .project-info .card-footer .stars {
         margin-left: 10px; }
         .card-container .project-info .card-footer .stars i {

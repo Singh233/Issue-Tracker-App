@@ -1,0 +1,30 @@
+
+
+<div class="projects-container">
+    <div class="container-heading">
+        <p>Choose project to see issues</p>
+        <a href="/projects/new-project" class="btn btn-primary">New Project</a>
+    </div>
+    <div class="cards-list">
+
+        <% for (let i = 0; i < projects.length; i++) { %>
+            <%- include('project_card.ejs', {project: projects[i]}); %>
+        <% } %>
+
+        <!-- If no project is present -->
+        <% if (projects.length === 0) { %>
+            <div class="no-projects">
+                <i class="fa-solid fa-circle-dot"></i>
+                <p class="heading">No project found!</p>
+                <p class="sub-heading">
+                    In order to see issues, you need to create a project.
+                    Issues are used to track todos, bugs, feature requests, and more. 
+                    As issues are created, 
+                    they’ll appear here in a searchable and filterable list. 
+                    To get started, you should <span>create an project</span>.
+                </p>
+            </div>
+        <% } %>
+        
+    </div>
+</div>
