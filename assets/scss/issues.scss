@@ -120,7 +120,11 @@
             color: #ffffff9e;
             font-weight: 500;
 
-            .filter {
+            .active-filter {
+                color: dodgerblue !important;
+            }
+
+            .filter-button {
                 display: flex;
                 align-items: center;
                 font-weight: 600;
@@ -143,6 +147,114 @@
                 i {
                     color: #ffffff9e;
                     margin-left: 5px;
+                }
+            }
+
+            .filters-expanded {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 5px;
+                border: 1px solid rgba(255, 255, 255, 0.194);
+                background-color: #30363c;
+                height: max-content;
+                width: max-content;
+                min-width: 200px;
+    
+                position: absolute;
+                z-index: 10;
+                top: 40px;
+                left: 10px;
+    
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+                
+    
+                .filter-border {
+                    width: 100%;
+                    height: 1px;
+                    background-color: rgba(128, 128, 128, 0.42);
+                }
+
+                .active-filter {
+                    color: dodgerblue !important;
+                }
+    
+                .heading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    width: 100%;
+                    padding: 5px 10px;
+                    font-size: 0.9rem;
+    
+                    #close-button-filter {
+                        cursor: pointer;
+    
+                        &:hover {
+                            color: white;
+                        }
+                    }
+    
+                }
+                
+    
+                .filters {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 10px;
+                    width: 100%;
+                    height: 100%;
+                    color: #ffffffbd;
+                    font-size: 0.9rem;
+    
+                    .filter {
+                        display: flex;
+                        
+                        padding: 5px;
+                        cursor: pointer;
+    
+    
+                        .group {
+                            display: flex;
+                            flex-direction: column;
+    
+                            .title {
+                                font-weight: 600;
+                            }
+    
+                            .subheading {
+                                font-size: 0.8rem;
+                                color: gray;
+                            }
+                        }
+    
+                        i {
+                            margin-right: 8px;
+                            margin-top: 5px;
+                        }
+    
+                        &:hover {
+                            color: white;
+                        }
+    
+                        .bug {
+                            color: #d73a4a;
+                        }
+        
+                        .help {
+                            color: #28a745;
+                        }
+        
+                        .invalid {
+                            color: #6f42c1;
+                        }
+    
+                        .question {
+                            color: #d876e3;
+                        }
+                    }
                 }
             }
 

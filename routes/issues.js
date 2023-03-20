@@ -42,6 +42,22 @@ router.get('/:id/search/open', issueController.searchOpen);
 // Route for searching closed issue
 router.get('/:id/search/closed', issueController.searchClosed);
 
+// Route for filtering issue by recent activity
+router.get('/:id/:all/filter/recent', issueController.filterRecentActivity);
+router.get('/:id/:open/filter/recent', issueController.filterRecentActivity);
+router.get('/:id/:closed/filter/recent', issueController.filterRecentActivity);
+
+
+// Route for filtering issue by oldest activity
+router.get('/:id/:all/filter/old', issueController.filterOldestActivity);
+router.get('/:id/:open/filter/old', issueController.filterOldestActivity);
+router.get('/:id/:closed/filter/old', issueController.filterOldestActivity);
+
+// Route for filtering issue by logged in author
+router.get('/:id/:all/filter/author', issueController.filterLoggedInAuthor);
+router.get('/:id/:open/filter/author', issueController.filterLoggedInAuthor);
+router.get('/:id/:closed/filter/author', issueController.filterLoggedInAuthor);
+
 
 // export router
 module.exports = router;

@@ -82,7 +82,9 @@
       padding: 0 10px;
       color: #ffffff9e;
       font-weight: 500; }
-      .issues-container .filter-create-bar .filter-search .filter {
+      .issues-container .filter-create-bar .filter-search .active-filter {
+        color: dodgerblue !important; }
+      .issues-container .filter-create-bar .filter-search .filter-button {
         display: flex;
         align-items: center;
         font-weight: 600;
@@ -95,12 +97,78 @@
         background-color: #30363c;
         cursor: pointer;
         transition: all 0.2s ease-in-out; }
-        .issues-container .filter-create-bar .filter-search .filter:hover {
+        .issues-container .filter-create-bar .filter-search .filter-button:hover {
           color: white;
           background-color: #2a2f35; }
-        .issues-container .filter-create-bar .filter-search .filter i {
+        .issues-container .filter-create-bar .filter-search .filter-button i {
           color: #ffffff9e;
           margin-left: 5px; }
+      .issues-container .filter-create-bar .filter-search .filters-expanded {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.194);
+        background-color: #30363c;
+        height: max-content;
+        width: max-content;
+        min-width: 200px;
+        position: absolute;
+        z-index: 10;
+        top: 40px;
+        left: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
+        .issues-container .filter-create-bar .filter-search .filters-expanded .filter-border {
+          width: 100%;
+          height: 1px;
+          background-color: rgba(128, 128, 128, 0.42); }
+        .issues-container .filter-create-bar .filter-search .filters-expanded .active-filter {
+          color: dodgerblue !important; }
+        .issues-container .filter-create-bar .filter-search .filters-expanded .heading {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 5px 10px;
+          font-size: 0.9rem; }
+          .issues-container .filter-create-bar .filter-search .filters-expanded .heading #close-button-filter {
+            cursor: pointer; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .heading #close-button-filter:hover {
+              color: white; }
+        .issues-container .filter-create-bar .filter-search .filters-expanded .filters {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px;
+          width: 100%;
+          height: 100%;
+          color: #ffffffbd;
+          font-size: 0.9rem; }
+          .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter {
+            display: flex;
+            padding: 5px;
+            cursor: pointer; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .group {
+              display: flex;
+              flex-direction: column; }
+              .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .group .title {
+                font-weight: 600; }
+              .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .group .subheading {
+                font-size: 0.8rem;
+                color: gray; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter i {
+              margin-right: 8px;
+              margin-top: 5px; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter:hover {
+              color: white; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .bug {
+              color: #d73a4a; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .help {
+              color: #28a745; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .invalid {
+              color: #6f42c1; }
+            .issues-container .filter-create-bar .filter-search .filters-expanded .filters .filter .question {
+              color: #d876e3; }
       .issues-container .filter-create-bar .filter-search .search {
         display: flex;
         align-items: center;

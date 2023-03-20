@@ -37,10 +37,51 @@
         <div class="filter-search">
 
             <!-- Filter button -->
-            <div class="filter">
-                <p>Filter</p>
+            <div class="filter-button">
+                <p id="filter-button-heading" class=" ">Filter</p>
                 <i class="fa-solid fa-caret-down"></i>
             </div>
+
+            <!-- Filters dropdown -->
+
+            <div class="filters-expanded hide">
+                <div class="heading">
+                    <p>Filter issues</p>
+                    <i id="close-button-filter" class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="filter-border"></div>
+
+                <div class="filters">
+                    <div class="filter">
+                        <div onclick="filterClick( '<%= project.id %>' ,'recent')" class="group">
+                            <p id="recent-filter" class="title">Recent activity</p>
+                            <!-- <p class="subheading">Something isn't working</p> -->
+                        </div>
+                    </div>
+                    
+                    <div class="filter-border"></div>
+
+                    <div class="filter">
+                        <div onclick="filterClick('<%= project.id %>' ,'old')" class="group">
+                            <p id="old-filter" class="title">Old activity</p>
+                            <!-- <p class="subheading">Extra attention is needed</p> -->
+                        </div>
+                        
+                    </div>
+
+                    <div class="filter-border"></div>
+
+                    <div class="filter">
+                        <div onclick="filterClick('<%= project.id %>' ,'author')" class="group">
+                            <p id="author-filter" class="title">Your issues</p>
+                            <!-- <p class="subheading">This doesn't seem right</p> -->
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        
             <div class="search">     
                 <i class="fa-solid fa-search"></i>
                 <input
@@ -218,6 +259,7 @@
 
 <script src="/js/SearchIssue.js"></script>
 <script src="/js/LabelFilter.js"></script>
+<script src="/js/NormalFilter.js"></script>
 
 <script>
     // label button
@@ -233,6 +275,21 @@
         console.log('clicked')
         labelsExpanded.classList.toggle("hide");
     });
+
+    // filter button
+    const filterButton = document.querySelector(".filter-button");
+    const filterExpanded = document.querySelector(".filters-expanded");
+    const xmarkFilter = document.getElementById("close-button-filter");
+    
+    filterButton.addEventListener("click", () => {
+        filterExpanded.classList.toggle("hide");
+    });
+
+    xmarkFilter.addEventListener("click", () => {
+        filterExpanded.classList.toggle("hide");
+    });
+
+
 
     
 </script>
