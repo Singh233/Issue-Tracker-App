@@ -56,9 +56,9 @@
         <div class="label-button">
             <i class="fa-solid fa-tag"></i>
             <p>Labels</p>
-
-            
         </div>
+
+        <!-- Labels dropdown -->
 
         <div class="labels-expanded hide">
             <div class="heading">
@@ -70,7 +70,7 @@
             <div class="labels">
                 <div class="label">
                     <i class="fa-solid fa-circle bug"></i>
-                    <div class="group">
+                    <div onclick="labelClick( '<%= project.id %>' ,'bug')" class="group">
                         <p class="title">bug</p>
                         <p class="subheading">Something isn't working</p>
                     </div>
@@ -80,7 +80,7 @@
 
                 <div class="label">
                     <i class="fa-solid fa-circle help"></i>
-                    <div class="group">
+                    <div onclick="labelClick('<%= project.id %>' ,'help')" class="group">
                         <p class="title">help</p>
                         <p class="subheading">Extra attention is needed</p>
                     </div>
@@ -91,7 +91,7 @@
 
                 <div class="label">
                     <i class="fa-solid fa-circle invalid"></i>
-                    <div class="group">
+                    <div onclick="labelClick('<%= project.id %>' ,'invalid')" class="group">
                         <p class="title">invalid</p>
                         <p class="subheading">This doesn't seem right</p>
                     </div>
@@ -101,12 +101,18 @@
 
                 <div class="label">
                     <i class="fa-solid fa-circle question"></i>
-                    <div class="group">
+                    <div onclick="labelClick('<%= project.id %>' ,'question')" class="group">
                         <p class="title">question</p>
                         <p class="subheading">Further information is requested</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Active label button -->
+        <div class="active-label hide">
+            <p id="active-label-title">bug</p>
+            <i id="active-label-close" onclick="labelClick('<%= project.id %>', '')" class="fa-solid fa-xmark"></i>
         </div>
 
         
@@ -211,6 +217,7 @@
 </div>
 
 <script src="/js/SearchIssue.js"></script>
+<script src="/js/LabelFilter.js"></script>
 
 <script>
     // label button

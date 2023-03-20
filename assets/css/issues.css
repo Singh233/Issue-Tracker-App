@@ -162,8 +162,10 @@
       height: max-content;
       width: max-content;
       position: absolute;
+      z-index: 10;
       top: 40px;
-      right: 110px; }
+      right: 110px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
       .issues-container .filter-create-bar .labels-expanded .label-border {
         width: 100%;
         height: 1px;
@@ -213,7 +215,35 @@
             color: #6f42c1; }
           .issues-container .filter-create-bar .labels-expanded .labels .label .question {
             color: #d876e3; }
-    .issues-container .filter-create-bar .hide {
+    .issues-container .filter-create-bar .active-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.194);
+      color: #ffffffd6;
+      font-weight: 500;
+      background-color: #30363c;
+      transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      font-size: 1rem; }
+      .issues-container .filter-create-bar .active-label i {
+        cursor: pointer;
+        color: #ffffff9e;
+        margin-left: 5px; }
+        .issues-container .filter-create-bar .active-label i:hover {
+          color: white; }
+    .issues-container .filter-create-bar .bug-active {
+      background-color: #d73a4a; }
+    .issues-container .filter-create-bar .help-active {
+      background-color: #28a745; }
+    .issues-container .filter-create-bar .invalid-active {
+      background-color: #6f42c1; }
+    .issues-container .filter-create-bar .question-active {
+      background-color: #d876e3; }
+    .issues-container .filter-create-bar .hide-active {
       display: none !important; }
     .issues-container .filter-create-bar .create-button {
       min-width: max-content;
