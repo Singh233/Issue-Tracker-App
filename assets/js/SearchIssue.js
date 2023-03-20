@@ -18,27 +18,32 @@ const newIssueDom = (issue, index) => `
                 <div class="right">
                     <div class="labels">
                         
-                        ${issue.labels[0] === 'bug' ?
-                            `
+                        ${
+                            issue.labels[0] === 'bug'
+                                ? `
                             <div class="label bug">
                                 <p> ${issue.labels[0]} </p>
-                            </div>` : issue.labels[0] === 'help' ?
-                            `
+                            </div>`
+                                : issue.labels[0] === 'help'
+                                ? `
                             <div class="label help">
                                 <p> ${issue.labels[0]} </p>
                             </div>
-                            ` : issue.labels[0] === 'invalid' ?
-                        `
+                            `
+                                : issue.labels[0] === 'invalid'
+                                ? `
                             <div class="label invalid ">
                                 <p> ${issue.labels[0]} </p>
                             </div>
-                            ` : issue.labels[0] === 'question' ?
-                        `
+                            `
+                                : issue.labels[0] === 'question'
+                                ? `
                             <div class="label question">
                                 <p> ${issue.labels[0]} </p>
                             </div>
-                            ` : ''
-}
+                            `
+                                : ''
+                        }
                         
                     
                             
@@ -58,25 +63,33 @@ function searchIssues(e, projectId) {
     // get the search value
     const searchValue = searchInput.value;
 
-
-
-
     // if the key pressed is enter
     if (e.keyCode === 13) {
-            // make search result heading visible
-        const searchResultHeading = document.getElementById('search-results-heading');
-        searchResultHeading.classList.remove('hide');
-        // add icon
-        searchResultHeading.innerHTML = `<i class="fa-solid fa-search"></i>`;
-        // append the heading text
-        searchResultHeading.innerHTML += `Search Results for "${searchValue}"`;
-
         let URL = `/issues/${projectId}/search?search=${searchValue}`;
+
+        const searchResultHeading = document.getElementById(
+            'search-results-heading'
+        );
+
         if (searchValue === '') {
             // make search result heading hidden
             searchResultHeading.classList.add('hide');
             // update URL
-            URL = `/issues/${projectId}/all`;
+
+            URL = window.location.href.includes('open')
+                ? `/issues/${projectId}/open`
+                : window.location.href.includes('closed')
+                ? `/issues/${projectId}/closed`
+                : `/issues/${projectId}/all`;
+        } else {
+            // check if the page is open issues page
+            if (window.location.href.includes('open')) {
+                // update URL
+                URL = `/issues/${projectId}/search/open?search=${searchValue}`;
+            } else if (window.location.href.includes('closed')) {
+                // update URL
+                URL = `/issues/${projectId}/search/closed?search=${searchValue}`;
+            }
         }
 
         // make ajax request
@@ -90,11 +103,40 @@ function searchIssues(e, projectId) {
                     document.getElementById('issues-container');
                 // remove all the children
                 issuesContainer.innerHTML = '';
-                // append the issues
-                data.data.issues.forEach((issue, index) => {
-                    console.log(issue);
-                    issuesContainer.innerHTML += newIssueDom(issue, index);
-                });
+
+                // if no issues found
+                if (data.data.issues.length === 0) {
+                    // make search result heading hidden
+                    searchResultHeading.classList.add('hide');
+                    // append the no issues found message
+                    issuesContainer.innerHTML = `
+                    <div class="no-issues">
+                        <i class="fa-solid fa-circle-dot"></i>
+                        <p class="heading">No results matched your search!</p>
+                        <p class="sub-heading">
+                            Search again or you should <span>create an issue</span>.
+                        </p>
+                    </div>`;
+                } else {
+                    // make search result heading visible
+
+                    searchResultHeading.classList.remove('hide');
+                    // add icon
+                    searchResultHeading.innerHTML = `<i class="fa-solid fa-search"></i>`;
+                    // append the heading text
+                    searchResultHeading.innerHTML += `Search Results for "${searchValue}"`;
+                    if (searchValue === '') {
+                        // make search result heading hidden
+                        searchResultHeading.classList.add('hide');
+                        // update URL
+                        URL = `/issues/${projectId}/all`;
+                    }
+                    // append the issues
+                    data.data.issues.forEach((issue, index) => {
+                        console.log(issue);
+                        issuesContainer.innerHTML += newIssueDom(issue, index);
+                    });
+                }
             },
             error: function (error) {
                 console.log(error.responseText);
