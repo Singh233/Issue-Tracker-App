@@ -106,6 +106,8 @@
         display: flex;
         align-items: center;
 
+        position: relative;
+
         width: 70%;
         margin-top: 40px;
 
@@ -210,6 +212,109 @@
                 margin-right: 5px;
                 margin-bottom: 2px;
             }
+        }
+
+        .labels-expanded {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.194);
+            background-color: #30363c;
+            height: max-content;
+            width: max-content;
+
+            position: absolute;
+            top: 40px;
+            right: 110px;
+            
+
+            .label-border {
+                width: 100%;
+                height: 1px;
+                background-color: rgba(128, 128, 128, 0.42);
+            }
+
+            .heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                width: 100%;
+                padding: 5px 10px;
+                font-size: 0.9rem;
+
+                #close-button {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+
+            }
+
+            .labels {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+                color: #ffffffbd;
+                font-size: 0.9rem;
+
+                .label {
+                    display: flex;
+                    
+                    padding: 5px;
+                    cursor: pointer;
+
+
+                    .group {
+                        display: flex;
+                        flex-direction: column;
+
+                        .title {
+                            font-weight: 600;
+                        }
+
+                        .subheading {
+                            font-size: 0.8rem;
+                            color: gray;
+                        }
+                    }
+
+                    i {
+                        margin-right: 8px;
+                        margin-top: 5px;
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+
+                    .bug {
+                        color: #d73a4a;
+                    }
+    
+                    .help {
+                        color: #28a745;
+                    }
+    
+                    .invalid {
+                        color: #6f42c1;
+                    }
+
+                    .question {
+                        color: #d876e3;
+                    }
+                }
+            }
+        }
+
+        .hide {
+            display: none !important;
         }
 
         .create-button {

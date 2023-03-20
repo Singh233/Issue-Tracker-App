@@ -56,7 +56,60 @@
         <div class="label-button">
             <i class="fa-solid fa-tag"></i>
             <p>Labels</p>
+
+            
         </div>
+
+        <div class="labels-expanded hide">
+            <div class="heading">
+                <p>Filter by label</p>
+                <i id="close-button" class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="label-border"></div>
+
+            <div class="labels">
+                <div class="label">
+                    <i class="fa-solid fa-circle bug"></i>
+                    <div class="group">
+                        <p class="title">bug</p>
+                        <p class="subheading">Something isn't working</p>
+                    </div>
+                </div>
+                
+                <div class="label-border"></div>
+
+                <div class="label">
+                    <i class="fa-solid fa-circle help"></i>
+                    <div class="group">
+                        <p class="title">help</p>
+                        <p class="subheading">Extra attention is needed</p>
+                    </div>
+                    
+                </div>
+
+                <div class="label-border"></div>
+
+                <div class="label">
+                    <i class="fa-solid fa-circle invalid"></i>
+                    <div class="group">
+                        <p class="title">invalid</p>
+                        <p class="subheading">This doesn't seem right</p>
+                    </div>
+                </div>
+
+                <div class="label-border"></div>
+
+                <div class="label">
+                    <i class="fa-solid fa-circle question"></i>
+                    <div class="group">
+                        <p class="title">question</p>
+                        <p class="subheading">Further information is requested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
 
         <div onclick="window.location.href = `/issues/<%= project.id %>/new`" class="create-button">
             <p>New Issue</p>
@@ -158,4 +211,22 @@
 </div>
 
 <script src="/js/SearchIssue.js"></script>
+
+<script>
+    // label button
+    const labelButton = document.querySelector(".label-button");
+    const labelsExpanded = document.querySelector(".labels-expanded");
+    const xmark = document.getElementById("close-button");
+
+    labelButton.addEventListener("click", () => {
+        labelsExpanded.classList.toggle("hide");
+    });
+
+    xmark.addEventListener("click", () => {
+        console.log('clicked')
+        labelsExpanded.classList.toggle("hide");
+    });
+
+    
+</script>
 
