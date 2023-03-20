@@ -6,6 +6,21 @@
     width: 100vw;
     margin-top: 90px;
 
+    #search-results-heading {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 30px;
+        color: gray;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .hide {
+        display: none !important;
+    }
+
     .issue-header {
         display: flex;
         align-items: center;
@@ -183,6 +198,7 @@
             transition: all 0.2s ease-in-out;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
+            font-size: 1rem;
 
             &:hover {
                 color: white;
@@ -209,6 +225,7 @@
             font-weight: 500;
             background-color: #29a33f;
             transition: all 0.2s ease-in-out;
+            font-size: 1rem;
             cursor: pointer;
 
             &:hover {
@@ -233,7 +250,7 @@
             margin-right: 10px;
             font-weight: 500;
             padding: 5px 10px;
-            color: gray;
+            color: rgb(192, 192, 192);
             transition: all 0.2s ease-in-out;
             background-color: #2a2f35;
             border-radius: 5px;

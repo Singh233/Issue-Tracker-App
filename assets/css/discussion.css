@@ -250,7 +250,7 @@
         .discussion-container .comments-list .comment .heading .label, .discussion-container .comments-list .owner .heading .label {
           display: flex;
           align-items: center; }
-          .discussion-container .comments-list .comment .heading .label .owner-label, .discussion-container .comments-list .owner .heading .label .owner-label {
+          .discussion-container .comments-list .comment .heading .label .owner-label, .discussion-container .comments-list .comment .heading .label .author-label, .discussion-container .comments-list .owner .heading .label .owner-label, .discussion-container .comments-list .owner .heading .label .author-label {
             font-size: 0.8rem;
             background-color: #15223a80;
             color: white;
@@ -258,6 +258,8 @@
             border-radius: 15px;
             margin-left: 10px;
             border: 1px solid #1F4272; }
+          .discussion-container .comments-list .comment .heading .label .author-label, .discussion-container .comments-list .owner .heading .label .author-label {
+            border: 1px solid rgba(255, 255, 255, 0.194); }
       .discussion-container .comments-list .comment .comment-body, .discussion-container .comments-list .owner .comment-body {
         padding: 20px;
         font-size: 1rem;

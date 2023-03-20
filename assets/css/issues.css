@@ -5,6 +5,15 @@
   height: 90vh;
   width: 100vw;
   margin-top: 90px; }
+  .issues-container #search-results-heading {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 30px;
+    color: gray; }
+    .issues-container #search-results-heading i {
+      margin-right: 5px; }
+  .issues-container .hide {
+    display: none !important; }
   .issues-container .issue-header {
     display: flex;
     align-items: center;
@@ -133,7 +142,8 @@
       background-color: #30363c;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
-      transition: all 0.2s ease-in-out; }
+      transition: all 0.2s ease-in-out;
+      font-size: 1rem; }
       .issues-container .filter-create-bar .label-button:hover {
         color: white;
         background-color: #2a2f35; }
@@ -154,6 +164,7 @@
       font-weight: 500;
       background-color: #29a33f;
       transition: all 0.2s ease-in-out;
+      font-size: 1rem;
       cursor: pointer; }
       .issues-container .filter-create-bar .create-button:hover {
         background-color: #5cd672; }
@@ -171,7 +182,7 @@
       margin-right: 10px;
       font-weight: 500;
       padding: 5px 10px;
-      color: gray;
+      color: silver;
       transition: all 0.2s ease-in-out;
       background-color: #2a2f35;
       border-radius: 5px;

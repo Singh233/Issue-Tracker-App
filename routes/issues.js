@@ -33,6 +33,9 @@ router.post('/:id/discussion/:index/create-comment', commentsController.createCo
 // Route for change status of issue
 router.get('/:id/discussion/:index/:issueId/change-status/:status', issueController.changeStatus);
 
+// Route for searching issue
+router.get('/:id/:search', issueController.search);
+
 
 // export router
 module.exports = router;

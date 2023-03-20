@@ -44,9 +44,11 @@
             <div class="search">     
                 <i class="fa-solid fa-search"></i>
                 <input
+                    id="search-input"
+                    onkeypress="searchIssues(event, '<%= project.id %>')"
                     class="search-input"
                     type="text"
-                    placeholder="Search issues"
+                    placeholder="Search issues by title, author or label"
                 />
             </div>
         </div>
@@ -79,9 +81,10 @@
 
     </div>
 
-    <!-- Issues list -->
-    <div class="issues-list">
+    <p class="hide" id="search-results-heading"><i class="fa-solid fa-search"></i>Search results for Sanam</p>
 
+    <!-- Issues list -->
+    <div id="issues-container" class="issues-list">
 
         <!-- If no issues are present -->
         <% if (issues.length === 0) { %>
@@ -153,4 +156,6 @@
         </p>
     </div>
 </div>
+
+<script src="/js/SearchIssue.js"></script>
 

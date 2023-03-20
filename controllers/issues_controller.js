@@ -15,6 +15,15 @@ module.exports.all = async function (req, res) {
         // find the issues of the project and populate with user
         let issues = await Issue.find({ project: req.params.id }).populate('user');
 
+        if (req.xhr) {
+            return res.status(200).json({
+                data: {
+                    issues: issues,
+                },
+                message: 'Issues fetched',
+            });
+        }
+
         // render the project issue page
         return res.render('issues.ejs', {
             title: 'Issue',
@@ -177,6 +186,67 @@ module.exports.changeStatus = async function (req, res) {
         return res.redirect('back');
     } catch (error) {
         req.flash('error', 'Error in changing status');
+        console.log('Error--', error);
+        return res.redirect('back');
+    }
+}
+
+// controller for searching issue
+module.exports.search = async function (req, res) {
+    try {
+        // find the project and populate with user and issues
+        let project = await Project.findById(req.params.id).populate('user');
+
+
+        // find the issues of the project by title, user, label and populate with user
+        let issues = await Issue.find({
+            project: req.params.id,
+            title: { $regex: req.query.search, $options: 'i' },
+        }).populate('user');
+
+        // find all issues
+        let issues1 = await Issue.find({ project: req.params.id }).populate('user');
+        // filter the issues by user
+        issues1 = issues1.filter((issue) => {
+            return issue.user.name.toLowerCase().includes(req.query.search.toLowerCase());
+        });
+
+
+        // find the issues of the project by title, user, label and populate with user
+        let issues2 = await Issue.find({
+            project: req.params.id,
+            labels: { $regex: req.query.search, $options: 'i' },
+        }).populate('user');
+
+        // merge the issues
+        issues = issues.concat(issues1);
+        issues = issues.concat(issues2);
+
+        // remove the duplicate issues
+        issues = issues.filter((issue, index) => {
+            return issues.indexOf(issue) === index;
+        });
+
+
+        // ajax request
+        if (req.xhr) {
+            return res.status(200).json({
+                data: {
+                    issues: issues,
+                },
+                message: 'Issues fetched',
+            });
+        }
+
+        // render the project issue page
+        return res.render('issues.ejs', {
+            title: 'Issue',
+            project: project,
+            issues: issues,
+            page: 'all',
+        });
+    } catch (error) {
+        flash(error, 'Error in finding project in db');
         console.log('Error--', error);
         return res.redirect('back');
     }

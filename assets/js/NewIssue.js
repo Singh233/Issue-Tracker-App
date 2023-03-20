@@ -50,3 +50,6 @@ $('#new-issue-form').on('submit', function(e){
         }
     });
 } );
+
+
+            

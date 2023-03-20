@@ -372,7 +372,7 @@ $error-color: #aa08087d;
                     display: flex;
                     align-items: center;
 
-                    .owner-label {
+                    .owner-label, .author-label {
                         font-size: 0.8rem;
                         background-color: #15223a80;
                         color: white;
@@ -380,6 +380,11 @@ $error-color: #aa08087d;
                         border-radius: 15px;
                         margin-left: 10px;
                         border: 1px solid #1F4272;
+                    }
+
+                    .author-label {
+                        
+                        border: 1px solid rgba(255, 255, 255, 0.194);
                     }
                 }
             }
