@@ -35,18 +35,26 @@ body {
     display: flex;
     flex-direction: column; }
   body::-webkit-scrollbar {
+    position: relative;
     margin: 2px;
-    background-color: #171717; }
+    background-color: #171717;
+    z-index: 99999; }
   body::-webkit-scrollbar-thumb {
+    position: relative;
     background-color: #2e2e2e;
-    border-radius: 8px; }
+    border-radius: 8px;
+    z-index: 99999; }
 
 ::-webkit-scrollbar {
   width: 12px;
-  height: 14px; }
+  height: 14px;
+  position: relative;
+  z-index: 99999; }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 8px; }
+  position: relative;
+  border-radius: 8px;
+  z-index: 99999; }
 
 @media screen and (max-width: 480px) {
   body {

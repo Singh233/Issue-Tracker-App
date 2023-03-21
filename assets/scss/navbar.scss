@@ -9,11 +9,10 @@
     width: 100vw;
     height: auto;
     font-size: 1.3rem;
-    background-color: #0E1117;
+    // background-color: #0E1117;
 
     a {
         text-decoration: none;
-        
     }
 
     .search-and-nav {
@@ -59,7 +58,8 @@
             color: rgba(255, 255, 255, 0.527);
         }
 
-        a, p {
+        a,
+        p {
             margin-left: 16px;
             font-size: 1rem;
             font-weight: 500;
@@ -137,4 +137,8 @@
             cursor: pointer;
         }
     }
+}
+
+.bg {
+    background-color: #0e1117;
 }

@@ -5,26 +5,38 @@
     <div class="right-gradient">
     </div>
 
-    <div class="star1"></div>
-    <div class="star2"></div>
-    <div class="sta3"></div>
-    <div class="star4"></div>
-    <div class="star5"></div>
-    <div class="star6"></div>
-    <div class="star7"></div>
-    <div class="star8"></div>
-    <div class="star9"></div>
-    <div class="star10"></div>
-    <div class="star11"></div>
-    <div class="star12"></div>
-    <div class="star13"></div>
-    <div class="star14"></div>
-    <div class="star15"></div>
-    <div class="star16"></div>
-    <div class="star17"></div>
-    <div class="star18"></div>
-    <div class="star19"></div>
-    
+    <div class="star star1"></div>
+    <div class="star star2"></div>
+    <div class="star sta3"></div>
+    <div class="star star4"></div>
+    <div class="star star5"></div>
+    <div class="star star6"></div>
+    <div class="star star7"></div>
+    <div class="star star8"></div>
+    <div class="star star9"></div>
+    <div class="star star10"></div>
+    <div class="star star11"></div>
+    <div class="star star12"></div>
+    <div class="star star13"></div>
+    <div class="star star14"></div>
+    <div class="star star15"></div>
+    <div class="star star16"></div>
+    <div class="star star17"></div>
+    <div class="star star18"></div>
+    <div class="star star19"></div>
+
+    <div class="star star20"></div>
+    <div class="star star21"></div>
+    <div class="star star22"></div>
+    <div class="star star23"></div>
+    <div class="star star24"></div>
+    <div class="star star25"></div>
+    <div class="star star26"></div>
+    <div class="star star27"></div>
+    <div class="star star28"></div>
+    <div class="star star29"></div>
+    <div class="star star30"></div>
+
     <div class="planet shadow">
         <div class="planet-gradient">
         </div>
@@ -42,3 +54,29 @@
         <p class="time">9:21 AM IST</p>
     </div>
 </div>
+
+<script>
+    // on scroll make stars move
+    window.addEventListener('scroll', function() {
+        let stars = document.querySelectorAll('.star');
+        let value = window.scrollY;
+        stars.forEach(star => {
+            star.style.transform = 'translateY(' + value * 0.5 + 'px)';
+        })
+    })
+
+
+
+    
+    
+</script>
+
+<!-- // window.addEventListener('scroll', function() {
+    //     let planet = document.querySelector('.planet');
+    //     let stars = document.querySelectorAll('.star');
+    //     let value = window.scrollY;
+    //     planet.style.transform = 'rotate(' + value * 0.5 + 'deg)';
+    //     stars.forEach(star => {
+    //         star.style.transform = 'translateY(' + value * 0.5 + 'px)';
+    //     })
+    // }) -->

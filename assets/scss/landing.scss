@@ -15,6 +15,8 @@
         rgba(0, 0, 0, 0.5) 0%,
         rgba(0, 21, 85, 0.5) 75%
     );
+    position: fixed;
+    top: 0;
 
     // star particles styling
     .star1 {
@@ -276,6 +278,162 @@
 
     }
 
+    .star20 {
+        position: absolute;
+        // center
+        right: 45%;
+        top: -6%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+
+    }
+
+    .star21 {
+        position: absolute;
+        // center
+        right: 4%;
+        top: -17%;
+
+        height: 5px;
+        width: 5px;
+        background-color: rgba(255, 255, 255, 0.382);
+        border-radius: 50%;
+
+    }
+
+    .star22 {
+        position: absolute;
+        // center
+        left: 30%;
+        top: -19%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.333);
+        border-radius: 50%;
+
+    }
+
+    .star23 {
+        position: absolute;
+        // center
+        left: 20%;
+        top: -26%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+
+    }
+
+    .star24 {
+        position: absolute;
+        // center
+        left: 20%;
+        top: -43%;
+
+        height: 3px;
+        width: 3px;
+        background-color: rgba(255, 255, 255, 0.582);
+        border-radius: 50%;
+
+    }
+
+    .star25 {
+        position: absolute;
+        // center
+        left: 15%;
+        top: -11%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+
+    }
+
+    .star26 {
+        position: absolute;
+        // center
+        left: 1%;
+        top: -16%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.467);
+        border-radius: 50%;
+
+    }
+
+    .star27 {
+        position: absolute;
+        // center
+        right: 1%;
+        top: -50%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.347);
+        border-radius: 50%;
+
+    }
+
+    .star28 {
+        position: absolute;
+        // center
+        right: 25%;
+        top: -19%;
+
+        height: 3px;
+        width: 3px;
+        background-color: rgba(255, 255, 255, 0.616);
+        border-radius: 50%;
+
+    }
+
+    .star29 {
+        position: absolute;
+        // center
+        right: 25%;
+        top: -31%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgba(255, 255, 255, 0.277);
+        border-radius: 50%;
+
+    }
+
+    .star30 {
+        position: absolute;
+        // center
+        left: 15%;
+        top: -31%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+
+    }
+
+    .star31 {
+        position: absolute;
+        // center
+        left: 15%;
+        top: -81%;
+
+        height: 2px;
+        width: 2px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+
+    }
+
 
 
     
@@ -339,6 +497,7 @@
             rgba(42, 30, 84, 1) 22%,
             rgba(42, 47, 121, 1) 89%
         );
+        // transition: all 0.2s ease-in-out;
 
         background: radial-gradient(
                 circle at 50% 0%,
@@ -399,7 +558,7 @@
 
     .bg-planet {
         position: absolute;
-        top: 45%;
+        top: 55%;
         z-index: -1;
         min-width: 1845.6px;
         height: 70vh;

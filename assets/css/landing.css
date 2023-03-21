@@ -8,7 +8,9 @@
   width: 100vw;
   background-color: #000924;
   background: black;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 21, 85, 0.5) 75%); }
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 21, 85, 0.5) 75%);
+  position: fixed;
+  top: 0; }
   .heading-container .star1 {
     position: absolute;
     left: 50%;
@@ -169,6 +171,102 @@
     width: 2px;
     background-color: white;
     border-radius: 50%; }
+  .heading-container .star20 {
+    position: absolute;
+    right: 45%;
+    top: -6%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star21 {
+    position: absolute;
+    right: 4%;
+    top: -17%;
+    height: 5px;
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.382);
+    border-radius: 50%; }
+  .heading-container .star22 {
+    position: absolute;
+    left: 30%;
+    top: -19%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 50%; }
+  .heading-container .star23 {
+    position: absolute;
+    left: 20%;
+    top: -26%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star24 {
+    position: absolute;
+    left: 20%;
+    top: -43%;
+    height: 3px;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.582);
+    border-radius: 50%; }
+  .heading-container .star25 {
+    position: absolute;
+    left: 15%;
+    top: -11%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star26 {
+    position: absolute;
+    left: 1%;
+    top: -16%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.467);
+    border-radius: 50%; }
+  .heading-container .star27 {
+    position: absolute;
+    right: 1%;
+    top: -50%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.347);
+    border-radius: 50%; }
+  .heading-container .star28 {
+    position: absolute;
+    right: 25%;
+    top: -19%;
+    height: 3px;
+    width: 3px;
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 50%; }
+  .heading-container .star29 {
+    position: absolute;
+    right: 25%;
+    top: -31%;
+    height: 2px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.277);
+    border-radius: 50%; }
+  .heading-container .star30 {
+    position: absolute;
+    left: 15%;
+    top: -31%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
+  .heading-container .star31 {
+    position: absolute;
+    left: 15%;
+    top: -81%;
+    height: 2px;
+    width: 2px;
+    background-color: white;
+    border-radius: 50%; }
   .heading-container .left-gradient {
     position: absolute;
     top: 20%;
@@ -223,7 +321,7 @@
     justify-content: center; }
   .heading-container .bg-planet {
     position: absolute;
-    top: 45%;
+    top: 55%;
     z-index: -1;
     min-width: 1845.6px;
     height: 70vh;

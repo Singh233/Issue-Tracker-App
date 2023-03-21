@@ -44,3 +44,15 @@ function closeMenu() {
 }
 
 
+// check on which page the user is and add the background to the navbar
+
+const path = window.location.href;
+
+if (path.includes('projects') || path.includes('new-project') || path.includes('issues')) {
+    const navbar = document.querySelector('.navbar-container');
+    navbar.classList.add('bg');
+} else {
+    const navbar = document.querySelector('.navbar-container');
+    navbar.classList.remove('bg');
+}
+

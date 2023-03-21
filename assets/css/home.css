@@ -8,11 +8,11 @@
     display: grid;
     grid-template-columns: auto 2fr auto;
     align-items: center;
-    background-color: black;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 30%);
+    background-color: rgba(0, 0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
     width: 100vw;
     position: relative;
-    top: -15vh;
+    padding-top: 70vh;
     z-index: 1; }
     .home-container .content-container .content {
       display: flex;
