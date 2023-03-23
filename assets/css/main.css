@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 45%;
+    width: 35%;
     border-bottom: 1px solid #ffffff6c; }
     .main-container .nav p {
       margin: 0;
@@ -22,7 +22,12 @@
       font-weight: 500;
       padding: 10px;
       color: gray; }
-    .main-container .nav .recents {
+      .main-container .nav p:hover {
+        color: white;
+        cursor: pointer; }
+    .main-container .nav .my-projects {
+      margin-right: 0; }
+    .main-container .nav .nav-active {
       color: white;
       border-bottom: orange 2px solid; }
   .main-container .cards-list {

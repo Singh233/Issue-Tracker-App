@@ -15,7 +15,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 45%;
+        width: 35%;
 
         border-bottom: 1px solid #ffffff6c;
 
@@ -28,9 +28,18 @@
             font-weight: 500;
             padding: 10px;
             color: gray;
+
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
         }
 
-        .recents {
+        .my-projects {
+            margin-right: 0;
+        }
+
+        .nav-active {
             color: white;
             border-bottom: orange 2px solid;
 

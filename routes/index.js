@@ -8,6 +8,9 @@ console.log("Router loaded");
 // Define a route for the home page
 router.get('/', homeController.home);
 
+// Route for home navigation
+router.use('/nav', homeController.getProjects);
+
 // Route for sign/up page
 router.use('/users', require('./users'));
 
