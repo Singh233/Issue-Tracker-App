@@ -25,10 +25,19 @@
         </div>
 
         <div class="discussion-header-right">
-            <div class="star-button">
+            <!-- Check if the project is in favorites or not -->
+        <% if (favorites && favorites.projects && favorites.projects.includes(project.id)) { %>
+            <div id="starred-<%= project.id %>" onclick="removeFromFavorites('<%= project.id %>', 'starred')" class="star-button">
+                <i class="fa-solid fa-star"></i>
+                <p>Starred</p>
+            </div>
+        <% } else { %>
+            
+            <div id="star-<%= project.id %>" onclick="addToFavorites('<%= project.id %>', 'star')" class="star-button">
                 <i class="fa-regular fa-star"></i>
                 <p>Star</p>
             </div>
+        <% } %>
         </div>
     </div>
 

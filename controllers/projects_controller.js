@@ -6,13 +6,17 @@ const Project = require('../models/project');
 const Issue = require('../models/issue');
 // import user model
 const User = require('../models/user');
+// import favorite model
+const Favorites = require('../models/favorites');
 
 
 // controller for getting all projects
-exports.projects = (req, res) => {
+exports.projects = async (req, res) => {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find all projects and populate the user and issues
-        Project.find({})
+        await Project.find({})
         .populate('user')
         .populate('issues')
         .exec((err, projects) => {
@@ -23,7 +27,8 @@ exports.projects = (req, res) => {
             // return all projects
             return res.render('projects', {
                 title: "Projects",
-                projects: projects
+                projects: projects,
+                favorites: favorites
             });
         }
         );

@@ -96,11 +96,15 @@ $bg-color: #0e1117;
                 
     
                 color: #ffffff9e;
-    
+                cursor: pointer;
                 i {
                     color: #ffffff9e;
                     margin-right: 5px;
                     margin-bottom: 2px;
+                }
+    
+                &:hover {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
                 }
             }
         }

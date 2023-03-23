@@ -86,10 +86,16 @@
 
                 color: #ffffff9e;
 
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
                 i {
                     color: #ffffff9e;
                     margin-right: 5px;
                     margin-bottom: 2px;
+                }
+
+                &:hover {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
                 }
             }
         }
@@ -160,15 +166,14 @@
                 height: max-content;
                 width: max-content;
                 min-width: 200px;
-    
+
                 position: absolute;
                 z-index: 10;
                 top: 40px;
                 left: 10px;
-    
+
                 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-                
-    
+
                 .filter-border {
                     width: 100%;
                     height: 1px;
@@ -178,27 +183,25 @@
                 .active-filter {
                     color: dodgerblue !important;
                 }
-    
+
                 .heading {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-    
+
                     width: 100%;
                     padding: 5px 10px;
                     font-size: 0.9rem;
-    
+
                     #close-button-filter {
                         cursor: pointer;
-    
+
                         &:hover {
                             color: white;
                         }
                     }
-    
                 }
-                
-    
+
                 .filters {
                     display: flex;
                     flex-direction: column;
@@ -208,49 +211,48 @@
                     height: 100%;
                     color: #ffffffbd;
                     font-size: 0.9rem;
-    
+
                     .filter {
                         display: flex;
-                        
+
                         padding: 5px;
                         cursor: pointer;
-    
-    
+
                         .group {
                             display: flex;
                             flex-direction: column;
-    
+
                             .title {
                                 font-weight: 600;
                             }
-    
+
                             .subheading {
                                 font-size: 0.8rem;
                                 color: gray;
                             }
                         }
-    
+
                         i {
                             margin-right: 8px;
                             margin-top: 5px;
                         }
-    
+
                         &:hover {
                             color: white;
                         }
-    
+
                         .bug {
                             color: #d73a4a;
                         }
-        
+
                         .help {
                             color: #28a745;
                         }
-        
+
                         .invalid {
                             color: #6f42c1;
                         }
-    
+
                         .question {
                             color: #d876e3;
                         }
@@ -342,7 +344,6 @@
             right: 110px;
 
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-            
 
             .label-border {
                 width: 100%;
@@ -366,7 +367,6 @@
                         color: white;
                     }
                 }
-
             }
 
             .labels {
@@ -381,10 +381,9 @@
 
                 .label {
                     display: flex;
-                    
+
                     padding: 5px;
                     cursor: pointer;
-
 
                     .group {
                         display: flex;
@@ -412,11 +411,11 @@
                     .bug {
                         color: #d73a4a;
                     }
-    
+
                     .help {
                         color: #28a745;
                     }
-    
+
                     .invalid {
                         color: #6f42c1;
                     }
@@ -440,13 +439,9 @@
             font-weight: 500;
             background-color: #30363c;
             transition: all 0.2s ease-in-out;
-            
+
             transition: all 0.2s ease-in-out;
             font-size: 1rem;
-
-            
-
-            
 
             i {
                 cursor: pointer;
@@ -461,7 +456,6 @@
 
         .bug-active {
             background-color: #d73a4a;
-
         }
 
         .help-active {
@@ -683,45 +677,44 @@
 
                     .bug {
                         background-color: #d73a4a7d;
-                        border:#d73a4a solid 1px;
-    
+                        border: #d73a4a solid 1px;
+
                         &:hover {
                             background-color: #d73a4a;
-                            border:#d73a4a solid 1px;
+                            border: #d73a4a solid 1px;
                             box-shadow: 0 0 20px #d73a4a98;
                         }
                     }
-    
+
                     .help {
                         background-color: #28a7457d;
-                        border:#28a745 solid 1px;
-    
+                        border: #28a745 solid 1px;
+
                         &:hover {
                             background-color: #28a745;
-                            border:#28a745 solid 1px;
+                            border: #28a745 solid 1px;
                             box-shadow: 0 0 20px #28a74598;
                         }
                     }
-    
 
                     .invalid {
                         background-color: #6f42c17d;
-                        border:#6f42c1 solid 1px;
-    
+                        border: #6f42c1 solid 1px;
+
                         &:hover {
                             background-color: #6f42c1;
-                            border:#6f42c1 solid 1px;
+                            border: #6f42c1 solid 1px;
                             box-shadow: 0 0 20px #6f42c198;
                         }
                     }
 
                     .question {
                         background-color: #d876e37d;
-                        border:#d876e3 solid 1px;
-    
+                        border: #d876e3 solid 1px;
+
                         &:hover {
                             background-color: #d876e3;
-                            border:#d876e3 solid 1px;
+                            border: #d876e3 solid 1px;
                             box-shadow: 0 0 20px #d876e398;
                         }
                     }

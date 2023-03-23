@@ -1,6 +1,31 @@
 function filterClick(projectId, filter) {
     let URL = `/issues/${projectId}/all/filter/${filter}`;
 
+
+    // clear the search input
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = '';
+
+    
+    const activeLabel = document.querySelector('.active-label');
+    
+    // remove the active label class from the label button
+    if (activeLabel.classList.contains('question-active')) {
+        
+        activeLabel.classList.remove('question-active');
+    } else if (activeLabel.classList.contains('bug-active')) {
+        activeLabel.classList.remove('bug-active');
+    } else if (activeLabel.classList.contains('help-active')) {
+        activeLabel.classList.remove('help-active');
+    } else if (activeLabel.classList.contains('invalid-active')) {
+        activeLabel.classList.remove('invalid-active');
+    }
+    // show labels filter and hide active label
+    const labelsFilter = document.querySelector('.label-button');
+    labelsFilter.classList.remove('hide');
+
+    activeLabel.classList.add('hide');
+
     
         if (window.location.href.includes('open')) {
             // update URL

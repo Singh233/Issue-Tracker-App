@@ -5,10 +5,14 @@ const Project = require('../models/project');
 const Issue = require('../models/issue');
 // import comment model
 const Comment = require('../models/comment');
+// import favorites model
+const Favorites = require('../models/favorites');
 
 // controller for project all issues page
 module.exports.all = async function (req, res) {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find the project and populate with user and issues
         let project = await Project.findById(req.params.id).populate('user');
 
@@ -21,6 +25,7 @@ module.exports.all = async function (req, res) {
             return res.status(200).json({
                 data: {
                     issues: issues,
+                    favorites
                 },
                 message: 'Issues fetched',
             });
@@ -31,6 +36,7 @@ module.exports.all = async function (req, res) {
             title: 'Issue',
             project: project,
             issues: issues,
+            favorites,
             page: 'all',
         });
     } catch (error) {
@@ -43,6 +49,8 @@ module.exports.all = async function (req, res) {
 // controller for project open issues page
 module.exports.open = async function (req, res) {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find the project and populate with user and issues
         let project = await Project.findById(req.params.id).populate('user');
 
@@ -56,6 +64,7 @@ module.exports.open = async function (req, res) {
             return res.status(200).json({
                 data: {
                     issues: issues,
+                    favorites,
                 },
                 message: 'Issues fetched',
             });
@@ -66,6 +75,7 @@ module.exports.open = async function (req, res) {
             title: 'Issue',
             project: project,
             issues: issues,
+            favorites,
             page: 'open',
         });
     } catch (error) {
@@ -78,6 +88,8 @@ module.exports.open = async function (req, res) {
 // controller for project closed issues page
 module.exports.closed = async function (req, res) {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find the project and populate with user and issues
         let project = await Project.findById(req.params.id).populate('user');
 
@@ -91,6 +103,7 @@ module.exports.closed = async function (req, res) {
             return res.status(200).json({
                 data: {
                     issues: issues,
+                    favorites,
                 },
                 message: 'Issues fetched',
             });
@@ -101,6 +114,7 @@ module.exports.closed = async function (req, res) {
             title: 'Issue',
             project: project,
             issues: issues,
+            favorites,
             page: 'closed',
         });
     } catch (error) {
@@ -113,12 +127,15 @@ module.exports.closed = async function (req, res) {
 // controller for new issue page
 module.exports.new = async function (req, res) {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find the project
         let project = await Project.findById(req.params.id).populate('user');
         // render the new issue page
         return res.render('new_issue.ejs', {
             title: 'New Issue',
             project: project,
+            favorites,
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -130,6 +147,7 @@ module.exports.new = async function (req, res) {
 // controller for creating issue
 module.exports.create = async function (req, res) {
     try {
+
         // find the project
         let project = await Project.findById(req.params.id);
         // create the issue
@@ -162,6 +180,8 @@ module.exports.create = async function (req, res) {
 // controller for showing discussion page
 module.exports.discussion = async function (req, res) {
     try {
+        // find favorites of the user
+        const favorites = await Favorites.findOne({ user: req.user._id });
         // find the issue of the project and populate with user
         let issue = await Issue.findById(req.params.id).populate('user');
 
@@ -178,6 +198,7 @@ module.exports.discussion = async function (req, res) {
             title: 'Discussion',
             issue,
             project,
+            favorites,
             comments,
             index: req.params.index,
         });

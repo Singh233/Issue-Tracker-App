@@ -55,11 +55,14 @@
       border-radius: 5px;
       padding: 3px 13px;
       border: 1px solid rgba(255, 255, 255, 0.194);
-      color: #ffffff9e; }
+      color: #ffffff9e;
+      cursor: pointer; }
       .discussion-container .discussion-header .discussion-header-right .star-button i {
         color: #ffffff9e;
         margin-right: 5px;
         margin-bottom: 2px; }
+      .discussion-container .discussion-header .discussion-header-right .star-button:hover {
+        border: 1px solid rgba(255, 255, 255, 0.5); }
   .discussion-container .main-content {
     display: flex;
     flex-direction: column;

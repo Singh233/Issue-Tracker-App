@@ -58,11 +58,15 @@
       border-radius: 5px;
       padding: 3px 13px;
       border: 1px solid rgba(255, 255, 255, 0.194);
-      color: #ffffff9e; }
+      color: #ffffff9e;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer; }
       .issues-container .issue-header .issue-header-right .star-button i {
         color: #ffffff9e;
         margin-right: 5px;
         margin-bottom: 2px; }
+      .issues-container .issue-header .issue-header-right .star-button:hover {
+        border: 1px solid rgba(255, 255, 255, 0.5); }
   .issues-container .border {
     width: 100%;
     height: 1px;

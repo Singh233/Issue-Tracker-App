@@ -65,6 +65,35 @@ function searchIssues(e, projectId) {
 
     // if the key pressed is enter
     if (e.keyCode === 13) {
+        // remove the active filter class from the filter button and the filter
+        const filterButton = document.getElementById('filter-button-heading');
+        if (filterButton.classList.contains('active-filter')) {
+            const oldFilter = document.getElementById('old-filter');
+            oldFilter.classList.remove('active-filter');
+            const recentFilter = document.getElementById('recent-filter');
+            recentFilter.classList.remove('active-filter');
+            const authorFilter = document.getElementById('author-filter');
+            authorFilter.classList.remove('active-filter');
+            filterButton.classList.remove('active-filter');
+        }
+        const activeLabel = document.querySelector('.active-label');
+
+        // remove the active label class from the label button
+        if (activeLabel.classList.contains('question-active')) {
+            activeLabel.classList.remove('question-active');
+        } else if (activeLabel.classList.contains('bug-active')) {
+            activeLabel.classList.remove('bug-active');
+        } else if (activeLabel.classList.contains('help-active')) {
+            activeLabel.classList.remove('help-active');
+        } else if (activeLabel.classList.contains('invalid-active')) {
+            activeLabel.classList.remove('invalid-active');
+        }
+        // show labels filter and hide active label
+        const labelsFilter = document.querySelector('.label-button');
+        labelsFilter.classList.remove('hide');
+
+        activeLabel.classList.add('hide');
+
         let URL = `/issues/${projectId}/search?search=${searchValue}`;
 
         const searchResultHeading = document.getElementById(

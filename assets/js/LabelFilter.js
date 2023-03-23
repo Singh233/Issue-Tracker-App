@@ -1,6 +1,27 @@
 function labelClick(projectId, label) {
     let URL = `/issues/${projectId}/search?search=${label}`;
 
+    // clear the search input
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = '';
+
+    // remove the active filter class from the filter button and the filter
+    const filterButton = document.getElementById('filter-button-heading');
+    if (filterButton.classList.contains('active-filter')) {
+        const oldFilter = document.getElementById('old-filter');
+        oldFilter.classList.remove('active-filter');
+        const recentFilter = document.getElementById('recent-filter');
+        recentFilter.classList.remove('active-filter');
+        const authorFilter = document.getElementById('author-filter');
+        authorFilter.classList.remove('active-filter');
+        filterButton.classList.remove('active-filter');
+
+    }
+
+
+
+
+
     if (label === '') {
         // update URL
         URL = window.location.href.includes('open')
