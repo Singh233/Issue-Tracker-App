@@ -53,6 +53,8 @@
       .navbar-container .search-and-nav a:hover,
       .navbar-container .search-and-nav p:hover {
         color: white; }
+    .navbar-container .search-and-nav .active {
+      color: white; }
   .navbar-container .menu {
     display: flex;
     align-items: center;
