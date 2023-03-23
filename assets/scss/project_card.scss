@@ -41,7 +41,6 @@
         padding: 20px;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.194);
-        cursor: pointer;
         transition: all 0.2s ease-in-out;
 
         &:hover {
@@ -50,6 +49,13 @@
 
         .title {
             font-weight: 600;
+            cursor: pointer;
+            width: fit-content;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: dodgerblue;
+            }
         }
 
         .description {
@@ -94,12 +100,18 @@
             position: absolute;
             top: 20px;
             right: 30px;
+            z-index: 3;
             color: #ffffff9e;
-
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
             i {
                 color: #ffffff9e;
                 margin-right: 5px;
                 margin-bottom: 2px;
+            }
+
+            &:hover {
+                border: 1px solid rgba(255, 255, 255, 0.5);
             }
         }
     }
@@ -110,7 +122,13 @@
         right: 5px;
         padding: 5px 15px;
         border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
 
         background-color: dodgerblue;
+
+        &:hover {
+            background-color: lighten($color: dodgerblue, $amount: 10%);
+        }
     }
 }

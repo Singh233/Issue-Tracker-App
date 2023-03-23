@@ -23,5 +23,8 @@ router.use('/issues', require('./issues'));
 // Route for project page
 router.use('/projects', require('./projects'));
 
+// Route for favorites page
+router.use('/favorites', require('./favorites'));
+
 
 module.exports = router;

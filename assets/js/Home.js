@@ -11,7 +11,7 @@ function getProjects(page) {
         document.getElementById('recents').classList.add('nav-active');
         document.getElementById('favorites').classList.remove('nav-active');
         document.getElementById('user').classList.remove('nav-active');
-    } else if (page === 'favorites') {
+    } else if (page === 'starred') {
         document.getElementById('favorites').classList.add('nav-active');
         document.getElementById('recents').classList.remove('nav-active');
         document.getElementById('user').classList.remove('nav-active');
@@ -30,11 +30,19 @@ function getProjects(page) {
         success: function (response) {
 
             cardsList.innerHTML = '';
-            console.log(response.data.projects)
+            console.log(response.data)
 
             // append projects to cards list
+            if (response.data.projects.length === 0) {
+                cardsList.innerHTML = `
+                <div class="no-projects">
+                    <p>No projects found</p>
+                </div>
+                `;
+                return;
+            }
             response.data.projects.forEach(project => {
-                cardsList.innerHTML += cardContainer(project);
+                cardsList.innerHTML += cardContainer(project, response.data.favorites);
                 console.log(cardsList)
             }
             );
@@ -43,15 +51,16 @@ function getProjects(page) {
         },
         error: function (err) {
             console.log(err);
+            return;
         }
     });
 
 
 }
 
-const cardContainer = (project) =>   
+const cardContainer = (project, favorites) =>   
     `
-    <div onclick="window.location.href = /issues/${project.id}/all" class="card-container animate__animated animate__fadeIn">
+    <div  class="card-container animate__animated animate__fadeIn">
         <div class="user-info">
             <img src="${project.user.avatar}" alt="">
             <p class="user-name">${project.user.name} </p>
@@ -59,7 +68,7 @@ const cardContainer = (project) =>
         </div>
 
         <div class="project-info">
-            <p class="title">${project.title} </p>
+            <p onclick="window.location.href = '/issues/${project._id}/all'" class="title">${project.title} </p>
             <p class="description">${project.description} </p>
 
             <div class="card-footer">
@@ -67,10 +76,17 @@ const cardContainer = (project) =>
                 <p class="stars"><i class="fa-regular fa-star"></i>11.2k</p>
             </div>
 
-            <div class="star-button">
-                <i class="fa-regular fa-star"></i>
-                <p>Star</p>
-            </div>
+            ${favorites && favorites.projects.includes(project._id) ? 
+                `<div id="starred-${project._id}" onclick="removeFromFavorites('${project._id}')" class="star-button">
+                    <i class="fa-solid fa-star"></i>
+                    <p>Starred</p>
+                </div>` :
+                `<div id="star-${project._id}" onclick="addToFavorites('${project._id}')" class="star-button">
+                    <i class="fa-regular fa-star"></i>
+                    <p>Star</p>
+                </div>
+            `}
+
         </div>
 
         <div class="issues">
