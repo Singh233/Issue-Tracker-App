@@ -87,7 +87,7 @@ const newComment = (comment) => {
 
         <div class="heading">
             <p class="author-name">${comment.user.name}</p>
-            <p class="comment-time">commented 4 days ago</p>
+            <p class="comment-time">commented just now</p>
         </div>
 
         <div class="comment-body">

@@ -10,7 +10,7 @@
     <div id="cards-container" class="cards-list">
 
         <% for (let i = 0; i < projects.length; i++) { %>
-            <%- include('project_card.ejs', {project: projects[i], favorites}); %>
+            <%- include('project_card.ejs', {project: projects[i], favorites, moment}); %>
         <% } %>
         
     </div>

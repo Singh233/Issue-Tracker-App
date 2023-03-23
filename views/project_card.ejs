@@ -3,7 +3,10 @@
     <div class="user-info">
         <img src="<%= project.user.avatar %>" alt="">
         <p class="user-name"><%= project.user.name %> </p>
-        <p class="day">yesterday</p>
+
+        <!-- Calculate relative time for eg. 2 hours ago -->
+        <p class="day"><%= moment(project.createdAt).fromNow() %> </p>
+
     </div>
 
     <div  class="project-info">
@@ -34,3 +37,7 @@
         <p><%= project.issues.length %> Issues</p>
     </div>
 </div>
+
+<script>
+
+</script>

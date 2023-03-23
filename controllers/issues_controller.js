@@ -8,6 +8,8 @@ const Comment = require('../models/comment');
 // import favorites model
 const Favorites = require('../models/favorites');
 
+const moment = require('moment');
+
 // controller for project all issues page
 module.exports.all = async function (req, res) {
     try {
@@ -38,6 +40,7 @@ module.exports.all = async function (req, res) {
             issues: issues,
             favorites,
             page: 'all',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -77,6 +80,7 @@ module.exports.open = async function (req, res) {
             issues: issues,
             favorites,
             page: 'open',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -116,6 +120,7 @@ module.exports.closed = async function (req, res) {
             issues: issues,
             favorites,
             page: 'closed',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -136,6 +141,7 @@ module.exports.new = async function (req, res) {
             title: 'New Issue',
             project: project,
             favorites,
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -201,6 +207,7 @@ module.exports.discussion = async function (req, res) {
             favorites,
             comments,
             index: req.params.index,
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -279,6 +286,7 @@ module.exports.searchAll = async function (req, res) {
             return res.status(200).json({
                 data: {
                     issues: issues,
+                    moment
                 },
                 message: 'Issues fetched',
             });
@@ -290,6 +298,7 @@ module.exports.searchAll = async function (req, res) {
             project: project,
             issues: issues,
             page: 'all',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -355,6 +364,7 @@ module.exports.searchOpen = async function (req, res) {
             project: project,
             issues: issues,
             page: 'open',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -421,6 +431,7 @@ module.exports.searchClosed = async function (req, res) {
             project: project,
             issues: issues,
             page: 'close',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -471,6 +482,7 @@ module.exports.filterRecentActivity = async function (req, res) {
             project: project,
             issues: issues,
             page: 'all',
+            moment
         });
     } catch (error) {
         flash(error, 'Error in finding project in db');
@@ -520,6 +532,7 @@ module.exports.filterOldestActivity = async function (req, res) {
             project: project,
             issues: issues,
             page: 'all',
+            moment
         });
 
     } catch (error) {

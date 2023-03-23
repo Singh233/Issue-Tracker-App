@@ -30,7 +30,6 @@ function getProjects(page) {
         success: function (response) {
 
             cardsList.innerHTML = '';
-            console.log(response.data)
 
             // append projects to cards list
             if (response.data.projects.length === 0) {
@@ -41,8 +40,10 @@ function getProjects(page) {
                 `;
                 return;
             }
+            console.log('*******', response)
+            let i = 0;
             response.data.projects.forEach(project => {
-                cardsList.innerHTML += cardContainer(project, response.data.favorites);
+                cardsList.innerHTML += cardContainer(project, response.data.favorites, response.data.time[i++]);
                 console.log(cardsList)
             }
             );
@@ -58,13 +59,13 @@ function getProjects(page) {
 
 }
 
-const cardContainer = (project, favorites) =>   
+const cardContainer = (project, favorites, time) =>   
     `
     <div  class="card-container animate__animated animate__fadeIn">
         <div class="user-info">
             <img src="${project.user.avatar}" alt="">
             <p class="user-name">${project.user.name} </p>
-            <p class="day">yesterday</p>
+            <p class="day"> ${ time } </p>
         </div>
 
         <div class="project-info">

@@ -9,6 +9,8 @@ const User = require('../models/user');
 // import favorite model
 const Favorites = require('../models/favorites');
 
+const moment = require('moment');
+
 
 // controller for getting all projects
 exports.projects = async (req, res) => {
@@ -28,12 +30,20 @@ exports.projects = async (req, res) => {
             return res.render('projects', {
                 title: "Projects",
                 projects: projects,
-                favorites: favorites
+                favorites: favorites,
+                moment,
             });
         }
         );
 
     } catch (error) {
+        console.log("Error", error);
+        return res.render('projects', {
+            title: "Projects",
+            projects: [],
+            favorites: [],
+            moment,
+            });
         
     }
 }

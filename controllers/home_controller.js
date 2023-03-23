@@ -2,6 +2,8 @@
 const Project = require('../models/project');
 // import favorites model
 const Favorites = require('../models/favorites');
+// import moment
+const moment = require('moment');
 
 module.exports.home = async function (req, res) {
     try {
@@ -24,6 +26,7 @@ module.exports.home = async function (req, res) {
             name: 'World!',
             projects,
             favorites,
+            moment,
         });
     } catch (error) {
         console.log('Error', error);
@@ -32,7 +35,8 @@ module.exports.home = async function (req, res) {
             name: 'World!',
             projects: [],
             favorites: [],
-            });
+            moment,
+        });
     }
 };
 
@@ -48,11 +52,20 @@ module.exports.getProjects = async function (req, res) {
                 .populate('user')
                 .populate('issues')
                 .sort('-createdAt');
+
+            let time = [];
+            projects.forEach(project => {
+                time.push(
+                    moment(project.createdAt).fromNow()
+                );
+            });
+
             return res.json(200, {
                 message: 'Projects fetched successfully',
                 data: {
                     projects,
                     favorites,
+                    time,
                 },
             });
         } else if (req.query.page === 'user') {
@@ -61,33 +74,50 @@ module.exports.getProjects = async function (req, res) {
                 .populate('user')
                 .populate('issues')
                 .sort('-createdAt');
+
+            let time = [];
+            projects.forEach(project => {
+                time.push(
+                    moment(project.createdAt).fromNow()
+                );
+            });
+
             return res.json(200, {
                 message: 'Projects fetched successfully',
                 data: {
                     projects,
                     favorites,
+                    time,
                 },
             });
         } else if (req.query.page === 'starred') {
             // find all the projects of logged in user and populate the user and issues of each project
             let projects = [];
+            let time = [];
             // populate the projects of projects array
             for (let i = 0; favorites && i < favorites.projects.length; i++) {
+                let project = await Project.findById(favorites.projects[i])
+                .populate('user')
+                .populate('issues');
                 projects.push(
-                    await Project.findById(favorites.projects[i])
-                        .populate('user')
-                        .populate('issues')
-                        .sort('-createdAt')
+                    project
+                );
+                time.push(
+                    moment(project.createdAt).fromNow()
                 );
             }
 
+            const data = {
+                projects,
+                favorites,
+                time,
+            };
+
+            console.log(data);
 
             return res.json(200, {
                 message: 'Projects fetched successfully',
-                data: {
-                    projects,
-                    favorites,
-                },
+                data
             });
         }
     } catch (error) {
@@ -97,3 +127,5 @@ module.exports.getProjects = async function (req, res) {
         });
     }
 };
+
+

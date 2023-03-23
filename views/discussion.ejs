@@ -91,7 +91,9 @@
                         </p>
                     </div>
                     <div class="stats">
-                        <p class="user"><%= issue.user.email %> opened this issue 4 days ago</p>
+                        <!-- Calculate relative time for eg. 2 hours ago -->
+                        <p class="user"><%= issue.user.email %> opened this issue 
+                            <%= moment(issue.createdAt).fromNow() %> </p>
                         <% if (issue.comments.length > 1) { %>
                             <p class="comments"><%= issue.comments.length %> comments</p>
                         <% } else { %>
@@ -128,7 +130,8 @@
                     <div class="heading">
                         <p class="author-name"><%= issue.user.email %></p>
                         <div class="label">
-                            <p class="comment-time">commented 4 days ago</p>
+                            <p class="comment-time">commented
+                                <%= moment(issue.createdAt).fromNow() %> </p>
                             <p class="owner-label">Owner</p>
                         </div>
                         
@@ -137,7 +140,8 @@
                     <div class="heading">
                         <p class="author-name"><%= issue.user.email %></p>
                         <div class="label">
-                            <p class="comment-time">commented 4 days ago</p>
+                            <p class="comment-time">commented
+                                <%= moment(issue.createdAt).fromNow() %> </p>
                             <p class="author-label">Author</p>
                         </div>
                     </div>
@@ -168,7 +172,8 @@
                     <div class="heading">
                         <p class="author-name"><%= comment.user.email %></p>
                         <div class="label">
-                            <p class="comment-time">commented 4 days ago</p>
+                            <p class="comment-time">commented
+                                <%= moment(comment.createdAt).fromNow() %> </p>
                             <p class="owner-label">Owner</p>
                         </div>
                         
@@ -177,7 +182,8 @@
                     <div class="heading">
                         <p class="author-name"><%= comment.user.email %></p>
                         <div class="label">
-                            <p class="comment-time">commented 4 days ago</p>
+                            <p class="comment-time">commented
+                                <%= moment(comment.createdAt).fromNow() %> </p>
                             <p class="author-label">Author</p>
                         </div>
                     </div>
@@ -185,7 +191,8 @@
                 <% } else { %>
                     <div class="heading">
                         <p class="author-name"><%= comment.user.email %></p>
-                        <p class="comment-time">commented 4 days ago</p>
+                        <p class="comment-time">commented
+                            <%= moment(comment.createdAt).fromNow() %> </p>
                     </div>
                 <% } %>
 
