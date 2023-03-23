@@ -1,0 +1,111 @@
+
+
+
+
+#search-project-container {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0;
+    margin-top: 110px;
+
+    .container-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        padding: 0 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgb(194, 194, 194);
+            margin: 0;
+            padding: 0;
+            padding-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 7px 20px;
+            border-radius: 10px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            border: 1px solid #29a33f;
+            font-weight: 600;
+            transition: all 0.1s ease-in-out;
+            cursor: pointer;
+            background-color: #29a33f;
+
+            i {
+                font-size: 1.2rem;
+                margin-right: 5px;
+            }
+            &:hover {
+                background-color: #48c25e;
+            }
+        }
+    }
+
+
+    #search-cards-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+
+    }
+
+    .no-projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        min-height: auto;
+        border: 1px solid rgba(255, 255, 255, 0.194);
+        border-radius: 10px;
+
+        margin-top: 30px;
+        background-color: #0e1117;
+
+        i {
+            font-size: 1.5rem;
+            color: #ffffff9e;
+            margin: 10px;
+            margin-top: 10%;
+        }
+
+        .heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin: 10px;
+        }
+
+        .sub-heading {
+            width: 70%;
+            text-align: center;
+            color: #ffffff9e;
+            margin-bottom: 10%;
+
+            span {
+                color: dodgerblue;
+                font-weight: 600;
+                cursor: pointer;
+                &:hover {
+                    color: lighten($color: dodgerblue, $amount: 0);
+                }
+            }
+        }
+    }
+
+    
+}

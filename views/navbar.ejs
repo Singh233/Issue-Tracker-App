@@ -1,13 +1,15 @@
 <div class="navbar-container">
     <div class="search-and-nav">
         <i class="fa-brands fa-github"></i>
-        <input type="text" placeholder="Search or jump to..." />
+        <input 
+            type="text" 
+            id="search-project-bar"
+            onchange="searchProjects(event)"
+            placeholder="Search or jump to..." />
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <a href="/">Projects</a>
         <a href="/projects">Issues</a>
-        <a href="/new-project">
-            Create Project
-        </a>
+        <a href="/new-project"> Create Project </a>
     </div>
 
     <div class="menu">
@@ -17,9 +19,11 @@
                 <p>New Project</p>
             </button>
         </a> -->
-        
+
         <i class="fa-regular fa-bell"></i>
         <!-- <img class="profile" src=''> -->
         <i onclick="openMenu()" class="fa-solid fa-bars"></i>
     </div>
 </div>
+
+<script src="/js/SearchProject.js"></script>

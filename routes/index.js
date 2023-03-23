@@ -26,5 +26,8 @@ router.use('/projects', require('./projects'));
 // Route for favorites page
 router.use('/favorites', require('./favorites'));
 
+// Route for search page
+router.use('/search', require('./search'));
+
 
 module.exports = router;

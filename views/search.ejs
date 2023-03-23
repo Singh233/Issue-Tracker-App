@@ -1,0 +1,27 @@
+
+
+<div id="search-project-container">
+    <div class="container-heading">
+        <p id="search-value">Search results for '<%= searchValue %>'</p>
+        <a href="/new-project" class="btn btn-primary">New Project</a>
+    </div>
+    <div id="search-cards-list">
+
+        <% for (let i = 0; i < projects.length; i++) { %>
+            <%- include('project_card.ejs', {project: projects[i], favorites}); %>
+        <% } %>
+
+        <!-- If no project is present -->
+        <% if (projects.length === 0) { %>
+            <div class="no-projects">
+                <i class="fa-solid fa-circle-dot"></i>
+                <p class="heading">No project found!</p>
+                <p class="sub-heading">
+                    A project contains all the files, libraries used to build the project. Continue to enter the details of your project 
+                    To get started, you should <span>create an project</span>.
+                </p>
+            </div>
+        <% } %>
+        
+    </div>
+</div>
