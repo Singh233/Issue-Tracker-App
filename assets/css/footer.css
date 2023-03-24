@@ -1,18 +1,42 @@
-.footer {
+.footer-container {
+  color: #ffffff;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 0;
   width: 100vw;
-  padding: 10px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.194); }
+  .footer-container .footer-about {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 10px 20px; }
+    .footer-container .footer-about i {
+      margin-right: 10px;
+      font-size: 1.4rem; }
+  .footer-container .footer-links {
+    display: flex;
+    align-items: center; }
+    .footer-container .footer-links .footer-link {
+      color: #ffffff;
+      margin-right: 10px; }
+      .footer-container .footer-links .footer-link:hover {
+        text-decoration: underline; }
+  .footer-container .social-links {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem; }
+    .footer-container .social-links .social-link {
+      color: #6a737d;
+      margin-right: 10px; }
+      .footer-container .social-links .social-link:hover {
+        color: white; }
+
+.bottom {
+  position: absolute;
+  bottom: 0;
   left: 0; }
-  .footer p {
-    font-size: 1.1rem;
-    font-weight: 600; }
-  .footer .email {
-    font-size: 0.9rem;
-    font-weight: 500; }
 
 @media screen and (max-width: 480px) {
   .footer {

@@ -1,5 +1,32 @@
 
-<div class="footer">
-    <p class="email">sanambir123@gmail.com</p>
-    <p><i class="fa-solid fa-face-laugh-wink"></i> Proudly developed by Sanambir Singh</p>
-</div>
+<% if (bottom) { %>
+<footer class="footer-container bottom">
+<% } else { %>
+<footer  class="footer-container">
+<% } %>
+    <!-- about developer -->
+    <div class="footer-about">
+        <i class="fa-brands fa-github"></i>
+        <p class="author">© 2023</p>
+    </div>
+
+
+    <div class="footer-links">
+        <a href="#" class="footer-link">Proudly in development by Sanambir Singh &nbsp;-</a>
+
+        <a href="#" class="footer-link"> Contact</a>
+    </div>
+
+    <div class="social-links">
+        <a href="https://github.com/Singh233" target="_blank" class="social-link">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sanambir-singh-2b4b3a133/" target="_blank" class="social-link">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/awesanam/" target="_blank"  class="social-link">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+</footer>
+

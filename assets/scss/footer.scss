@@ -1,30 +1,79 @@
+// Variables
+$primary-color: #24292e;
+$secondary-color: #6a737d;
+$text-color: #ffffff;
 
-
-.footer {
+// Footer container
+.footer-container {
+    color: $text-color;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    position: fixed;
-    bottom: 0;
     width: 100vw;
-    padding: 10px;
-    left: 0;
-    p {
-        font-size: 1.1rem;
-        font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.194);
+
+
+    // about developer
+    .footer-about {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+
+        padding: 10px 20px;
+
+        i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+
+        
     }
-    .email {
-        font-size: 0.9rem;
-        font-weight: 500;
+
+    // Footer links
+    .footer-links {
+        display: flex;
+        align-items: center;
+
+        // Individual link
+        .footer-link {
+            color: $text-color;
+            margin-right: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+
+        }
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+
+        // Individual link
+        .social-link {
+            color: #6a737d;
+            margin-right: 10px;
+
+            &:hover {
+                color: white;
+            }
+        }
     }
 }
 
-@media screen and (max-width: "480px") {
+.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-
-    
+@media screen and (max-width: '480px') {
     .footer {
         display: none;
     }
-
 }

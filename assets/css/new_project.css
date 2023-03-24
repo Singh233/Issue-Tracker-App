@@ -152,7 +152,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: fit-content; }
+    width: fit-content;
+    margin-bottom: 15px; }
     .new-project-container .project-creation button {
       color: #fff;
       background-color: transparent;
