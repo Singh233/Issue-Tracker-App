@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('../config/passport-local-strategy');
 
 const homeController = require('../controllers/home_controller');
 
@@ -9,25 +10,25 @@ console.log("Router loaded");
 router.get('/', homeController.home);
 
 // Route for home navigation
-router.use('/nav', homeController.getProjects);
+router.use('/nav', passport.checkAuthentication, homeController.getProjects);
 
 // Route for sign/up page
 router.use('/users', require('./users'));
 
 // Route for new project page
-router.use('/new-project', require('./new_project'));
+router.use('/new-project', passport.checkAuthentication, require('./new_project'));
 
 // Route for project issue page
-router.use('/issues', require('./issues'));
+router.use('/issues', passport.checkAuthentication, require('./issues'));
 
-// Route for project page
-router.use('/projects', require('./projects'));
+// Route for project page and middleware to check if user is logged in
+router.use('/projects', passport.checkAuthentication, require('./projects'));
 
 // Route for favorites page
-router.use('/favorites', require('./favorites'));
+router.use('/favorites', passport.checkAuthentication, require('./favorites'));
 
 // Route for search page
-router.use('/search', require('./search'));
+router.use('/search', passport.checkAuthentication, require('./search'));
 
 
 module.exports = router;
