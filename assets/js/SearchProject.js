@@ -38,13 +38,14 @@ function searchProjects(e) {
                 </div> `;
                     return;
                 }
-
+                let i = 0;
                 // loop through the projects
                 projects.forEach((project) => {
                     // append the project card to the projects container
                     projectsContainer.innerHTML += projectCardDOM(
                         project,
-                        response.data.favorites
+                        response.data.favorites,
+                        response.data.time[i++]
                     );
                 });
             },
@@ -59,12 +60,12 @@ function searchProjects(e) {
     }
 }
 
-const projectCardDOM = (project, favorites) => `
+const projectCardDOM = (project, favorites, time) => `
     <div class="card-container animate__animated animate__fadeIn">
         <div class="user-info">
             <img src="${project.user.avatar}" alt="">
             <p class="user-name"> ${project.user.name} </p>
-            <p class="day">yesterday</p>
+            <p class="day">${time}</p>
         </div>
 
         <div  class="project-info">
@@ -77,7 +78,7 @@ const projectCardDOM = (project, favorites) => `
                 <p class="type"><i class="fa-solid fa-circle"></i>${
                     project.type
                 } Application </p>
-                <p class="stars"><i class="fa-regular fa-star"></i>11.2k</p>
+                <p id='stars-count' class="stars"><i class="fa-regular fa-star"></i>${project.starsCount}</p>
             </div>
             <!-- Check if the project is in favorites or not -->
             ${

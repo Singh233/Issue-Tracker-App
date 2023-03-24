@@ -9,6 +9,8 @@ const Comment = require('../models/comment');
 // import favorite model
 const Favorites = require('../models/favorites');
 
+const moment = require('moment');
+
 
 // search projects
 module.exports.searchProjects = async function (req, res) {
@@ -21,13 +23,20 @@ module.exports.searchProjects = async function (req, res) {
         // find favorites of the user and populate the array of projects
         let favorites = await Favorites.findOne({ user: req.user._id });
 
+        let time = [];
+
+        for (let i = 0; i < projects.length; i++) {
+            time[i] = moment(projects[i].createdAt).fromNow();
+        }
+
         if (req.xhr) {
             // return the response
             return res.status(200).json({
                 message: 'Projects found',
                 data: {
                     projects: projects,
-                    favorites: favorites
+                    favorites: favorites,
+                    time
                 }
             });
         } else {
@@ -36,7 +45,9 @@ module.exports.searchProjects = async function (req, res) {
                 title: 'Search',    
                 projects: projects,
                 favorites: favorites,
-                searchValue: searchValue
+                searchValue: searchValue,
+                time,
+                moment,
             });
         }
     } catch (error) {
