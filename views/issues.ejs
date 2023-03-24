@@ -187,6 +187,7 @@
             >
         </div>
         
+        
 
     </div>
 
@@ -265,6 +266,15 @@
             <i class="fa-solid fa-lightbulb"></i>Tip: You can use filter to sort issues.
         </p>
     </div>
+
+    <div class="new-issue-div">
+        <p>or create</p>
+        <div onclick="window.location.href = `/issues/<%= project.id %>/new`" class="create-button">
+            <p>New Issue</p>
+        </div>
+    </div>
+
+    
 
     <%- include('footer', {bottom: true}); %>
 
