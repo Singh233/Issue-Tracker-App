@@ -15,7 +15,7 @@
 
         <div class="card-footer">
             <p class="type"><i class="fa-solid fa-circle"></i><%= project.type %> Application </p>
-            <p class="stars"><i class="fa-regular fa-star"></i>11.2k</p>
+            <p id="stars-count" class="stars"><i class="fa-regular fa-star"></i><%= project.starsCount %></p>
         </div>
         <!-- Check if the project is in favorites or not -->
         <% if (favorites && favorites.projects && favorites.projects.includes(project.id)) { %>

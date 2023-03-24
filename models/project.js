@@ -10,6 +10,7 @@ const ProjectSchema = new mongoose.Schema(
         visibility: { type: String, required: true },
         user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         issues: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Issue' }],
+        starsCount: { type: Number, default: 0 },
     },
     {
         timestamps: true,

@@ -17,6 +17,20 @@ function addToFavorites(projectId) {
 
     
 
+    // increment the stars count on the card
+    let starsCount = $(`#star-${projectId}`).parent().parent().find('#stars-count').text();
+    starsCount++;
+    $(`#star-${projectId}`).parent().parent().find('#stars-count').text(starsCount);
+    $(`#star-${projectId}`).parent().parent().find('#stars-count').prepend('<i class="fa-regular fa-star"></i>');
+
+
+    let starsCountStarred = $(`#starred-${projectId}`).parent().parent().find('#stars-count').text();
+    starsCountStarred++;
+    $(`#starred-${projectId}`).parent().parent().find('#stars-count').text(starsCountStarred);
+    // prepend star icon to the stars count
+    $(`#starred-${projectId}`).parent().parent().find('#stars-count').prepend('<i class="fa-regular fa-star"></i>');
+
+
 
     
     
@@ -79,6 +93,19 @@ function removeFromFavorites(projectId) {
             $(`#starred-${projectId}`).parent().parent().remove();
         }, 500);
     }
+
+    // decrement the stars count on the card
+    let starsCount = $(`#star-${projectId}`).parent().parent().find('#stars-count').text();
+    starsCount--;
+    $(`#star-${projectId}`).parent().parent().find('#stars-count').text(starsCount);
+    $(`#star-${projectId}`).parent().parent().find('#stars-count').prepend(`<i class="fa-regular fa-star"></i>`);
+    
+    let starsCountStarred = $(`#starred-${projectId}`).parent().parent().find('#stars-count').text();
+    starsCountStarred--;
+    $(`#starred-${projectId}`).parent().parent().find('#stars-count').text(starsCountStarred);
+    // prepend star icon to the stars count
+    $(`#starred-${projectId}`).parent().parent().find('#stars-count').prepend(`<i class="fa-regular fa-star"></i>`);
+
 
     // make ajax request to remove from favorites
     $.ajax({

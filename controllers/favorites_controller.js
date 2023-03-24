@@ -1,10 +1,19 @@
 // import favorites model
 const Favorites = require('../models/favorites');
+// import project model
+const Project = require('../models/project');
 
 
 // controller for add to favorites
 module.exports.addToFavorites = async (req, res) => {
     try {
+
+        // find the project and increment starsCount
+        const project = await Project.findById(req.params.id);
+        project.starsCount++;
+        await project.save();
+
+
         // find the favorites document for the user
         const favorites = await Favorites.findOne({ user: req.user._id });
         // if the user has no favorites document, create one
@@ -32,6 +41,14 @@ module.exports.addToFavorites = async (req, res) => {
 // controller for remove from favorites
 module.exports.removeFromFavorites = async (req, res) => {
     try {
+
+        // find the project and decrement starsCount
+        const project = await Project.findById(req.params.id);
+        project.starsCount--;
+        await project.save();
+
+
+
         // find the favorites document for the user
         const favorites = await Favorites.findOne({ user: req.user._id });
         // if the user has no favorites document, send an error

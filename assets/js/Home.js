@@ -74,7 +74,7 @@ const cardContainer = (project, favorites, time) =>
 
             <div class="card-footer">
                 <p class="type"><i class="fa-solid fa-circle"></i>${project.type} Application </p>
-                <p class="stars"><i class="fa-regular fa-star"></i>11.2k</p>
+                <p id="stars-count" class="stars"><i class="fa-regular fa-star"></i>${project.starsCount}</p>
             </div>
 
             ${favorites && favorites.projects.includes(project._id) ? 
