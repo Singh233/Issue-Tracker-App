@@ -41,7 +41,10 @@
 <body>
     
     <%- include('navbar'); %>
-    <%- include('menu'); %>
+
+    <% if (locals.user) { %>
+        <%- include('menu'); %>
+    <% } %>
     
     <div id="main-body">
         <%- body %>
