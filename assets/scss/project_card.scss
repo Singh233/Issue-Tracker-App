@@ -1,12 +1,9 @@
-
-
 .card-container {
     display: flex;
     flex-direction: column;
     width: 50vw;
     margin-top: 20px;
     min-width: 600px;
-
 
     position: relative;
 
@@ -37,7 +34,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        background-color: #161B22;
+        background-color: #161b22;
         margin: 10px 0;
         padding: 20px;
         border-radius: 10px;
@@ -63,7 +60,6 @@
             margin: 10px 0;
             color: #ffffff6c;
         }
-
 
         .card-footer {
             display: flex;
@@ -92,12 +88,12 @@
             display: flex;
             align-items: center;
 
-            background-color: #30363C;
+            background-color: #30363c;
             border-radius: 5px;
             padding: 3px 13px;
 
             border: 1px solid rgba(255, 255, 255, 0.194);
-            
+
             position: absolute;
             top: 20px;
             right: 30px;
@@ -137,25 +133,27 @@
 // for mobile devices
 @media screen and (max-width: '425px') {
     .card-container {
-
         width: 100vw;
         min-width: 350px;
-    
-    
+
         position: relative;
-    
+
         .user-info {
             padding: 0px 10px;
         }
-    
-        
-    
-    
+
+        .star-button {
+            font-size: 0.9rem;
+            padding: 4px 10px;
+            border-radius: 9px;
+            right: 16px !important;
+        }
+
         .issues {
-
+            font-size: 0.9rem;
+            padding: 4px 10px;
+            border-radius: 9px;
             right: 15px;
-
         }
     }
-    
 }

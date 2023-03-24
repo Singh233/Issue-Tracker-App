@@ -77,3 +77,48 @@
         cursor: pointer; }
         .projects-container .no-projects .sub-heading span:hover {
           color: dodgerblue; }
+
+@media screen and (max-width: 425px) {
+  .projects-container {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0;
+    margin-top: 110px; }
+    .projects-container .container-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 0 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      .projects-container .container-heading p {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #c2c2c2;
+        margin: 0;
+        padding: 0;
+        padding-left: 5px; }
+      .projects-container .container-heading a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 7px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        border: 1px solid #29a33f;
+        font-weight: 600;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+        background-color: #29a33f;
+        font-size: 0.8rem; }
+        .projects-container .container-heading a i {
+          font-size: 1rem;
+          margin-right: 5px; }
+        .projects-container .container-heading a:hover {
+          background-color: #48c25e; } }
