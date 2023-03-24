@@ -77,3 +77,45 @@
         cursor: pointer; }
         #search-project-container .no-projects .sub-heading span:hover {
           color: dodgerblue; }
+
+@media screen and (max-width: 425px) {
+  #search-project-container .container-heading p {
+    font-size: 1rem; }
+  #search-project-container .container-heading a {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 5px; }
+    #search-project-container .container-heading a i {
+      font-size: 1.2rem;
+      margin-right: 5px; }
+    #search-project-container .container-heading a:hover {
+      background-color: #48c25e; }
+  #search-project-container #search-cards-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; }
+  #search-project-container .no-projects {
+    width: 100%;
+    margin-top: 100px; }
+    #search-project-container .no-projects i {
+      font-size: 1.5rem;
+      color: #ffffff9e;
+      margin: 10px;
+      margin-top: 10%; }
+    #search-project-container .no-projects .heading {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin: 10px; }
+    #search-project-container .no-projects .sub-heading {
+      width: 70%;
+      text-align: center;
+      color: #ffffff9e;
+      margin-bottom: 10%; }
+      #search-project-container .no-projects .sub-heading span {
+        color: dodgerblue;
+        font-weight: 600;
+        cursor: pointer; }
+        #search-project-container .no-projects .sub-heading span:hover {
+          color: dodgerblue; } }
