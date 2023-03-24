@@ -14,6 +14,11 @@ const CommentSchema = new mongoose.Schema({
     issue: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Issue'
+    },
+    type: {
+        type: String,
+        enum: ['comment', 'event'],
+        default: 'comment'
     }
 }, {
     timestamps: true

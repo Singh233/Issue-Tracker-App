@@ -157,55 +157,79 @@
         </div>
 
         <% comments.forEach(function(comment) { %>
-            <!-- if the comment is made by owner of the project -->
-            <% if (comment.user.email === project.user.email) { %>
-                <div class="owner ">
-            <% } else { %>
-                <div class="comment">
-            <% } %>
 
-                <img src="<%= comment.user.avatar %>" alt="">
+            <!-- Check the type of comment -->
+            <% if (comment.type === 'comment') { %>
 
-
-                <!-- if the comment is made by owner of the project add owner label -->
+                <!-- if the comment is made by owner of the project -->
                 <% if (comment.user.email === project.user.email) { %>
-                    <div class="heading">
-                        <p class="author-name"><%= comment.user.email %></p>
-                        <div class="label">
-                            <p class="comment-time">commented
-                                <%= moment(comment.createdAt).fromNow() %> </p>
-                            <p class="owner-label">Owner</p>
-                        </div>
-                        
-                    </div>
-                <% } else if (comment.user.email === issue.user.email) { %>
-                    <div class="heading">
-                        <p class="author-name"><%= comment.user.email %></p>
-                        <div class="label">
-                            <p class="comment-time">commented
-                                <%= moment(comment.createdAt).fromNow() %> </p>
-                            <p class="author-label">Author</p>
-                        </div>
-                    </div>
-                    
+                    <div class="owner ">
                 <% } else { %>
-                    <div class="heading">
-                        <p class="author-name"><%= comment.user.email %></p>
-                        <p class="comment-time">commented
-                            <%= moment(comment.createdAt).fromNow() %> </p>
-                    </div>
+                    <div class="comment">
                 <% } %>
 
+                    <img src="<%= comment.user.avatar %>" alt="">
 
-                <div class="comment-body">
-                    <p class="comment-text"><%= comment.content %></p>
-                </div>
 
-                <div class="vertical-track">
-                    
+                    <!-- if the comment is made by owner of the project add owner label -->
+                    <% if (comment.user.email === project.user.email) { %>
+                        <div class="heading">
+                            <p class="author-name"><%= comment.user.email %></p>
+                            <div class="label">
+                                <p class="comment-time">commented
+                                    <%= moment(comment.createdAt).fromNow() %> </p>
+                                <p class="owner-label">Owner</p>
+                            </div>
+                            
+                        </div>
+                    <% } else if (comment.user.email === issue.user.email) { %>
+                        <div class="heading">
+                            <p class="author-name"><%= comment.user.email %></p>
+                            <div class="label">
+                                <p class="comment-time">commented
+                                    <%= moment(comment.createdAt).fromNow() %> </p>
+                                <p class="author-label">Author</p>
+                            </div>
+                        </div>
+                        
+                    <% } else { %>
+                        <div class="heading">
+                            <p class="author-name"><%= comment.user.email %></p>
+                            <p class="comment-time">commented
+                                <%= moment(comment.createdAt).fromNow() %> </p>
+                        </div>
+                    <% } %>
+
+
+                    <div class="comment-body">
+                        <p class="comment-text"><%= comment.content %></p>
+                    </div>
+
+                    <div class="vertical-track">
+                        
+                    </div>
                 </div>
-            </div>
-        <% }) %>
+                <% } else { %>
+                    <div class="event">
+                        <% if (comment.content === 'open') {  %>
+                            <i style="color: #29a33f;" class="fa-brands fa-rev"></i>
+                        <% } else { %>
+                            <i style="color: #8957E5;" class="fa-solid fa-circle-dot"></i>
+                        <% } %>
+                        <img src="<%= comment.user.avatar %>" alt="">
+                        <p class="email"><%= comment.user.email %></p>
+                        <% if (comment.content === 'open') {  %>
+                            <p class="time">reopened this <%= moment(comment.createdAt).fromNow() %> </p>
+                        <% } else { %>
+                            <p class="time">closed this <%= moment(comment.createdAt).fromNow() %> </p>
+                        <% } %>
+                        <div class="vertical-track">
+                        
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        
     </div>
 
     <div class="border"></div>

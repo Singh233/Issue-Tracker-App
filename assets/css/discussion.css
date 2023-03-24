@@ -199,13 +199,42 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%; }
+    width: 70%;
+    position: relative; }
     .discussion-container .comments-list .owner {
       --heading-color: #15223a;
       --border-color: #1F4272; }
     .discussion-container .comments-list .comment {
       --heading-color: #161B22;
       --border-color: rgba(255, 255, 255, 0.194); }
+    .discussion-container .comments-list .event {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      margin-top: 25px;
+      width: 70%;
+      position: relative; }
+      .discussion-container .comments-list .event i {
+        background-color: #0E1117;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.3rem; }
+      .discussion-container .comments-list .event img {
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        margin-right: 10px; }
+      .discussion-container .comments-list .event .time {
+        color: #ffffff9e;
+        font-size: 0.85rem;
+        margin-left: 10px; }
+      .discussion-container .comments-list .event .vertical-track {
+        width: 2px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.194);
+        position: absolute;
+        left: 5%;
+        bottom: -82%; }
     .discussion-container .comments-list .comment, .discussion-container .comments-list .owner {
       display: flex;
       flex-direction: column;

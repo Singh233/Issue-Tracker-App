@@ -301,6 +301,7 @@ $error-color: #aa08087d;
         flex-direction: column;
         align-items: center;
         width: 70%;
+        position: relative;
 
         .owner {
             --heading-color: #15223a;
@@ -311,6 +312,47 @@ $error-color: #aa08087d;
             --heading-color: #161B22;
             --border-color: rgba(255, 255, 255, 0.194);
 
+        }
+
+        .event {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: 25px;
+            width: 70%;
+            position: relative;
+
+            i {
+                background-color: #0E1117;
+                padding: 10px;
+                border-radius: 50%;
+                font-size: 1.3rem;
+            }
+
+            // profile image
+            img {
+                width: 27px;
+                height: 27px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .time {
+                color: #ffffff9e;
+                font-size: 0.85rem;
+                margin-left: 10px;
+            }
+
+            .vertical-track {
+                width: 2px;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.194);
+                position: absolute;
+                left: 5%;
+                bottom: -82%;
+            }
+
+            
         }
 
 

@@ -219,23 +219,47 @@ module.exports.discussion = async function (req, res) {
 // controller for changing status of issue
 module.exports.changeStatus = async function (req, res) {
     try {
-        // find the issue
-        let issue = await Issue.findById(req.params.issueId);
-        // change the status
-        issue.status = req.params.status;
-        // save the issue
-        issue.save();
+        // create a new comment with type event
+        let comment = Comment.create(
+            {
+                content: req.params.status,
+                user: req.user._id,
+                issue: req.params.issueId,
+                type: 'event',
+            },
+            function (err, comment) {
+                if (err) {
+                    console.log('error in creating a comment', err);
+                    return;
+                }
+                // find the issue and add the comment to it
+                Issue.findById(req.params.issueId, function (err, issue) {
+                    if (err) {
+                        console.log('error in finding the issue');
+                        return;
+                    }
+                    issue.status = req.params.status;
+                    issue.comments.push(comment);
+                    issue.save();
+                });
 
-        if (req.params.status == 'close') {
-            // flash message
-            req.flash('success', 'Issue Closed!');
-        } else {
-            // flash message
-            req.flash('success', 'Issue Reopened!');
-        }
 
-        // redirect to project issue page
-        return res.redirect('back');
+                if (req.params.status == 'close') {
+                    // flash message
+                    req.flash('success', 'Issue Closed!');
+                } else {
+                    // flash message
+                    req.flash('success', 'Issue Reopened!');
+                }
+
+                // redirect to project issue page
+                return res.redirect('back');
+                
+                
+                
+            }
+        );
+        
     } catch (error) {
         req.flash('error', 'Error in changing status');
         console.log('Error--', error);
