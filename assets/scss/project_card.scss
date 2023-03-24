@@ -133,3 +133,29 @@
         }
     }
 }
+
+// for mobile devices
+@media screen and (max-width: '425px') {
+    .card-container {
+
+        width: 100vw;
+        min-width: 350px;
+    
+    
+        position: relative;
+    
+        .user-info {
+            padding: 0px 10px;
+        }
+    
+        
+    
+    
+        .issues {
+
+            right: 15px;
+
+        }
+    }
+    
+}

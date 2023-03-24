@@ -36,3 +36,20 @@
     flex-direction: column;
     align-items: center;
     padding: 20px; }
+
+@media screen and (max-width: 425px) {
+  .main-container .nav {
+    width: 100%;
+    min-width: 300px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #ffffff6c; }
+    .main-container .nav p {
+      font-size: 0.9rem; }
+      .main-container .nav p:hover {
+        color: white;
+        cursor: pointer; }
+    .main-container .nav .my-projects {
+      margin-right: 0; }
+    .main-container .nav .nav-active {
+      color: white;
+      border-bottom: orange 2px solid; } }

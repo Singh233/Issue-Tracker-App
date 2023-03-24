@@ -87,3 +87,13 @@
     background-color: dodgerblue; }
     .card-container .issues:hover {
       background-color: #51a9ff; }
+
+@media screen and (max-width: 425px) {
+  .card-container {
+    width: 100vw;
+    min-width: 350px;
+    position: relative; }
+    .card-container .user-info {
+      padding: 0px 10px; }
+    .card-container .issues {
+      right: 15px; } }

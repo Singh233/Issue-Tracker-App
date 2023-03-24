@@ -38,6 +38,15 @@
   bottom: 0;
   left: 0; }
 
-@media screen and (max-width: 480px) {
-  .footer {
-    display: none; } }
+@media screen and (max-width: 425px) {
+  .footer-container {
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.194); }
+    .footer-container .footer-links {
+      display: none; } }

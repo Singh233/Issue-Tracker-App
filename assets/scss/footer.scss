@@ -14,7 +14,6 @@ $text-color: #ffffff;
     padding: 10px 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.194);
 
-
     // about developer
     .footer-about {
         display: flex;
@@ -27,8 +26,6 @@ $text-color: #ffffff;
             margin-right: 10px;
             font-size: 1.4rem;
         }
-
-        
     }
 
     // Footer links
@@ -44,8 +41,6 @@ $text-color: #ffffff;
             &:hover {
                 text-decoration: underline;
             }
-
-
         }
     }
 
@@ -72,8 +67,22 @@ $text-color: #ffffff;
     left: 0;
 }
 
-@media screen and (max-width: '480px') {
-    .footer {
-        display: none;
+// for mobile devices
+@media screen and (max-width: '425px') {
+    // Footer container
+    .footer-container {
+        color: $text-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        font-size: 14px;
+        padding: 10px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.194);
+
+        // about developer
+        .footer-links {
+            display: none;
+        }
     }
 }
