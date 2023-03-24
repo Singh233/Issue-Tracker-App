@@ -115,8 +115,33 @@
     }
 }
 
-// For mobile devices
+// for tablet devices
+@media screen and (max-width: '868px') {
+    .navbar-container {
+        .search-and-nav {
+            img {
+                height: 40px;
+            }
 
+            input {
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: '768px') {
+    .navbar-container {
+        .search-and-nav {
+            a,
+            p {
+                display: none;
+            }
+        }
+    }
+}
+
+// For mobile devices
 @media screen and (max-width: '480px') {
     .navbar-container {
         .branding {
@@ -144,4 +169,25 @@
 
 .bg {
     background-color: #0e1117;
+}
+
+// for mobile devices
+@media screen and (max-width: '425px') {
+    .navbar-container {
+        .search-and-nav {
+
+
+            input {
+                width: 200px;
+            }
+        }
+
+        .menu {
+            justify-content: flex-end;
+            margin-right: 5px;
+            .fa-bell {
+                display: none;
+            }
+        }
+    }
 }

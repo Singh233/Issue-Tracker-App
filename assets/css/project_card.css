@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 50vw;
   margin-top: 20px;
+  min-width: 600px;
   position: relative; }
   .card-container .user-info {
     display: flex;

@@ -84,6 +84,17 @@
       .navbar-container .menu .create-button:hover {
         background-color: #48c25e; }
 
+@media screen and (max-width: 868px) {
+  .navbar-container .search-and-nav img {
+    height: 40px; }
+  .navbar-container .search-and-nav input {
+    width: 250px; } }
+
+@media screen and (max-width: 768px) {
+  .navbar-container .search-and-nav a,
+  .navbar-container .search-and-nav p {
+    display: none; } }
+
 @media screen and (max-width: 480px) {
   .navbar-container .branding {
     padding: 5px; }
@@ -100,3 +111,12 @@
 
 .bg {
   background-color: #0e1117; }
+
+@media screen and (max-width: 425px) {
+  .navbar-container .search-and-nav input {
+    width: 200px; }
+  .navbar-container .menu {
+    justify-content: flex-end;
+    margin-right: 5px; }
+    .navbar-container .menu .fa-bell {
+      display: none; } }
