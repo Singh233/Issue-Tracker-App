@@ -136,10 +136,14 @@
         width: 100vw;
         min-width: 350px;
 
-        position: relative;
-
         .user-info {
             padding: 0px 10px;
+        }
+
+        .project-info {
+            border-left: none;
+            border-right: none;
+            border-radius: 0px;
         }
 
         .star-button {

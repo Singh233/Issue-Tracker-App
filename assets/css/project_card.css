@@ -91,10 +91,13 @@
 @media screen and (max-width: 425px) {
   .card-container {
     width: 100vw;
-    min-width: 350px;
-    position: relative; }
+    min-width: 350px; }
     .card-container .user-info {
       padding: 0px 10px; }
+    .card-container .project-info {
+      border-left: none;
+      border-right: none;
+      border-radius: 0px; }
     .card-container .star-button {
       font-size: 0.9rem;
       padding: 4px 10px;

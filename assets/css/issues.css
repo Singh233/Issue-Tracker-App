@@ -514,3 +514,91 @@
     margin-top: 10px; }
     .issues-container .tip i {
       margin-right: 5px; }
+
+@media screen and (max-width: 425px) {
+  .issues-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    margin-top: 90px; }
+    .issues-container #search-results-heading {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 30px;
+      color: gray; }
+      .issues-container #search-results-heading i {
+        margin-right: 5px; }
+    .issues-container .hide {
+      display: none !important; }
+    .issues-container .issue-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%; }
+      .issues-container .issue-header .user-info {
+        display: flex;
+        align-items: center;
+        color: dodgerblue;
+        font-size: 1rem;
+        font-weight: 600; }
+        .issues-container .issue-header .user-info img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-left: 10px; }
+        .issues-container .issue-header .user-info .user-name {
+          display: none; }
+        .issues-container .issue-header .user-info .slash {
+          color: gray;
+          display: none; }
+        .issues-container .issue-header .user-info .project-title {
+          font-size: 1.1rem;
+          margin-left: 5px;
+          margin-right: 10px; }
+        .issues-container .issue-header .user-info .project-visibility {
+          display: none; }
+        .issues-container .issue-header .user-info .user-project-name {
+          display: flex;
+          align-items: center; }
+      .issues-container .issue-header .issue-header-right .star-button {
+        margin-right: 5px;
+        font-size: 0.8rem; }
+    .issues-container .border {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(128, 128, 128, 0.42);
+      margin-top: 10px; }
+    .issues-container .filter-create-bar {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 0.9rem;
+      width: 100%;
+      margin-top: 40px; }
+      .issues-container .filter-create-bar .filter-search .active-filter {
+        color: dodgerblue !important; }
+      .issues-container .filter-create-bar .filter-search .search {
+        font-size: 0.9rem;
+        width: 100%; }
+      .issues-container .filter-create-bar .label-button {
+        font-size: 0.9rem;
+        margin-right: 5px; }
+      .issues-container .filter-create-bar .labels-expanded {
+        right: 6px; }
+      .issues-container .filter-create-bar .create-button {
+        display: none; }
+    .issues-container .issue-nav {
+      justify-content: center;
+      width: 100%; }
+      .issues-container .issue-nav a {
+        font-size: 0.9rem; }
+    .issues-container .issues-list {
+      width: 100%;
+      border-radius: 0px;
+      border-right: none;
+      border-left: none;
+      margin-top: 50px;
+      background-color: #0e1117; } }

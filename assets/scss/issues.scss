@@ -751,3 +751,150 @@
         }
     }
 }
+
+// for mobile devices
+@media screen and (max-width: '425px') {
+    .issues-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        width: 100vw;
+        margin-top: 90px;
+
+        #search-results-heading {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 30px;
+            color: gray;
+
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .issue-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .user-info {
+                display: flex;
+                align-items: center;
+                color: dodgerblue;
+                font-size: 1rem;
+                font-weight: 600;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-left: 10px;
+                }
+
+                .user-name {
+                    display: none;
+                }
+
+                .slash {
+                    color: gray;
+                    display: none;
+                }
+
+                .project-title {
+                    font-size: 1.1rem;
+                    margin-left: 5px;
+                    margin-right: 10px;
+                }
+
+                .project-visibility {
+                    display: none;
+                }
+
+                .user-project-name {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .issue-header-right {
+                .star-button {
+                    margin-right: 5px;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        .border {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(128, 128, 128, 0.42);
+            margin-top: 10px;
+        }
+
+        .filter-create-bar {
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            font-size: 0.9rem;
+
+            width: 100%;
+            margin-top: 40px;
+
+            .filter-search {
+                .active-filter {
+                    color: dodgerblue !important;
+                }
+
+                .search {
+                    font-size: 0.9rem;
+
+                    width: 100%;
+                }
+            }
+
+            .label-button {
+                font-size: 0.9rem;
+                margin-right: 5px;
+            }
+
+            .labels-expanded {
+                right: 6px;
+            }
+
+            .create-button {
+                display: none;
+            }
+        }
+
+        .issue-nav {
+            justify-content: center;
+            width: 100%;
+
+            a {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .issues-list {
+
+            width: 100%;
+
+            border-radius: 0px;
+            border-right: none;
+            border-left: none;
+
+            margin-top: 50px;
+            background-color: #0e1117;
+
+        }
+
+    }
+}
