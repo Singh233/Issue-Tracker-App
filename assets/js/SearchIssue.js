@@ -8,9 +8,7 @@ const newIssueDom = (issue, index) => `
                     }
 
                     <div class="info">
-                        <a href="/issues/${issue.id}/discussion/${
-    index + 1
-}" class="title">${issue.title}</a>
+                        <a href="/issues/${issue._id}/discussion/${index + 1}" class="title">${issue.title}</a>
                         <p class="stats"> 1 day ago by ${issue.user.name} </p>
                     </div>
                 </div>

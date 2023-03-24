@@ -15,6 +15,7 @@ $('#new-issue-form').on('submit', function(e){
     // get the project id
     const projectId = document.getElementById('project-id').value;
 
+
     $.ajax({
         type: 'post',
         url: `/issues/${projectId}/new/create`,
@@ -51,5 +52,41 @@ $('#new-issue-form').on('submit', function(e){
     });
 } );
 
+
+function selectLabel(e){
+    // get the label element
+    const label = e.target;
+
+    // remove the selected class from all the labels
+    const labels = document.querySelectorAll('.label');
+    labels.forEach(label => {
+        label.classList.remove('label-selected');
+        if (label.classList.contains('bug-selected')){
+            label.classList.remove('bug-selected');
+        } else if (label.classList.contains('help-selected')){
+            label.classList.remove('help-selected');
+        } else if (label.classList.contains('invalid-selected')){
+            label.classList.remove('invalid-selected');
+        } else if (label.classList.contains('question-selected')){
+            label.classList.remove('question-selected');
+        }
+
+    });
+
+    // add the selected class to the clicked label
+    label.classList.add('label-selected');
+    if (label.classList.contains('bug')){
+        label.classList.add('bug-selected');
+    } else if (label.classList.contains('help')){
+        label.classList.add('help-selected');
+    } else if (label.classList.contains('invalid')){
+        label.classList.add('invalid-selected');
+    } else if (label.classList.contains('question')){
+        label.classList.add('question-selected');
+    }
+
+    // update the label input value
+    document.getElementById('labels').value = label.textContent;
+}
 
             

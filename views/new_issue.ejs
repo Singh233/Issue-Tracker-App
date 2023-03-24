@@ -53,14 +53,14 @@
         <!-- div for labels and submit button -->
         <div class="label-submit">
             <div class="labels">
-                <p class="bug bug-selected">bug</p>
-                <p class="help">help wanted</p>
-                <p class="invalid">invalid</p>
-                <p class="question">question</p>
+                <p onclick="selectLabel(event)" class="label bug bug-selected label-selected">bug</p>
+                <p onclick="selectLabel(event)" class="label help">help</p>
+                <p onclick="selectLabel(event)" class="label invalid">invalid</p>
+                <p onclick="selectLabel(event)" class="label question">question</p>
             </div>
 
-            <div class="new-issue-button">
-                <button type="submit" class="submit-button">Submit</button>
+            <div  class="new-issue-button">
+                <button type="submit"  class="submit-button">Submit</button>
                 <svg id="issue-loader" class=" hide" viewBox="25 25 50 50">
                     <circle r="20" cy="50" cx="50"></circle>
                 </svg>

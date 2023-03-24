@@ -206,6 +206,8 @@
           background-color: transparent;
           border: none;
           font-weight: 600; }
+        .new-issue-container #new-issue-form .label-submit .new-issue-button p {
+          font-size: 0.9rem; }
         .new-issue-container #new-issue-form .label-submit .new-issue-button svg {
           position: relative;
           z-index: 10;
