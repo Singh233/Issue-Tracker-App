@@ -85,6 +85,19 @@
         margin-right: 15px;
         cursor: pointer;
 
+        .info {
+            font-size: 1rem;
+            min-width: max-content;
+            margin-right: 100px;
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 1rem;
+                margin-left: 5px;
+            }
+        }
+
         i {
             font-size: 1.5rem;
             color: #fff;
@@ -186,6 +199,10 @@
             justify-content: flex-end;
             margin-right: 5px;
             .fa-bell {
+                display: none;
+            }
+
+            .info {
                 display: none;
             }
         }
