@@ -8,14 +8,15 @@ const moment = require('moment');
 module.exports.home = async function (req, res) {
     try {
         // find all the projects and populate the user of each project
-        let projects = await Project.find({})
-            .populate('user')
-            .sort('-createdAt');
+        let projects = [];
 
         let favorites = [];
         if (req.user) {
             // find favorites of the user and populate the array of projects
             favorites = await Favorites.findOne({ user: req.user._id });
+            projects = await Project.find({})
+            .populate('user')
+            .sort('-createdAt');
         }
 
         // // populate the projects of projects array
