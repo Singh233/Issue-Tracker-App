@@ -7,7 +7,7 @@ const homeController = require('../controllers/home_controller');
 console.log("Router loaded");
 
 // Define a route for the home page
-router.get('/', homeController.home);
+router.get('/',  homeController.home);
 
 // Route for home navigation
 router.use('/nav', passport.checkAuthentication, homeController.getProjects);

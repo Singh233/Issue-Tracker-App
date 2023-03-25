@@ -12,8 +12,11 @@ module.exports.home = async function (req, res) {
             .populate('user')
             .sort('-createdAt');
 
-        // find favorites of the user and populate the array of projects
-        let favorites = await Favorites.findOne({ user: req.user._id });
+        let favorites = [];
+        if (req.user) {
+            // find favorites of the user and populate the array of projects
+            favorites = await Favorites.findOne({ user: req.user._id });
+        }
 
         // // populate the projects of projects array
         // favorites.projects.forEach(project => {
@@ -54,10 +57,8 @@ module.exports.getProjects = async function (req, res) {
                 .sort('-createdAt');
 
             let time = [];
-            projects.forEach(project => {
-                time.push(
-                    moment(project.createdAt).fromNow()
-                );
+            projects.forEach((project) => {
+                time.push(moment(project.createdAt).fromNow());
             });
 
             return res.json(200, {
@@ -76,10 +77,8 @@ module.exports.getProjects = async function (req, res) {
                 .sort('-createdAt');
 
             let time = [];
-            projects.forEach(project => {
-                time.push(
-                    moment(project.createdAt).fromNow()
-                );
+            projects.forEach((project) => {
+                time.push(moment(project.createdAt).fromNow());
             });
 
             return res.json(200, {
@@ -97,14 +96,10 @@ module.exports.getProjects = async function (req, res) {
             // populate the projects of projects array
             for (let i = 0; favorites && i < favorites.projects.length; i++) {
                 let project = await Project.findById(favorites.projects[i])
-                .populate('user')
-                .populate('issues');
-                projects.push(
-                    project
-                );
-                time.push(
-                    moment(project.createdAt).fromNow()
-                );
+                    .populate('user')
+                    .populate('issues');
+                projects.push(project);
+                time.push(moment(project.createdAt).fromNow());
             }
 
             const data = {
@@ -117,7 +112,7 @@ module.exports.getProjects = async function (req, res) {
 
             return res.json(200, {
                 message: 'Projects fetched successfully',
-                data
+                data,
             });
         }
     } catch (error) {
@@ -127,5 +122,3 @@ module.exports.getProjects = async function (req, res) {
         });
     }
 };
-
-
