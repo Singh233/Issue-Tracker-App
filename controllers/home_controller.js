@@ -1,7 +1,3 @@
-// import project model
-const Project = require('../models/project');
-// import favorites model
-const Favorites = require('../models/favorites');
 // import moment
 const moment = require('moment');
 
@@ -12,11 +8,15 @@ module.exports.home = async function (req, res) {
 
         let favorites = [];
         if (req.user) {
+            // import project model
+            const Project = require('../models/project');
+            // import favorites model
+            const Favorites = require('../models/favorites');
             // find favorites of the user and populate the array of projects
             favorites = await Favorites.findOne({ user: req.user._id });
             projects = await Project.find({})
-            .populate('user')
-            .sort('-createdAt');
+                .populate('user')
+                .sort('-createdAt');
         }
 
         // // populate the projects of projects array
@@ -48,6 +48,10 @@ module.exports.home = async function (req, res) {
 module.exports.getProjects = async function (req, res) {
     console.log(req.query);
     try {
+        // import project model
+        const Project = require('../models/project');
+        // import favorites model
+        const Favorites = require('../models/favorites');
         // find favorites of the user
         let favorites = await Favorites.findOne({ user: req.user._id });
         if (req.query.page === 'recent') {
