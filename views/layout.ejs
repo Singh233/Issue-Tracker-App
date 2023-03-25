@@ -12,31 +12,33 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/user_sign_up.css">
-    <link rel="stylesheet" href="/css/user_sign_in.css">
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="<%= assetPath('css/user_sign_up.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/user_sign_in.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/layout.css') %>">
 
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/left.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/right.css">
-    
-    <link rel="stylesheet" href="/css/project_card.css">
-    <link rel="stylesheet" href="/css/issues.css">
-    <link rel="stylesheet" href="/css/new_issue.css">
-    <link rel="stylesheet" href="/css/discussion.css">
-    <link rel="stylesheet" href="/css/projects.css">
-    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="<%= assetPath('css/home.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/left.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/main.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/right.css') %>">
+
+    <link rel="stylesheet" href="<%= assetPath('css/project_card.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/issues.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/new_issue.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/discussion.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/projects.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/search.css') %>">
+
+    <link rel="stylesheet" href="<%= assetPath('css/new_project.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/landing.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/forgot_password.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/password_reset.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/iziToast.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/navbar.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/menu.css') %>">
+    <link rel="stylesheet" href="<%= assetPath('css/footer.css') %>">
 
 
-    <link rel="stylesheet" href="/css/new_project.css">
-    <link rel="stylesheet" href="/css/landing.css">
-    <link rel="stylesheet" href="/css/forgot_password.css">
-    <link rel="stylesheet" href="/css/password_reset.css">
-    <link rel="stylesheet" href="/css/iziToast.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/footer.css">
+
 </head>
 <body>
     
@@ -53,7 +55,8 @@
 
 
     <%- script %>
-    <script src="/js/iziToast.js" type="text/javascript"></script>
+    <script src="<%= assetPath('js/iziToast.js') %>"></script>
+
     <script>
 
         
@@ -123,7 +126,7 @@
         <% } %>
         
     </script>
+    <script src="<%= assetPath('js/Favorites.js') %>"></script>
 
-<script src="/js/Favorites.js"></script>
 </body>
 </html>

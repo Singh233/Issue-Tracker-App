@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+require('./config/view_helper')(app);
+
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
@@ -7,6 +9,7 @@ const path = require('path');
 const routes = require('./routes');
 const passwordReset = require('./routes/passwordReset');
 const bodyParser = require('body-parser');
+const env = require('./config/environment');
 
 // For session cookie
 const session = require('express-session');
@@ -25,18 +28,20 @@ const customWare = require('./config/middleware');
 
 app.use(express.urlencoded({extended: true})); // parses urlencoded body
 
+if (env.name == 'development') {
 // compile scss to css
-app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
-    debug: false,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+    app.use(sassMiddleware({
+        src: './assets/scss',
+        dest: './assets/css',
+        debug: false,
+        outputStyle: 'extended',
+        prefix: '/css'
+    }));
+}
 
 
 
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 
 // Tell express to use layouts in all views
 app.use(expressLayouts);

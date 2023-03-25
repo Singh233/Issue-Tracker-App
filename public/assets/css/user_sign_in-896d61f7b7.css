@@ -1,0 +1,186 @@
+.user-sign-in {
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border-radius: 20px;
+  display: flex;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  margin-top: 130px;
+  transition: all .3s; }
+  .user-sign-in .outline-effect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    background-color: #12171C;
+    border-radius: 20px;
+    padding: 0 30px; }
+    .user-sign-in .outline-effect .welcome-div {
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .user-sign-in .outline-effect .welcome-div img {
+        display: none;
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+        object-fit: cover; }
+      .user-sign-in .outline-effect .welcome-div p {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+        font-family: cursive;
+        font-weight: 700; }
+        .user-sign-in .outline-effect .welcome-div p span {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          margin-top: -4px;
+          font-size: 2.5rem;
+          font-weight: 600; }
+    .user-sign-in .outline-effect form {
+      display: flex;
+      flex-direction: column; }
+      .user-sign-in .outline-effect form .input-with-icon {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #1A2733;
+        border-radius: 10px;
+        margin: 7px;
+        color: white;
+        border: none; }
+        .user-sign-in .outline-effect form .input-with-icon i {
+          margin-left: 5px;
+          font-size: 1.2rem; }
+      .user-sign-in .outline-effect form #toggle-password {
+        cursor: pointer;
+        transition: 0.3s all ease-in-out; }
+      .user-sign-in .outline-effect form #email-input, .user-sign-in .outline-effect form #pass-input {
+        font-size: 1rem;
+        margin-left: 15px;
+        width: 90%;
+        background-color: #1A2733;
+        border-radius: 10px;
+        color: white;
+        border: none; }
+        .user-sign-in .outline-effect form #email-input:focus, .user-sign-in .outline-effect form #pass-input:focus {
+          outline: none; }
+        .user-sign-in .outline-effect form #email-input:-webkit-autofill, .user-sign-in .outline-effect form #pass-input:-webkit-autofill {
+          -webkit-text-fill-color: white !important;
+          transition: background-color 5000s ease-in-out 0s;
+          font-size: 1rem; }
+      .user-sign-in .outline-effect form .forgot-password {
+        align-self: flex-end;
+        margin: 5px;
+        margin-right: 10px;
+        transition: 0.2s all ease-out; }
+        .user-sign-in .outline-effect form .forgot-password:hover {
+          color: #367ee2; }
+      .user-sign-in .outline-effect form #submit-button {
+        --primary-color: #645bff;
+        --secondary-color: #fff;
+        --hover-color: #111;
+        --arrow-width: 10px;
+        --arrow-stroke: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        margin-top: 8px;
+        padding: 10px;
+        background-color: #0057D2;
+        color: white;
+        font-size: 1rem;
+        border-radius: 15px;
+        border: none;
+        font-weight: 500;
+        text-decoration: none;
+        background: linear-gradient(130deg, #1277f3 0%, #0b4995 97%);
+        transition: 0.2s all ease-out;
+        cursor: pointer; }
+        .user-sign-in .outline-effect form #submit-button .arrow-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px; }
+        .user-sign-in .outline-effect form #submit-button .arrow {
+          margin-top: 1px;
+          width: var(--arrow-width);
+          background: var(--primary-color);
+          height: var(--arrow-stroke);
+          position: relative;
+          transition: 0.2s; }
+        .user-sign-in .outline-effect form #submit-button .arrow::before {
+          content: "";
+          box-sizing: border-box;
+          position: absolute;
+          border: solid var(--secondary-color);
+          border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+          display: inline-block;
+          top: -3px;
+          right: 3px;
+          transition: 0.2s;
+          padding: 3px;
+          transform: rotate(-45deg); }
+        .user-sign-in .outline-effect form #submit-button:hover {
+          background: linear-gradient(130deg, rgba(18, 119, 243, 0.747) 0%, rgba(11, 73, 149, 0.699) 97%); }
+        .user-sign-in .outline-effect form #submit-button:hover .arrow {
+          background: var(--secondary-color); }
+        .user-sign-in .outline-effect form #submit-button:hover .arrow:before {
+          right: 0; }
+    .user-sign-in .outline-effect .option-text {
+      color: #d0d0d0;
+      margin: 10px;
+      align-self: center;
+      font-size: 0.9rem; }
+      .user-sign-in .outline-effect .option-text a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #0057D2;
+        transition: 0.2s all ease-out; }
+        .user-sign-in .outline-effect .option-text a:hover {
+          color: #367ee2; }
+    .user-sign-in .outline-effect .auth-options {
+      display: flex;
+      justify-content: center;
+      margin: 10px; }
+      .user-sign-in .outline-effect .auth-options #google-auth, .user-sign-in .outline-effect .auth-options #fb-auth, .user-sign-in .outline-effect .auth-options #git-auth {
+        font-size: 1.3rem;
+        margin: 5px;
+        padding: 10px 20px;
+        background-color: #1A2733;
+        border-radius: 15px;
+        color: white;
+        text-decoration: none; }
+      .user-sign-in .outline-effect .auth-options #google-auth {
+        padding: 5px 15px;
+        display: flex;
+        align-items: center;
+        background: white; }
+        .user-sign-in .outline-effect .auth-options #google-auth img {
+          height: 28px;
+          width: 28px; }
+      .user-sign-in .outline-effect .auth-options #fb-auth {
+        background: #1277f3;
+        background: linear-gradient(130deg, #1277f3 0%, #0b4995 97%); }
+
+.remove {
+  display: none; }
+
+@media screen and (max-width: 480px) {
+  .user-sign-in {
+    max-width: 88vw; }
+    .user-sign-in .welcome-div {
+      margin: 0;
+      margin-bottom: 20px; }
+      .user-sign-in .welcome-div p {
+        position: relative;
+        font-size: 1.7rem; }
+        .user-sign-in .welcome-div p span {
+          position: relative;
+          width: 100%;
+          font-size: 1.8rem !important; } }
