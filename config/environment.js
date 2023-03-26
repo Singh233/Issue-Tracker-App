@@ -4,16 +4,16 @@
 const development = {
     name: 'development',
     asset_path: './assets',
-    google_clientID: process.env.NODEJS_GOOGLE_CLIENT_ID,
-    google_clientSecret: process.env.NODEJS_GOOGLE_CLIENT_SECRET,
+    google_clientID: process.env.ISSUE_TRACKER_GOOGLE_CLIENT_ID,
+    google_clientSecret: process.env.ISSUE_TRACKER_GOOGLE_CLIENT_SECRET,
     google_callbackURL: 'http://localhost:8000/users/auth/google/callback',
     
-    github_clientID: process.env.NODEJS_GITHUB_CLIENT_ID,
-    github_clientSecret: process.env.NODEJS_GITHUB_CLIENT_SECRET,
+    github_clientID: process.env.ISSUE_TRACKER_GITHUB_CLIENT_ID,
+    github_clientSecret: process.env.ISSUE_TRACKER_GITHUB_CLIENT_SECRET,
     github_callbackURL: "http://localhost:8000/users/auth/github/callback",
 
-    fb_clientID: process.env.NODEJS_FACEBOOK_CLIENT_ID,
-    fb_clientSecret: process.env.NODEJS_FACEBOOK_CLIENT_SECRET,
+    fb_clientID: process.env.ISSUE_TRACKER_FACEBOOK_CLIENT_ID,
+    fb_clientSecret: process.env.ISSUE_TRACKER_FACEBOOK_CLIENT_SECRET,
     fb_callbackURL: "http://localhost:8000/users/auth/facebook/callback",
 
     db: process.env.ISSUE_TRACKER_DB,
@@ -28,15 +28,15 @@ const production = {
     name: 'production',
     asset_path: './public/assets',
     google_clientID: process.env.ISSUE_TRACKER_GOOGLE_CLIENT_ID,
-    google_clientSecret: process.env.ISSUE_TRACKER_GOOGLE_SECRET,
+    google_clientSecret: process.env.ISSUE_TRACKER_GOOGLE_CLIENT_SECRET,
     google_callbackURL: 'https://issuetracker.sanam.tech/users/auth/google/callback',
     
     github_clientID: process.env.ISSUE_TRACKER_GITHUB_CLIENT_ID,
-    github_clientSecret: process.env.ISSUE_TRACKER_GITHUB_SECRET,
+    github_clientSecret: process.env.ISSUE_TRACKER_GITHUB_CLIENT_SECRET,
     github_callbackURL: "https://issuetracker.sanam.tech/users/auth/github/callback",
 
     fb_clientID: process.env.ISSUE_TRACKER_FACEBOOK_CLIENT_ID,
-    fb_clientSecret: process.env.ISSUE_TRACKER_FACEBOOK_SECRET,
+    fb_clientSecret: process.env.ISSUE_TRACKER_FACEBOOK_CLIENT_SECRET,
     fb_callbackURL: "https://issuetracker.sanam.tech/users/auth/facebook/callback",
 
     db: process.env.ISSUE_TRACKER_DB,
