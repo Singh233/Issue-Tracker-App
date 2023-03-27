@@ -366,3 +366,23 @@
     .heading-container .greeting-text .time {
       font-size: 1rem;
       color: rgba(255, 255, 255, 0.647); }
+
+@media screen and (min-width: 1440px) {
+  .heading-container .left-gradient {
+    position: absolute;
+    top: 20%;
+    left: -440px;
+    width: 20vw;
+    height: 15vw;
+    background-color: black;
+    border-radius: 50%;
+    transform-style: preserve-3d; }
+  .heading-container .right-gradient {
+    position: absolute;
+    top: 20%;
+    right: -440px;
+    width: 20vw;
+    height: 15vw;
+    background-color: black;
+    border-radius: 50%;
+    transform-style: preserve-3d; } }

@@ -646,3 +646,31 @@
         
     }
 }
+
+// if screen width is greater than 1440px
+@media screen and (min-width: '1440px') {
+    .heading-container {
+        .left-gradient {
+            position: absolute;
+            top: 20%;
+            left: -440px;
+            width: 20vw;
+            height: 15vw;
+            background-color: black;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+        }
+    
+    
+        .right-gradient {
+            position: absolute;
+            top: 20%;
+            right: -440px;
+            width: 20vw;
+            height: 15vw;
+            background-color: black;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+        }
+    }
+}

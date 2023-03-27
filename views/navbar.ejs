@@ -39,3 +39,21 @@
 </div>
 <script src="<%= assetPath('js/SearchProject.js') %>"></script>
 
+<script>
+    // if page is home page
+    if (window.location.pathname === '/') {
+        // add class to navbar
+        window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar-container');
+        if (window.scrollY > 400) {
+            navbar.classList.add('scrolled');
+            // add animation to background color
+            navbar.style.transition = "background-color 0.4s ease-in-out";
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    } 
+    
+</script>
+
