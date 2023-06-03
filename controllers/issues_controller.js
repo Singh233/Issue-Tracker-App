@@ -467,22 +467,20 @@ module.exports.searchClosed = async function (req, res) {
 // controller for sorting issues by recently created
 module.exports.filterRecentActivity = async function (req, res) {
     try {
-        console.log(req.params)
         // find the project and populate with user and issues
-        let project = await Project.findById(req.params.id);
+        let project = await Project.findById(req.params.id).populate('user');
 
         let issues = null;
         // check if all issues are to be fetched
         if (req.params.all === 'all') {
-            console.log('inside all')
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id });
+            issues = await Issue.find({ project: req.params.id }).populate('user');
         } else if (req.params.all === 'open') {
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id, status: 'open' });
+            issues = await Issue.find({ project: req.params.id, status: 'open' }).populate('user');
         } else if (req.params.all === 'closed') {
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id, status: 'close' });
+            issues = await Issue.find({ project: req.params.id, status: 'close' }).populate('user');
         }
         
         // sort the issues by recently created
@@ -524,15 +522,14 @@ module.exports.filterOldestActivity = async function (req, res) {
         let issues = null;
         // find the issues of the project and sort by oldest created
         if (req.params.all === 'all') {
-            console.log('inside all')
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id });
+            issues = await Issue.find({ project: req.params.id }).populate('user');
         } else if (req.params.all === 'open') {
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id, status: 'open' });
+            issues = await Issue.find({ project: req.params.id, status: 'open' }).populate('user');
         } else if (req.params.all === 'closed') {
             // find the issues of the project
-            issues = await Issue.find({ project: req.params.id, status: 'close' });
+            issues = await Issue.find({ project: req.params.id, status: 'close' }).populate('user');
         }
 
         // sort the issues by oldest created
@@ -577,15 +574,14 @@ module.exports.filterLoggedInAuthor = async function (req, res) {
         // find the issues of the project and sort by logged in author
         let issues = null;
         if (req.params.all === 'all') {
-            console.log('inside all')
             // find the issues of the project and sort by logged in author
-            issues = await Issue.find({ project: req.params.id, user: req.user._id });
+            issues = await Issue.find({ project: req.params.id, user: req.user._id }).populate('user');
         } else if (req.params.all === 'open') {
             // find the issues of the project and sort by logged in author
-            issues = await Issue.find({ project: req.params.id, user: req.user._id, status: 'open' });
+            issues = await Issue.find({ project: req.params.id, user: req.user._id, status: 'open' }).populate('user');
         } else if (req.params.all === 'closed') {
             // find the issues of the project and sort by logged in author
-            issues = await Issue.find({ project: req.params.id, user: req.user._id, status: 'close' });
+            issues = await Issue.find({ project: req.params.id, user: req.user._id, status: 'close' }).populate('user');
         }
 
         

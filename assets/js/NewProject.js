@@ -18,7 +18,6 @@ $('#new-project-form').on('submit', function(e){
         url: '/new-project/create-project',
         data: $(this).serialize(),
         success: function(data){
-            console.log(data);
             setTimeout(() => {
                 iziToast.success({
                     title: 'Success',

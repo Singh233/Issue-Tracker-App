@@ -46,7 +46,6 @@ module.exports.home = async function (req, res) {
 
 // controller for getting projects according to query
 module.exports.getProjects = async function (req, res) {
-    console.log(req.query);
     try {
         // import project model
         const Project = require('../models/project');
@@ -113,7 +112,6 @@ module.exports.getProjects = async function (req, res) {
                 time,
             };
 
-            console.log(data);
 
             return res.json(200, {
                 message: 'Projects fetched successfully',

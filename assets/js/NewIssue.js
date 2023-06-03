@@ -21,7 +21,6 @@ $('#new-issue-form').on('submit', function(e){
         url: `/issues/${projectId}/new/create`,
         data: $(this).serialize(),
         success: function(data){
-            console.log(data);
             setTimeout(() => {
                 iziToast.success({
                     title: 'Success',

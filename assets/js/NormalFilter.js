@@ -147,7 +147,6 @@ function filterClick(projectId, filter) {
 
                 // append the issues
                 response.data.issues.forEach((issue, index) => {
-                    console.log(issue);
                     issuesContainer.innerHTML += newIssueDom(issue, index);
                 });
             }

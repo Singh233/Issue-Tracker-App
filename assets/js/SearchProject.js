@@ -4,7 +4,6 @@ function searchProjects(e) {
     // get the search value
     const searchValue = searchInput.value;
 
-    console.log(window.location.pathname)
     // check current page
     if (window.location.pathname === '/search/projects') {
         // make ajax request to search for projects

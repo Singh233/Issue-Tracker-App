@@ -30,7 +30,6 @@ function labelClick(projectId, label) {
             ? `/issues/${projectId}/closed`
             : `/issues/${projectId}/all`;
 
-            console.log('label is empty')
         // show labels filter and hide active label
         const labelsFilter = document.querySelector('.label-button');
         labelsFilter.classList.toggle('hide');
@@ -122,7 +121,6 @@ function labelClick(projectId, label) {
 
                 // append the issues
                 response.data.issues.forEach((issue, index) => {
-                    console.log(issue);
                     issuesContainer.innerHTML += newIssueDom(issue, index);
                 });
             }

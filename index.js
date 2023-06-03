@@ -26,20 +26,20 @@ const db = require('./config/mongoose');
 const flash = require('connect-flash');
 const customWare = require('./config/middleware');
 
-app.use(express.urlencoded({extended: true})); // parses urlencoded body
+app.use(express.urlencoded({ extended: true })); // parses urlencoded body
 
-if (env.name == 'development') {
-// compile scss to css
-    app.use(sassMiddleware({
-        src: './assets/scss',
-        dest: './assets/css',
-        debug: false,
-        outputStyle: 'extended',
-        prefix: '/css'
-    }));
+if (env.name === 'development') {
+  // compile scss to css
+  app.use(
+    sassMiddleware({
+      src: './assets/scss',
+      dest: './assets/css',
+      debug: false,
+      outputStyle: 'expanded',
+      prefix: '/css',
+    })
+  );
 }
-
-
 
 app.use(express.static(env.asset_path));
 
@@ -50,31 +50,31 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-
-
 // set up express app to use EJS as the template engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // configure express-session and mongo store is used to store the session cookie in the db
-app.use(session({
+app.use(
+  session({
     name: 'Authentication',
     secret: 'something',
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: (1000 * 60 * 100),
+      maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create(
-        {
-            mongoUrl: `mongodb+srv://sanam:${process.env.MONGODB_CLUSTER_PASSWORD}@cluster0.pxkvrhv.mongodb.net/?retryWrites=true&w=majority`,
-            autoRemove: 'disabled'
-        },
-        function(error) {
-            console.log(error || "---connect-mongodb setup ok---")
-        }
-    )
-}));
+      {
+        mongoUrl: `mongodb+srv://sanam:${process.env.MONGODB_CLUSTER_PASSWORD}@cluster0.pxkvrhv.mongodb.net/?retryWrites=true&w=majority`,
+        autoRemove: 'disabled',
+      },
+      function (error) {
+        console.log(error || '---connect-mongodb setup ok---');
+      }
+    ),
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -85,12 +85,12 @@ app.use(customWare.setFlash);
 
 // use express router
 app.use('/', routes);
-app.use("/users/password-reset", passwordReset);
+app.use('/users/password-reset', passwordReset);
 
 app.listen(port, (error) => {
-    if (error) {
-        console.log('Error in starting the server', error);
-        return;
-    }
-    console.log(`Server is running: http://localhost:${port}`);
-})
+  if (error) {
+    console.log('Error in starting the server', error);
+    return;
+  }
+  console.log(`Server is running: http://localhost:${port}`);
+});

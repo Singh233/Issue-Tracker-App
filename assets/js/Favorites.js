@@ -79,7 +79,6 @@ function removeFromFavorites(projectId) {
 
     // check which nav item is active
     let activeNavItem = $('.nav-active').attr('id');
-    console.log(activeNavItem)
     if (activeNavItem === 'favorites') {
         $(`#star-${projectId}`).parent().parent().removeClass('animate__fadeIn');
         $(`#starred-${projectId}`).parent().parent().removeClass('animate__fadeIn');

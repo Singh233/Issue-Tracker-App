@@ -36,7 +36,6 @@ module.exports.createComment = function (req, res) {
                         console.log('error in populating the user of the comment');
                         return;
                     }
-                    console.log(comment)
                     // if the request is an ajax request, then return the comment
                     if (req.xhr) {
                         return res.status(200).json({

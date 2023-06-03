@@ -18,7 +18,6 @@ passport.use(
         function (req, email, password, done) {
             // Find a user and establish the identity
             email = email.toLowerCase();
-            console.log(email);
 
             User.findOne({ email: email }, function (error, user) {
                 if (error) {
@@ -35,14 +34,12 @@ passport.use(
                 // Load hash from database for the password.
                 bcrypt.compare(password, user.password)
                 .then(result => {
-                    console.log(result);
                     // This will be either true or false, based on if the string
                     // matches or not.
                     if (result) {
                         return done(null, user);
                     }
                     req.flash('error', 'Invalid Username/Password!');
-                    console.log('Invalid username/password');
                     return done(null, false);
                 }).catch((error) => {
                     console.log("Error in hashing password");

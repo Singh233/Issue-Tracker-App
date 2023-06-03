@@ -71,7 +71,6 @@ router.post("/:userId/:token", async (req, res) => {
 
         req.logout(function(error) {
             if (error) {
-                console.log("error signing out");
                 req.flash('error', 'Something went wrong!');
                 return;
             }

@@ -124,7 +124,6 @@ function searchIssues(e, projectId) {
             type: 'get',
             url: URL,
             success: function (data) {
-                console.log(data);
                 // get the issues container
                 const issuesContainer =
                     document.getElementById('issues-container');
@@ -160,7 +159,6 @@ function searchIssues(e, projectId) {
                     }
                     // append the issues
                     data.data.issues.forEach((issue, index) => {
-                        console.log(issue);
                         issuesContainer.innerHTML += newIssueDom(issue, index);
                     });
                 }
