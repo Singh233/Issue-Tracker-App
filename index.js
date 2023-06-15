@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 require('./config/view_helper')(app);
 
-const port = 8000;
+const port = 4000;
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');

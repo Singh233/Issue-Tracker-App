@@ -77,16 +77,17 @@
     } else if (hour >= 12 && hour <= 17 && ampm === 'pm') {
         greetingUser.innerHTML = 'Good Afternoon ,';
     } else if (hour >= 00 && hour <= 04 && ampm === 'am') {
-        greetingUser.innerHTML = 'Good Night Take A Rest or';
+        greetingUser.innerHTML = 'Welcome Night Owl ,';
     } else {
         greetingUser.textContent = 'Good Evening ,';
     }
 
     // show current time
     const time = document.querySelector('.time');
-    time.innerHTML = `${date.getHours()}:${date.getMinutes()} ${ampm} IST`;
+    time.innerHTML = `${hours12()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()} ${ampm} IST`;
 
-    
+    function hours12() { return (date.getHours() + 24) % 12 || 12; }
+
 
 
 
